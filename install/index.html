@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>安裝 Python 模組（舊版） &#8212; Python 3.10.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安裝 Python 模組（舊版） &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.11.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.1 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -69,8 +69,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">安裝 Python 模組（舊版）</a><ul>
 <li><a class="reference internal" href="#introduction">簡介</a><ul>
 <li><a class="reference internal" href="#distutils-based-source-distributions">Distutils based source distributions</a></li>
@@ -115,9 +116,12 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="../distutils/apiref.html"
-                        title="上一章"><span class="section-number">9. </span>API 參照</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="../distutils/apiref.html"
+                          title="上一章"><span class="section-number">9. </span>API 參照</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
@@ -157,7 +161,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.1 Documentation</a> &#187;
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">安裝 Python 模組（舊版）</a></li>
@@ -810,21 +814,21 @@ parsing your configuration file(s).</p>
 <p>Obviously, specifying the entire installation scheme every time you install a
 new module distribution would be very tedious.  Thus, you can put these options
 into your Distutils config file (see section <a class="reference internal" href="#inst-config-files"><span class="std std-ref">Distutils Configuration Files</span></a>):</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[install]</span>
-<span class="na">install-base</span><span class="o">=</span><span class="s">$HOME</span>
-<span class="na">install-purelib</span><span class="o">=</span><span class="s">python/lib</span>
-<span class="na">install-platlib</span><span class="o">=</span><span class="s">python/lib.$PLAT</span>
-<span class="na">install-scripts</span><span class="o">=</span><span class="s">python/scripts</span>
-<span class="na">install-data</span><span class="o">=</span><span class="s">python/data</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[install]</span><span class="w"></span>
+<span class="na">install-base</span><span class="o">=</span><span class="s">$HOME</span><span class="w"></span>
+<span class="na">install-purelib</span><span class="o">=</span><span class="s">python/lib</span><span class="w"></span>
+<span class="na">install-platlib</span><span class="o">=</span><span class="s">python/lib.$PLAT</span><span class="w"></span>
+<span class="na">install-scripts</span><span class="o">=</span><span class="s">python/scripts</span><span class="w"></span>
+<span class="na">install-data</span><span class="o">=</span><span class="s">python/data</span><span class="w"></span>
 </pre></div>
 </div>
 <p>or, equivalently,</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[install]</span>
-<span class="na">install-base</span><span class="o">=</span><span class="s">$HOME/python</span>
-<span class="na">install-purelib</span><span class="o">=</span><span class="s">lib</span>
-<span class="na">install-platlib</span><span class="o">=</span><span class="s">lib.$PLAT</span>
-<span class="na">install-scripts</span><span class="o">=</span><span class="s">scripts</span>
-<span class="na">install-data</span><span class="o">=</span><span class="s">data</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[install]</span><span class="w"></span>
+<span class="na">install-base</span><span class="o">=</span><span class="s">$HOME/python</span><span class="w"></span>
+<span class="na">install-purelib</span><span class="o">=</span><span class="s">lib</span><span class="w"></span>
+<span class="na">install-platlib</span><span class="o">=</span><span class="s">lib.$PLAT</span><span class="w"></span>
+<span class="na">install-scripts</span><span class="o">=</span><span class="s">scripts</span><span class="w"></span>
+<span class="na">install-data</span><span class="o">=</span><span class="s">data</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that these two are <em>not</em> equivalent if you supply a different installation
@@ -1021,8 +1025,8 @@ plus a <code class="docutils literal notranslate"><span class="pre">global</span
 section consists of one option per line, specified as <code class="docutils literal notranslate"><span class="pre">option=value</span></code>.</p>
 <p>For example, the following is a complete config file that just forces all
 commands to run quietly by default:</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[global]</span>
-<span class="na">verbose</span><span class="o">=</span><span class="s">0</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[global]</span><span class="w"></span>
+<span class="na">verbose</span><span class="o">=</span><span class="s">0</span><span class="w"></span>
 </pre></div>
 </div>
 <p>If this is installed as the system config file, it will affect all processing of
@@ -1034,9 +1038,9 @@ distribution.</p>
 <p>You could override the default &quot;build base&quot; directory and make the
 <strong class="command">build*</strong> commands always forcibly rebuild all files with the
 following:</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[build]</span>
-<span class="na">build-base</span><span class="o">=</span><span class="s">blib</span>
-<span class="na">force</span><span class="o">=</span><span class="s">1</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[build]</span><span class="w"></span>
+<span class="na">build-base</span><span class="o">=</span><span class="s">blib</span><span class="w"></span>
+<span class="na">force</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which corresponds to the command-line arguments</p>
@@ -1253,8 +1257,9 @@ of the same name.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">安裝 Python 模組（舊版）</a><ul>
 <li><a class="reference internal" href="#introduction">簡介</a><ul>
 <li><a class="reference internal" href="#distutils-based-source-distributions">Distutils based source distributions</a></li>
@@ -1299,9 +1304,12 @@ of the same name.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="../distutils/apiref.html"
-                        title="上一章"><span class="section-number">9. </span>API 參照</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="../distutils/apiref.html"
+                          title="上一章"><span class="section-number">9. </span>API 參照</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
@@ -1340,7 +1348,7 @@ of the same name.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.1 Documentation</a> &#187;
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">安裝 Python 模組（舊版）</a></li>
@@ -1361,25 +1369,25 @@ of the same name.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 12月 29, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 1月 17, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>
