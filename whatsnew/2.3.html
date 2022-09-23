@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Python 2.3 有什麼新功能 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 2.3 有什麼新功能 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -164,7 +165,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -192,9 +193,9 @@
           <div class="body" role="main">
             
   <section id="what-s-new-in-python-2-3">
-<h1>Python 2.3 有什麼新功能<a class="headerlink" href="#what-s-new-in-python-2-3" title="本標題的永久連結">¶</a></h1>
+<h1>Python 2.3 有什麼新功能<a class="headerlink" href="#what-s-new-in-python-2-3" title="本標頭的永久連結">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">作者</dt>
+<dt class="field-odd">作者<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A.M. Kuchling</p>
 </dd>
 </dl>
@@ -221,7 +222,7 @@ Reference and the Python Reference Manual.  If you want to understand the
 complete implementation and design rationale, refer to the PEP for a particular
 new feature.</p>
 <section id="pep-218-a-standard-set-datatype">
-<h2>PEP 218: A Standard Set Datatype<a class="headerlink" href="#pep-218-a-standard-set-datatype" title="本標題的永久連結">¶</a></h2>
+<h2>PEP 218: A Standard Set Datatype<a class="headerlink" href="#pep-218-a-standard-set-datatype" title="本標頭的永久連結">¶</a></h2>
 <p>The new <code class="xref py py-mod docutils literal notranslate"><span class="pre">sets</span></code> module contains an implementation of a set datatype.  The
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code> class is for mutable sets, sets that can have members added and
 removed.  The <code class="xref py py-class docutils literal notranslate"><span class="pre">ImmutableSet</span></code> class is for sets that can't be modified,
@@ -294,14 +295,14 @@ whether one set is a subset or superset of another:</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0218"><strong>PEP 218</strong></a> - Adding a Built-In Set Object Type</dt><dd><p>PEP written by Greg V. Wilson. Implemented by Greg V. Wilson, Alex Martelli, and
+<dt><span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0218/"><strong>PEP 218</strong></a> - Adding a Built-In Set Object Type</dt><dd><p>PEP written by Greg V. Wilson. Implemented by Greg V. Wilson, Alex Martelli, and
 GvR.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-255-simple-generators">
-<span id="section-generators"></span><h2>PEP 255: Simple Generators<a class="headerlink" href="#pep-255-simple-generators" title="本標題的永久連結">¶</a></h2>
+<span id="section-generators"></span><h2>PEP 255: Simple Generators<a class="headerlink" href="#pep-255-simple-generators" title="本標頭的永久連結">¶</a></h2>
 <p>In Python 2.2, generators were added as an optional feature, to be enabled by a
 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">generators</span></code> directive.  In 2.3 generators no longer
 need to be specially enabled, and are now always present; this means that
@@ -337,7 +338,7 @@ variables are preserved.  On the next call to the generator's <code class="docut
 method, the function will resume executing immediately after the
 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">yield</span></code> statement.  (For complicated reasons, the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">yield</span></code>
 statement isn't allowed inside the <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> block of a
-<code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code>...<code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code> statement; read <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0255"><strong>PEP 255</strong></a> for a full
+<code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code>...<code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code> statement; read <span class="target" id="index-1"></span><a class="pep reference external" href="https://peps.python.org/pep-0255/"><strong>PEP 255</strong></a> for a full
 explanation of the interaction between <code class="xref std std-keyword docutils literal notranslate"><span class="pre">yield</span></code> and exceptions.)</p>
 <p>Here's a sample usage of the <code class="xref py py-func docutils literal notranslate"><span class="pre">generate_ints()</span></code> generator:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span> <span class="o">=</span> <span class="n">generate_ints</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -412,14 +413,14 @@ a data structure.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0255"><strong>PEP 255</strong></a> - Simple Generators</dt><dd><p>Written by Neil Schemenauer, Tim Peters, Magnus Lie Hetland.  Implemented mostly
+<dt><span class="target" id="index-2"></span><a class="pep reference external" href="https://peps.python.org/pep-0255/"><strong>PEP 255</strong></a> - Simple Generators</dt><dd><p>Written by Neil Schemenauer, Tim Peters, Magnus Lie Hetland.  Implemented mostly
 by Neil Schemenauer and Tim Peters, with other fixes from the Python Labs crew.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-263-source-code-encodings">
-<span id="section-encodings"></span><h2>PEP 263: Source Code Encodings<a class="headerlink" href="#pep-263-source-code-encodings" title="本標題的永久連結">¶</a></h2>
+<span id="section-encodings"></span><h2>PEP 263: Source Code Encodings<a class="headerlink" href="#pep-263-source-code-encodings" title="本標頭的永久連結">¶</a></h2>
 <p>Python source files can now be declared as being in different character set
 encodings.  Encodings are declared by including a specially formatted comment in
 the first or second line of the source file.  For example, a UTF-8 file can be
@@ -440,14 +441,14 @@ use characters outside of the usual alphanumerics.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-3"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0263"><strong>PEP 263</strong></a> - Defining Python Source Code Encodings</dt><dd><p>Written by Marc-André Lemburg and Martin von Löwis; implemented by Suzuki Hisao
+<dt><span class="target" id="index-3"></span><a class="pep reference external" href="https://peps.python.org/pep-0263/"><strong>PEP 263</strong></a> - Defining Python Source Code Encodings</dt><dd><p>Written by Marc-André Lemburg and Martin von Löwis; implemented by Suzuki Hisao
 and Martin von Löwis.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-273-importing-modules-from-zip-archives">
-<h2>PEP 273: Importing Modules from ZIP Archives<a class="headerlink" href="#pep-273-importing-modules-from-zip-archives" title="本標題的永久連結">¶</a></h2>
+<h2>PEP 273: Importing Modules from ZIP Archives<a class="headerlink" href="#pep-273-importing-modules-from-zip-archives" title="本標頭的永久連結">¶</a></h2>
 <p>The new <a class="reference internal" href="../library/zipimport.html#module-zipimport" title="zipimport: Support for importing Python modules from ZIP archives."><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipimport</span></code></a> module adds support for importing modules from a
 ZIP-format archive.  You don't need to import the module explicitly; it will be
 automatically imported if a ZIP archive's filename is added to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.
@@ -481,16 +482,16 @@ import from the <code class="file docutils literal notranslate"><span class="pre
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0273"><strong>PEP 273</strong></a> - Import Modules from Zip Archives</dt><dd><p>Written by James C. Ahlstrom,  who also provided an implementation. Python 2.3
-follows the specification in <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0273"><strong>PEP 273</strong></a>,  but uses an implementation written by
-Just van Rossum  that uses the import hooks described in <span class="target" id="index-6"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0302"><strong>PEP 302</strong></a>. See section
+<dt><span class="target" id="index-4"></span><a class="pep reference external" href="https://peps.python.org/pep-0273/"><strong>PEP 273</strong></a> - Import Modules from Zip Archives</dt><dd><p>Written by James C. Ahlstrom,  who also provided an implementation. Python 2.3
+follows the specification in <span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0273/"><strong>PEP 273</strong></a>,  but uses an implementation written by
+Just van Rossum  that uses the import hooks described in <span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0302/"><strong>PEP 302</strong></a>. See section
 <a class="reference internal" href="#section-pep302"><span class="std std-ref">PEP 302: New Import Hooks</span></a> for a description of the new import hooks.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-277-unicode-file-name-support-for-windows-nt">
-<h2>PEP 277: Unicode file name support for Windows NT<a class="headerlink" href="#pep-277-unicode-file-name-support-for-windows-nt" title="本標題的永久連結">¶</a></h2>
+<h2>PEP 277: Unicode file name support for Windows NT<a class="headerlink" href="#pep-277-unicode-file-name-support-for-windows-nt" title="本標頭的永久連結">¶</a></h2>
 <p>On Windows NT, 2000, and XP, the system stores file names as Unicode strings.
 Traditionally, Python has represented file names as byte strings, which is
 inadequate because it renders some file names inaccessible.</p>
@@ -510,14 +511,14 @@ a Boolean value.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0277"><strong>PEP 277</strong></a> - Unicode file name support for Windows NT</dt><dd><p>Written by Neil Hodgson; implemented by Neil Hodgson, Martin von Löwis, and Mark
+<dt><span class="target" id="index-7"></span><a class="pep reference external" href="https://peps.python.org/pep-0277/"><strong>PEP 277</strong></a> - Unicode file name support for Windows NT</dt><dd><p>Written by Neil Hodgson; implemented by Neil Hodgson, Martin von Löwis, and Mark
 Hammond.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-278-universal-newline-support">
-<span id="index-8"></span><h2>PEP 278: Universal Newline Support<a class="headerlink" href="#pep-278-universal-newline-support" title="本標題的永久連結">¶</a></h2>
+<span id="index-8"></span><h2>PEP 278: Universal Newline Support<a class="headerlink" href="#pep-278-universal-newline-support" title="本標頭的永久連結">¶</a></h2>
 <p>The three major operating systems used today are Microsoft Windows, Apple's
 Macintosh OS, and the various Unix derivatives.  A minor irritation of
 cross-platform work  is that these three platforms all use different characters to
@@ -540,13 +541,13 @@ line-endings.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-9"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0278"><strong>PEP 278</strong></a> - Universal Newline Support</dt><dd><p>Written and implemented by Jack Jansen.</p>
+<dt><span class="target" id="index-9"></span><a class="pep reference external" href="https://peps.python.org/pep-0278/"><strong>PEP 278</strong></a> - Universal Newline Support</dt><dd><p>Written and implemented by Jack Jansen.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-279-enumerate">
-<span id="section-enumerate"></span><h2>PEP 279: enumerate()<a class="headerlink" href="#pep-279-enumerate" title="本標題的永久連結">¶</a></h2>
+<span id="section-enumerate"></span><h2>PEP 279: enumerate()<a class="headerlink" href="#pep-279-enumerate" title="本標頭的永久連結">¶</a></h2>
 <p>A new built-in function, <a class="reference internal" href="../library/functions.html#enumerate" title="enumerate"><code class="xref py py-func docutils literal notranslate"><span class="pre">enumerate()</span></code></a>, will make certain loops a bit
 clearer.  <code class="docutils literal notranslate"><span class="pre">enumerate(thing)</span></code>, where <em>thing</em> is either an iterator or a
 sequence, returns an iterator that will return <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">thing[0])</span></code>, <code class="docutils literal notranslate"><span class="pre">(1,</span>
@@ -567,13 +568,13 @@ sequence, returns an iterator that will return <code class="docutils literal not
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-10"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0279"><strong>PEP 279</strong></a> - The enumerate() built-in function</dt><dd><p>Written and implemented by Raymond D. Hettinger.</p>
+<dt><span class="target" id="index-10"></span><a class="pep reference external" href="https://peps.python.org/pep-0279/"><strong>PEP 279</strong></a> - The enumerate() built-in function</dt><dd><p>Written and implemented by Raymond D. Hettinger.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-282-the-logging-package">
-<h2>PEP 282: The logging Package<a class="headerlink" href="#pep-282-the-logging-package" title="本標題的永久連結">¶</a></h2>
+<h2>PEP 282: The logging Package<a class="headerlink" href="#pep-282-the-logging-package" title="本標頭的永久連結">¶</a></h2>
 <p>A standard package for writing logs, <a class="reference internal" href="../library/logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a>, has been added to Python
 2.3.  It provides a powerful and flexible mechanism for generating logging
 output which can then be filtered and processed in various ways.  A
@@ -655,22 +656,22 @@ creates a <code class="xref py py-class docutils literal notranslate"><span clas
 of filters, and each filter can cause the <code class="xref py py-class docutils literal notranslate"><span class="pre">LogRecord</span></code> to be ignored or
 can modify the record before passing it along.  When they're finally output,
 <code class="xref py py-class docutils literal notranslate"><span class="pre">LogRecord</span></code> instances are converted to text by a <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code>
-class.  All of these classes can be replaced by your own specially-written
+class.  All of these classes can be replaced by your own specially written
 classes.</p>
 <p>With all of these features the <a class="reference internal" href="../library/logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> package should provide enough
 flexibility for even the most complicated applications.  This is only an
 incomplete overview of its features, so please see the package's reference
-documentation for all of the details.  Reading <span class="target" id="index-11"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0282"><strong>PEP 282</strong></a> will also be helpful.</p>
+documentation for all of the details.  Reading <span class="target" id="index-11"></span><a class="pep reference external" href="https://peps.python.org/pep-0282/"><strong>PEP 282</strong></a> will also be helpful.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-12"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0282"><strong>PEP 282</strong></a> - A Logging System</dt><dd><p>Written by Vinay Sajip and Trent Mick; implemented by Vinay Sajip.</p>
+<dt><span class="target" id="index-12"></span><a class="pep reference external" href="https://peps.python.org/pep-0282/"><strong>PEP 282</strong></a> - A Logging System</dt><dd><p>Written by Vinay Sajip and Trent Mick; implemented by Vinay Sajip.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-285-a-boolean-type">
-<span id="section-bool"></span><h2>PEP 285: A Boolean Type<a class="headerlink" href="#pep-285-a-boolean-type" title="本標題的永久連結">¶</a></h2>
+<span id="section-bool"></span><h2>PEP 285: A Boolean Type<a class="headerlink" href="#pep-285-a-boolean-type" title="本標頭的永久連結">¶</a></h2>
 <p>A Boolean type was added to Python 2.3.  Two new constants were added to the
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">__builtin__</span></code> module, <a class="reference internal" href="../library/constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> and <a class="reference internal" href="../library/constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a>.  (<a class="reference internal" href="../library/constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> and
 <a class="reference internal" href="../library/constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a> constants were added to the built-ins in Python 2.2.1, but the
@@ -708,7 +709,7 @@ or a coefficient that multiplies some other quantity.  If the statement is
 strict language such as Pascal would also prevent you performing arithmetic with
 Booleans, and would require that the expression in an <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> statement
 always evaluate to a Boolean result.  Python is not this strict and never will
-be, as <span class="target" id="index-13"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0285"><strong>PEP 285</strong></a> explicitly says.  This means you can still use any expression
+be, as <span class="target" id="index-13"></span><a class="pep reference external" href="https://peps.python.org/pep-0285/"><strong>PEP 285</strong></a> explicitly says.  This means you can still use any expression
 in an <code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code> statement, even ones that evaluate to a list or tuple or
 some random object.  The Boolean type is a subclass of the <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> class so
 that arithmetic using a Boolean still works.</p>
@@ -729,13 +730,13 @@ instead of <code class="docutils literal notranslate"><span class="pre">'1'</spa
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-14"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0285"><strong>PEP 285</strong></a> - Adding a bool type</dt><dd><p>Written and implemented by GvR.</p>
+<dt><span class="target" id="index-14"></span><a class="pep reference external" href="https://peps.python.org/pep-0285/"><strong>PEP 285</strong></a> - Adding a bool type</dt><dd><p>Written and implemented by GvR.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-293-codec-error-handling-callbacks">
-<h2>PEP 293: Codec Error Handling Callbacks<a class="headerlink" href="#pep-293-codec-error-handling-callbacks" title="本標題的永久連結">¶</a></h2>
+<h2>PEP 293: Codec Error Handling Callbacks<a class="headerlink" href="#pep-293-codec-error-handling-callbacks" title="本標頭的永久連結">¶</a></h2>
 <p>When encoding a Unicode string into a byte string, unencodable characters may be
 encountered.  So far, Python has allowed specifying the error processing as
 either &quot;strict&quot; (raising <a class="reference internal" href="../library/exceptions.html#UnicodeError" title="UnicodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeError</span></code></a>), &quot;ignore&quot; (skipping the
@@ -756,13 +757,13 @@ characters and &quot;xmlcharrefreplace&quot; emits XML character references.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-15"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0293"><strong>PEP 293</strong></a> - Codec Error Handling Callbacks</dt><dd><p>Written and implemented by Walter Dörwald.</p>
+<dt><span class="target" id="index-15"></span><a class="pep reference external" href="https://peps.python.org/pep-0293/"><strong>PEP 293</strong></a> - Codec Error Handling Callbacks</dt><dd><p>Written and implemented by Walter Dörwald.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-301-package-index-and-metadata-for-distutils">
-<span id="section-pep301"></span><h2>PEP 301: Package Index and Metadata for Distutils<a class="headerlink" href="#pep-301-package-index-and-metadata-for-distutils" title="本標題的永久連結">¶</a></h2>
+<span id="section-pep301"></span><h2>PEP 301: Package Index and Metadata for Distutils<a class="headerlink" href="#pep-301-package-index-and-metadata-for-distutils" title="本標頭的永久連結">¶</a></h2>
 <p>Support for the long-requested Python catalog makes its first appearance in 2.3.</p>
 <p>The heart of the catalog is the new Distutils <strong class="command">register</strong> command.
 Running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">register</span></code> will collect the metadata describing a
@@ -797,20 +798,20 @@ with older versions of the Distutils:</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-16"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0301"><strong>PEP 301</strong></a> - Package Index and Metadata for Distutils</dt><dd><p>Written and implemented by Richard Jones.</p>
+<dt><span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-0301/"><strong>PEP 301</strong></a> - Package Index and Metadata for Distutils</dt><dd><p>Written and implemented by Richard Jones.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-302-new-import-hooks">
-<span id="section-pep302"></span><h2>PEP 302: New Import Hooks<a class="headerlink" href="#pep-302-new-import-hooks" title="本標題的永久連結">¶</a></h2>
+<span id="section-pep302"></span><h2>PEP 302: New Import Hooks<a class="headerlink" href="#pep-302-new-import-hooks" title="本標頭的永久連結">¶</a></h2>
 <p>While it's been possible to write custom import hooks ever since the
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">ihooks</span></code> module was introduced in Python 1.3, no one has ever been really
 happy with it because writing new import hooks is difficult and messy.  There
 have been various proposed alternatives such as the <code class="xref py py-mod docutils literal notranslate"><span class="pre">imputil</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">iu</span></code>
 modules, but none of them has ever gained much acceptance, and none of them were
 easily usable from C code.</p>
-<p><span class="target" id="index-17"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0302"><strong>PEP 302</strong></a> borrows ideas from its predecessors, especially from Gordon
+<p><span class="target" id="index-17"></span><a class="pep reference external" href="https://peps.python.org/pep-0302/"><strong>PEP 302</strong></a> borrows ideas from its predecessors, especially from Gordon
 McMillan's <code class="xref py py-mod docutils literal notranslate"><span class="pre">iu</span></code> module.  Three new items  are added to the <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>
 module:</p>
 <ul class="simple">
@@ -831,7 +832,7 @@ object added to this list.</p></li>
 single method, <code class="docutils literal notranslate"><span class="pre">load_module(fullname)</span></code>, that creates and returns the
 corresponding module object.</p>
 <p>Pseudo-code for Python's new import logic, therefore, looks something like this
-(simplified a bit; see <span class="target" id="index-18"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0302"><strong>PEP 302</strong></a> for the full details):</p>
+(simplified a bit; see <span class="target" id="index-18"></span><a class="pep reference external" href="https://peps.python.org/pep-0302/"><strong>PEP 302</strong></a> for the full details):</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">mp</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">meta_path</span><span class="p">:</span>
     <span class="n">loader</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">loader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -855,13 +856,13 @@ corresponding module object.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-19"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0302"><strong>PEP 302</strong></a> - New Import Hooks</dt><dd><p>Written by Just van Rossum and Paul Moore. Implemented by Just van Rossum.</p>
+<dt><span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0302/"><strong>PEP 302</strong></a> - New Import Hooks</dt><dd><p>Written by Just van Rossum and Paul Moore. Implemented by Just van Rossum.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-305-comma-separated-files">
-<span id="section-pep305"></span><h2>PEP 305: Comma-separated Files<a class="headerlink" href="#pep-305-comma-separated-files" title="本標題的永久連結">¶</a></h2>
+<span id="section-pep305"></span><h2>PEP 305: Comma-separated Files<a class="headerlink" href="#pep-305-comma-separated-files" title="本標頭的永久連結">¶</a></h2>
 <p>Comma-separated files are a format frequently used for exporting data from
 databases and spreadsheets.  Python 2.3 adds a parser for comma-separated files.</p>
 <p>Comma-separated format is deceptively simple at first glance:</p>
@@ -893,17 +894,17 @@ of tuples or lists, quoting strings that contain the delimiter.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-20"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0305"><strong>PEP 305</strong></a> - CSV File API</dt><dd><p>Written and implemented  by Kevin Altis, Dave Cole, Andrew McNamara, Skip
+<dt><span class="target" id="index-20"></span><a class="pep reference external" href="https://peps.python.org/pep-0305/"><strong>PEP 305</strong></a> - CSV File API</dt><dd><p>Written and implemented  by Kevin Altis, Dave Cole, Andrew McNamara, Skip
 Montanaro, Cliff Wells.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="pep-307-pickle-enhancements">
-<span id="section-pep307"></span><h2>PEP 307: Pickle Enhancements<a class="headerlink" href="#pep-307-pickle-enhancements" title="本標題的永久連結">¶</a></h2>
+<span id="section-pep307"></span><h2>PEP 307: Pickle Enhancements<a class="headerlink" href="#pep-307-pickle-enhancements" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="../library/pickle.html#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">cPickle</span></code> modules received some attention during the
 2.3 development cycle.  In 2.2, new-style classes could be pickled without
-difficulty, but they weren't pickled very compactly; <span class="target" id="index-21"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0307"><strong>PEP 307</strong></a> quotes a trivial
+difficulty, but they weren't pickled very compactly; <span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0307/"><strong>PEP 307</strong></a> quotes a trivial
 example where a new-style class results in a pickled string three times longer
 than that for a classic class.</p>
 <p>The solution was to invent a new pickle protocol.  The <a class="reference internal" href="../library/pickle.html#pickle.dumps" title="pickle.dumps"><code class="xref py py-func docutils literal notranslate"><span class="pre">pickle.dumps()</span></code></a>
@@ -920,7 +921,7 @@ not unpickle untrusted data in any version of Python.</p>
 <p>To reduce the pickling overhead for new-style classes, a new interface for
 customizing pickling was added using three special methods:
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getstate__()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">__setstate__()</span></code>, and <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs__()</span></code>.  Consult
-<span class="target" id="index-22"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0307"><strong>PEP 307</strong></a> for the full semantics  of these methods.</p>
+<span class="target" id="index-22"></span><a class="pep reference external" href="https://peps.python.org/pep-0307/"><strong>PEP 307</strong></a> for the full semantics  of these methods.</p>
 <p>As a way to compress pickles yet further, it's now possible to use integer codes
 instead of long strings to identify pickled classes. The Python Software
 Foundation will maintain a list of standardized codes; there's also a range of
@@ -928,13 +929,13 @@ codes for private use.  Currently no codes have been specified.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-23"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0307"><strong>PEP 307</strong></a> - Extensions to the pickle protocol</dt><dd><p>Written and implemented  by Guido van Rossum and Tim Peters.</p>
+<dt><span class="target" id="index-23"></span><a class="pep reference external" href="https://peps.python.org/pep-0307/"><strong>PEP 307</strong></a> - Extensions to the pickle protocol</dt><dd><p>Written and implemented  by Guido van Rossum and Tim Peters.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="extended-slices">
-<span id="section-slices"></span><h2>Extended Slices<a class="headerlink" href="#extended-slices" title="本標題的永久連結">¶</a></h2>
+<span id="section-slices"></span><h2>Extended Slices<a class="headerlink" href="#extended-slices" title="本標頭的永久連結">¶</a></h2>
 <p>Ever since Python 1.4, the slicing syntax has supported an optional third &quot;step&quot;
 or &quot;stride&quot; argument.  For example, these are all legal Python syntax:
 <code class="docutils literal notranslate"><span class="pre">L[1:10:2]</span></code>, <code class="docutils literal notranslate"><span class="pre">L[:-1:1]</span></code>, <code class="docutils literal notranslate"><span class="pre">L[::-1]</span></code>.  This was added to Python at the
@@ -1037,7 +1038,7 @@ consistent with Python 2.2, where <a class="reference internal" href="../library
 the same change.</p>
 </section>
 <section id="other-language-changes">
-<h2>Other Language Changes<a class="headerlink" href="#other-language-changes" title="本標題的永久連結">¶</a></h2>
+<h2>Other Language Changes<a class="headerlink" href="#other-language-changes" title="本標頭的永久連結">¶</a></h2>
 <p>Here are all of the changes that Python 2.3 makes to the core Python language.</p>
 <ul>
 <li><p>The <a class="reference internal" href="../reference/simple_stmts.html#yield"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">yield</span></code></a> statement is now always a keyword, as described in
@@ -1138,7 +1139,7 @@ automatically  converted to bytes using the given encoding.</p></li>
 you'll only notice the difference if you have a really complicated inheritance
 hierarchy.  Classic classes are unaffected by this change.  Python 2.2
 originally used a topological sort of a class's ancestors, but 2.3 now uses the
-C3 algorithm as described in the paper <a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.19.3910">&quot;A Monotonic Superclass Linearization
+C3 algorithm as described in the paper <a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.19.3910">&quot;A Monotonic Superclass Linearization
 for Dylan&quot;</a>. To
 understand the motivation for this change,  read Michele Simionato's article
 <a class="reference external" href="http://www.phyast.pitt.edu/~micheles/mro.html">&quot;Python 2.3 Method Resolution Order&quot;</a>, or
@@ -1175,7 +1176,7 @@ assigned to <a class="reference internal" href="../library/stdtypes.html#class._
 an instance's <a class="reference internal" href="../library/stdtypes.html#instance.__class__" title="instance.__class__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__class__</span></code></a> attribute.</p></li>
 </ul>
 <section id="string-changes">
-<h3>String Changes<a class="headerlink" href="#string-changes" title="本標題的永久連結">¶</a></h3>
+<h3>String Changes<a class="headerlink" href="#string-changes" title="本標頭的永久連結">¶</a></h3>
 <ul>
 <li><p>The <a class="reference internal" href="../reference/expressions.html#in"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">in</span></code></a> operator now works differently for strings. Previously, when
 evaluating <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">in</span> <span class="pre">Y</span></code> where <em>X</em> and <em>Y</em> are strings, <em>X</em> could only be a single
@@ -1235,7 +1236,7 @@ interned strings.  (Implemented by Oren Tirosh.)</p></li>
 </ul>
 </section>
 <section id="optimizations">
-<h3>Optimizations<a class="headerlink" href="#optimizations" title="本標題的永久連結">¶</a></h3>
+<h3>Optimizations<a class="headerlink" href="#optimizations" title="本標頭的永久連結">¶</a></h3>
 <ul class="simple">
 <li><p>The creation of new-style class instances has been made much faster; they're
 now faster than classic classes!</p></li>
@@ -1260,7 +1261,7 @@ benchmark around 25% faster than Python 2.2.</p>
 </section>
 </section>
 <section id="new-improved-and-deprecated-modules">
-<h2>New, Improved, and Deprecated Modules<a class="headerlink" href="#new-improved-and-deprecated-modules" title="本標題的永久連結">¶</a></h2>
+<h2>New, Improved, and Deprecated Modules<a class="headerlink" href="#new-improved-and-deprecated-modules" title="本標頭的永久連結">¶</a></h2>
 <p>As usual, Python's standard library received a number of enhancements and bug
 fixes.  Here's a partial list of the most notable changes, sorted alphabetically
 by module name. Consult the <code class="file docutils literal notranslate"><span class="pre">Misc/NEWS</span></code> file in the source tree for a more
@@ -1367,7 +1368,7 @@ other mutable Python sequence type.  Here's an example that uses a Python list:<
 from the IDLEfork project (<a class="reference external" href="http://idlefork.sourceforge.net">http://idlefork.sourceforge.net</a>).  The most notable feature is
 that the code being developed is now executed in a subprocess, meaning that
 there's no longer any need for manual <code class="docutils literal notranslate"><span class="pre">reload()</span></code> operations. IDLE's core code
-has been incorporated into the standard library as the <code class="xref py py-mod docutils literal notranslate"><span class="pre">idlelib</span></code> package.</p></li>
+has been incorporated into the standard library as the <a class="reference internal" href="../library/idle.html#module-idlelib" title="idlelib: Implementation package for the IDLE shell/editor."><code class="xref py py-mod docutils literal notranslate"><span class="pre">idlelib</span></code></a> package.</p></li>
 <li><p>The <a class="reference internal" href="../library/imaplib.html#module-imaplib" title="imaplib: IMAP4 protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code></a> module now supports IMAP over SSL. (Contributed by Piers
 Lauder and Tino Lange.)</p></li>
 <li><p>The <a class="reference internal" href="../library/itertools.html#module-itertools" title="itertools: Functions creating iterators for efficient looping."><code class="xref py py-mod docutils literal notranslate"><span class="pre">itertools</span></code></a> contains a number of useful functions for use with
@@ -1416,7 +1417,7 @@ that can convert option values to a particular Python type  and will
 automatically generate a usage message.  See the following section for  more
 details.</p></li>
 <li><p>The old and never-documented <code class="xref py py-mod docutils literal notranslate"><span class="pre">linuxaudiodev</span></code> module has been deprecated,
-and a new version named <a class="reference internal" href="../library/ossaudiodev.html#module-ossaudiodev" title="ossaudiodev: Access to OSS-compatible audio devices. (Linux, FreeBSD)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ossaudiodev</span></code></a> has been added.  The module was
+and a new version named <a class="reference internal" href="../library/ossaudiodev.html#module-ossaudiodev" title="ossaudiodev: Access to OSS-compatible audio devices.（已棄用） (Linux, FreeBSD)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ossaudiodev</span></code></a> has been added.  The module was
 renamed because the OSS sound drivers can be used on platforms other than Linux,
 and the interface has also been tidied and brought up to date in various ways.
 (Contributed by Greg Ward and Nicholas FitzRoy-Dale.)</p></li>
@@ -1676,7 +1677,7 @@ tool and the <code class="docutils literal notranslate"><span class="pre">punyco
 </li>
 </ul>
 <section id="date-time-type">
-<h3>Date/Time Type<a class="headerlink" href="#date-time-type" title="本標題的永久連結">¶</a></h3>
+<h3>Date/Time Type<a class="headerlink" href="#date-time-type" title="本標頭的永久連結">¶</a></h3>
 <p>Date and time types suitable for expressing timestamps were added as the
 <a class="reference internal" href="../library/datetime.html#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> module.  The types don't support different calendars or many
 fancy features, and just stick to the basics of representing time.</p>
@@ -1723,7 +1724,7 @@ support for parsing strings and getting back a <code class="xref py py-class doc
 (Contributed by Tim Peters.)</p>
 </section>
 <section id="the-optparse-module">
-<h3>The optparse Module<a class="headerlink" href="#the-optparse-module" title="本標題的永久連結">¶</a></h3>
+<h3>The optparse Module<a class="headerlink" href="#the-optparse-module" title="本標頭的永久連結">¶</a></h3>
 <p>The <a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a> module provides simple parsing of command-line arguments.  The
 new <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module (originally named Optik) provides more elaborate
 command-line parsing that follows the Unix conventions, automatically creates
@@ -1781,7 +1782,7 @@ SIG.</p>
 </section>
 </section>
 <section id="pymalloc-a-specialized-object-allocator">
-<span id="section-pymalloc"></span><h2>Pymalloc: A Specialized Object Allocator<a class="headerlink" href="#pymalloc-a-specialized-object-allocator" title="本標題的永久連結">¶</a></h2>
+<span id="section-pymalloc"></span><h2>Pymalloc: A Specialized Object Allocator<a class="headerlink" href="#pymalloc-a-specialized-object-allocator" title="本標頭的永久連結">¶</a></h2>
 <p>Pymalloc, a specialized object allocator written by Vladimir Marangozov, was a
 feature added to Python 2.1.  Pymalloc is intended to be faster than the system
 <code class="xref c c-func docutils literal notranslate"><span class="pre">malloc()</span></code> and to have less memory overhead for allocation patterns typical
@@ -1842,7 +1843,7 @@ The above link points to the file within the python.org SVN browser.</p>
 </div>
 </section>
 <section id="build-and-c-api-changes">
-<h2>Build and C API Changes<a class="headerlink" href="#build-and-c-api-changes" title="本標題的永久連結">¶</a></h2>
+<h2>Build and C API Changes<a class="headerlink" href="#build-and-c-api-changes" title="本標頭的永久連結">¶</a></h2>
 <p>Changes to Python's build process and to the C API include:</p>
 <ul class="simple">
 <li><p>The cycle detection implementation used by the garbage collection has proven
@@ -1888,7 +1889,7 @@ the type name leading up to the final period will no longer have the desired
 effect.  For more detail, read the API reference documentation or the  source.</p></li>
 </ul>
 <section id="port-specific-changes">
-<h3>Port-Specific Changes<a class="headerlink" href="#port-specific-changes" title="本標題的永久連結">¶</a></h3>
+<h3>Port-Specific Changes<a class="headerlink" href="#port-specific-changes" title="本標頭的永久連結">¶</a></h3>
 <p>Support for a port to IBM's OS/2 using the EMX runtime environment was merged
 into the main Python source tree.  EMX is a POSIX emulation layer over the OS/2
 system APIs.  The Python port for EMX tries to support all the POSIX-like
@@ -1908,7 +1909,7 @@ source distribution, were updated for 2.3.  (Contributed by Sean Reifschneider.)
 </section>
 </section>
 <section id="other-changes-and-fixes">
-<span id="section-other"></span><h2>Other Changes and Fixes<a class="headerlink" href="#other-changes-and-fixes" title="本標題的永久連結">¶</a></h2>
+<span id="section-other"></span><h2>Other Changes and Fixes<a class="headerlink" href="#other-changes-and-fixes" title="本標頭的永久連結">¶</a></h2>
 <p>As usual, there were a bunch of other improvements and bugfixes scattered
 throughout the source tree.  A search through the CVS change logs finds there
 were 523 patches applied and 514 bugs fixed between Python 2.2 and 2.3.  Both
@@ -1948,7 +1949,7 @@ taking advantage of this new feature. (Implemented by Richie Hindle.)</p>
 </ul>
 </section>
 <section id="porting-to-python-2-3">
-<h2>Porting to Python 2.3<a class="headerlink" href="#porting-to-python-2-3" title="本標題的永久連結">¶</a></h2>
+<h2>Porting to Python 2.3<a class="headerlink" href="#porting-to-python-2-3" title="本標頭的永久連結">¶</a></h2>
 <p>This section lists previously described changes that may require changes to your
 code:</p>
 <ul>
@@ -1998,7 +1999,7 @@ contain the module and a <code class="docutils literal notranslate"><span class=
 </ul>
 </section>
 <section id="acknowledgements">
-<span id="acks"></span><h2>致謝<a class="headerlink" href="#acknowledgements" title="本標題的永久連結">¶</a></h2>
+<span id="acks"></span><h2>致謝<a class="headerlink" href="#acknowledgements" title="本標頭的永久連結">¶</a></h2>
 <p>The author would like to thank the following people for offering suggestions,
 corrections and assistance with various drafts of this article: Jeff Bauer,
 Simon Brunning, Brett Cannon, Michael Chermside, Andrew Dalke, Scott David
@@ -2081,6 +2082,10 @@ Suzi, Jason Tishler, Just van Rossum.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -2110,7 +2115,7 @@ Suzi, Jason Tishler, Just van Rossum.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -2146,11 +2151,11 @@ Suzi, Jason Tishler, Just van Rossum.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

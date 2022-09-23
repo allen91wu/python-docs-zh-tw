@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Generic Operating System Services &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用作業系統服務 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -122,11 +123,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Generic Operating System Services</a></li>
+        <li class="nav-item nav-item-this"><a href="">通用作業系統服務</a></li>
                 <li class="right">
                     
 
@@ -150,11 +151,8 @@
           <div class="body" role="main">
             
   <section id="generic-operating-system-services">
-<span id="allos"></span><h1>Generic Operating System Services<a class="headerlink" href="#generic-operating-system-services" title="本標題的永久連結">¶</a></h1>
-<p>The modules described in this chapter provide interfaces to operating system
-features that are available on (almost) all operating systems, such as files and
-a clock.  The interfaces are generally modeled after the Unix or C interfaces,
-but they are available on most other systems as well.  Here's an overview:</p>
+<span id="allos"></span><h1>通用作業系統服務<a class="headerlink" href="#generic-operating-system-services" title="本標頭的永久連結">¶</a></h1>
+<p>此章節所描述的模組 (module) 提供了作業系統特性的使用介面，例如檔案與時鐘，（幾乎）在所有作業系統上皆能使用。這些介面通常是參考 Unix 或 C 的介面來實作，不過在其他大多數系統上也能使用。以下為概述：</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="os.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a><ul>
@@ -325,7 +323,7 @@ but they are available on most other systems as well.  Here's an overview:</p>
 <li class="toctree-l2"><a class="reference internal" href="logging.handlers.html#queuelistener">QueueListener</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="getpass.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getpass.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- 可攜式密碼輸入工具</a></li>
 <li class="toctree-l1"><a class="reference internal" href="curses.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code> --- Terminal handling for character-cell displays</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="curses.html#functions">函式</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curses.html#window-objects">Window Objects</a></li>
@@ -342,7 +340,7 @@ but they are available on most other systems as well.  Here's an overview:</p>
 <li class="toctree-l2"><a class="reference internal" href="curses.panel.html#panel-objects">Panel Objects</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="platform.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code> ---  Access to underlying platform's identifying data</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="platform.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code> ---  獲取底層平臺的標識資料</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#cross-platform">跨平台</a></li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#java-platform">Java 平台</a></li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#windows-platform">Windows 平台</a></li>
@@ -423,6 +421,10 @@ but they are available on most other systems as well.  Here's an overview:</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -452,11 +454,11 @@ but they are available on most other systems as well.  Here's an overview:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Generic Operating System Services</a></li>
+        <li class="nav-item nav-item-this"><a href="">通用作業系統服務</a></li>
                 <li class="right">
                     
 
@@ -488,11 +490,11 @@ but they are available on most other systems as well.  Here's an overview:</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

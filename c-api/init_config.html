@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Python Initialization Configuration &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Initialization Configuration &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -144,7 +145,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API 參考手冊</a> &#187;</li>
@@ -172,7 +173,7 @@
           <div class="body" role="main">
             
   <section id="python-initialization-configuration">
-<span id="init-config"></span><h1>Python Initialization Configuration<a class="headerlink" href="#python-initialization-configuration" title="本標題的永久連結">¶</a></h1>
+<span id="init-config"></span><h1>Python Initialization Configuration<a class="headerlink" href="#python-initialization-configuration" title="本標頭的永久連結">¶</a></h1>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
@@ -183,11 +184,11 @@
 <ul class="simple">
 <li><p>The <a class="reference internal" href="#init-python-config"><span class="std std-ref">Python Configuration</span></a> can be used to build a
 customized Python which behaves as the regular Python. For example,
-environments variables and command line arguments are used to configure
+environment variables and command line arguments are used to configure
 Python.</p></li>
 <li><p>The <a class="reference internal" href="#init-isolated-conf"><span class="std std-ref">Isolated Configuration</span></a> can be used to embed
 Python into an application. It isolates Python from the system. For example,
-environments variables are ignored, the LC_CTYPE locale is left unchanged and
+environment variables are ignored, the LC_CTYPE locale is left unchanged and
 no signal handler is registered.</p></li>
 </ul>
 <p>The <a class="reference internal" href="#c.Py_RunMain" title="Py_RunMain"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_RunMain()</span></code></a> function can be used to write a customized Python
@@ -195,10 +196,10 @@ program.</p>
 <p>See also <a class="reference internal" href="init.html#initialization"><span class="std std-ref">Initialization, Finalization, and Threads</span></a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<p><span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0587"><strong>PEP 587</strong></a> &quot;Python Initialization Configuration&quot;.</p>
+<p><span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0587/"><strong>PEP 587</strong></a> &quot;Python Initialization Configuration&quot;.</p>
 </div>
 <section id="example">
-<h2>範例<a class="headerlink" href="#example" title="本標題的永久連結">¶</a></h2>
+<h2>範例<a class="headerlink" href="#example" title="本標頭的永久連結">¶</a></h2>
 <p>Example of customized Python always running in isolated mode:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -236,7 +237,7 @@ program.</p>
 </div>
 </section>
 <section id="pywidestringlist">
-<h2>PyWideStringList<a class="headerlink" href="#pywidestringlist" title="本標題的永久連結">¶</a></h2>
+<h2>PyWideStringList<a class="headerlink" href="#pywidestringlist" title="本標頭的永久連結">¶</a></h2>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyWideStringList">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyWideStringList</span></span></span><a class="headerlink" href="#c.PyWideStringList" title="本定義的永久連結">¶</a><br /></dt>
@@ -253,7 +254,7 @@ non-<code class="docutils literal notranslate"><span class="pre">NULL</span></co
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyWideStringList.PyWideStringList_Insert">
-<a class="reference internal" href="#c.PyStatus" title="PyStatus"><span class="n"><span class="pre">PyStatus</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyWideStringList_Insert</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyWideStringList" title="PyWideStringList"><span class="n"><span class="pre">PyWideStringList</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">list</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">index</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">item</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyWideStringList.PyWideStringList_Insert" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="#c.PyStatus" title="PyStatus"><span class="n"><span class="pre">PyStatus</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyWideStringList_Insert</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyWideStringList" title="PyWideStringList"><span class="n"><span class="pre">PyWideStringList</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">list</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">index</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">item</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyWideStringList.PyWideStringList_Insert" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Insert <em>item</em> into <em>list</em> at <em>index</em>.</p>
 <p>If <em>index</em> is greater than or equal to <em>list</em> length, append <em>item</em> to
 <em>list</em>.</p>
@@ -264,7 +265,7 @@ non-<code class="docutils literal notranslate"><span class="pre">NULL</span></co
 <p>Structure fields:</p>
 <dl class="c member">
 <dt class="sig sig-object c" id="c.PyWideStringList.length">
-<span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length</span></span></span><a class="headerlink" href="#c.PyWideStringList.length" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length</span></span></span><a class="headerlink" href="#c.PyWideStringList.length" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>List length.</p>
 </dd></dl>
 
@@ -278,7 +279,7 @@ non-<code class="docutils literal notranslate"><span class="pre">NULL</span></co
 
 </section>
 <section id="pystatus">
-<h2>PyStatus<a class="headerlink" href="#pystatus" title="本標題的永久連結">¶</a></h2>
+<h2>PyStatus<a class="headerlink" href="#pystatus" title="本標頭的永久連結">¶</a></h2>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyStatus">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyStatus</span></span></span><a class="headerlink" href="#c.PyStatus" title="本定義的永久連結">¶</a><br /></dt>
@@ -389,7 +390,7 @@ whereas functions to create a status set <code class="docutils literal notransla
 </div>
 </section>
 <section id="pypreconfig">
-<h2>PyPreConfig<a class="headerlink" href="#pypreconfig" title="本標題的永久連結">¶</a></h2>
+<h2>PyPreConfig<a class="headerlink" href="#pypreconfig" title="本標頭的永久連結">¶</a></h2>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyPreConfig">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyPreConfig</span></span></span><a class="headerlink" href="#c.PyPreConfig" title="本定義的永久連結">¶</a><br /></dt>
@@ -520,7 +521,7 @@ same way the regular Python parses command line arguments: see
 
 </section>
 <section id="preinitialize-python-with-pypreconfig">
-<span id="c-preinit"></span><h2>Preinitialize Python with PyPreConfig<a class="headerlink" href="#preinitialize-python-with-pypreconfig" title="本標題的永久連結">¶</a></h2>
+<span id="c-preinit"></span><h2>Preinitialize Python with PyPreConfig<a class="headerlink" href="#preinitialize-python-with-pypreconfig" title="本標頭的永久連結">¶</a></h2>
 <p>The preinitialization of Python:</p>
 <ul class="simple">
 <li><p>Set the Python memory allocators (<a class="reference internal" href="#c.PyPreConfig.allocator" title="PyPreConfig.allocator"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyPreConfig.allocator</span></code></a>)</p></li>
@@ -594,7 +595,7 @@ the <a class="reference internal" href="../library/os.html#utf8-mode"><span clas
 </div>
 </section>
 <section id="pyconfig">
-<h2>PyConfig<a class="headerlink" href="#pyconfig" title="本標題的永久連結">¶</a></h2>
+<h2>PyConfig<a class="headerlink" href="#pyconfig" title="本標頭的永久連結">¶</a></h2>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyConfig">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyConfig</span></span></span><a class="headerlink" href="#c.PyConfig" title="本定義的永久連結">¶</a><br /></dt>
@@ -648,7 +649,7 @@ configuration memory.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyConfig.PyConfig_SetWideStringList">
-<a class="reference internal" href="#c.PyStatus" title="PyStatus"><span class="n"><span class="pre">PyStatus</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyConfig_SetWideStringList</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyConfig" title="PyConfig"><span class="n"><span class="pre">PyConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="#c.PyWideStringList" title="PyWideStringList"><span class="n"><span class="pre">PyWideStringList</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">list</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">items</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyConfig.PyConfig_SetWideStringList" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="#c.PyStatus" title="PyStatus"><span class="n"><span class="pre">PyStatus</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyConfig_SetWideStringList</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyConfig" title="PyConfig"><span class="n"><span class="pre">PyConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="#c.PyWideStringList" title="PyWideStringList"><span class="n"><span class="pre">PyWideStringList</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">list</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">items</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyConfig.PyConfig_SetWideStringList" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Set the list of wide strings <em>list</em> to <em>length</em> and <em>items</em>.</p>
 <p><a class="reference internal" href="#c-preinit"><span class="std std-ref">Preinitialize Python</span></a> if needed.</p>
 </dd></dl>
@@ -784,7 +785,7 @@ value of the 'check_source' flag.</p></li>
 determines invalidation.</p></li>
 </ul>
 <p>預設：<code class="docutils literal notranslate"><span class="pre">L&quot;default&quot;</span></code>。</p>
-<p>See also <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0552"><strong>PEP 552</strong></a> &quot;Deterministic pycs&quot;.</p>
+<p>See also <span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0552/"><strong>PEP 552</strong></a> &quot;Deterministic pycs&quot;.</p>
 </dd></dl>
 
 <dl class="c member">
@@ -812,7 +813,7 @@ buffering on stdin and stdout (only stdout on Windows).</p></li>
 <dl class="c member">
 <dt class="sig sig-object c" id="c.PyConfig.dump_refs">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dump_refs</span></span></span><a class="headerlink" href="#c.PyConfig.dump_refs" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Dump Python refererences?</p>
+<dd><p>Dump Python references?</p>
 <p>If non-zero, dump all objects which are still alive at exit.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">1</span></code> by the <span class="target" id="index-6"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONDUMPREFS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONDUMPREFS</span></code></a> environment variable.</p>
 <p>Need a special build of Python with the <code class="docutils literal notranslate"><span class="pre">Py_TRACE_REFS</span></code> macro defined:
@@ -861,9 +862,8 @@ files are installed: <a class="reference internal" href="../library/sys.html#sys
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;utf-8&quot;</span></code> if <a class="reference internal" href="#c.PyPreConfig.utf8_mode" title="PyPreConfig.utf8_mode"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyPreConfig.utf8_mode</span></code></a> is non-zero.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;ascii&quot;</span></code> if Python detects that <code class="docutils literal notranslate"><span class="pre">nl_langinfo(CODESET)</span></code> announces
-the ASCII encoding (or Roman8 encoding on HP-UX), whereas the
-<code class="docutils literal notranslate"><span class="pre">mbstowcs()</span></code> function decodes from a different encoding (usually
-Latin1).</p></li>
+the ASCII encoding, whereas the <code class="docutils literal notranslate"><span class="pre">mbstowcs()</span></code> function
+decodes from a different encoding (usually Latin1).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;utf-8&quot;</span></code> if <code class="docutils literal notranslate"><span class="pre">nl_langinfo(CODESET)</span></code> returns an empty string.</p></li>
 <li><p>Otherwise, use the <a class="reference internal" href="../glossary.html#term-locale-encoding"><span class="xref std std-term">locale encoding</span></a>:
 <code class="docutils literal notranslate"><span class="pre">nl_langinfo(CODESET)</span></code> result.</p></li>
@@ -983,7 +983,7 @@ variable is set to a non-empty string.</p>
 <p>Only available on Windows. <code class="docutils literal notranslate"><span class="pre">#ifdef</span> <span class="pre">MS_WINDOWS</span></code> macro can be used for
 Windows specific code.</p>
 <p>預設：<code class="docutils literal notranslate"><span class="pre">0</span></code>。</p>
-<p>See also the <span class="target" id="index-13"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0528"><strong>PEP 528</strong></a> (Change Windows console encoding to UTF-8).</p>
+<p>See also the <span class="target" id="index-13"></span><a class="pep reference external" href="https://peps.python.org/pep-0528/"><strong>PEP 528</strong></a> (Change Windows console encoding to UTF-8).</p>
 </dd></dl>
 
 <dl class="c member">
@@ -1339,7 +1339,7 @@ the <a class="reference internal" href="../using/cmdline.html#cmdoption-X"><code
 </div>
 </section>
 <section id="initialization-with-pyconfig">
-<h2>Initialization with PyConfig<a class="headerlink" href="#initialization-with-pyconfig" title="本標題的永久連結">¶</a></h2>
+<h2>Initialization with PyConfig<a class="headerlink" href="#initialization-with-pyconfig" title="本標頭的永久連結">¶</a></h2>
 <p>Function to initialize Python:</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_InitializeFromConfig">
@@ -1434,12 +1434,12 @@ configuration, and then override some parameters:</p>
 </div>
 </section>
 <section id="isolated-configuration">
-<span id="init-isolated-conf"></span><h2>Isolated Configuration<a class="headerlink" href="#isolated-configuration" title="本標題的永久連結">¶</a></h2>
+<span id="init-isolated-conf"></span><h2>Isolated Configuration<a class="headerlink" href="#isolated-configuration" title="本標頭的永久連結">¶</a></h2>
 <p><code class="xref c c-func docutils literal notranslate"><span class="pre">PyPreConfig_InitIsolatedConfig()</span></code> and
 <code class="xref c c-func docutils literal notranslate"><span class="pre">PyConfig_InitIsolatedConfig()</span></code> functions create a configuration to
 isolate Python from the system. For example, to embed Python into an
 application.</p>
-<p>This configuration ignores global configuration variables, environments
+<p>This configuration ignores global configuration variables, environment
 variables, command line arguments (<a class="reference internal" href="#c.PyConfig.argv" title="PyConfig.argv"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyConfig.argv</span></code></a> is not parsed)
 and user site directory. The C standard streams (ex: <code class="docutils literal notranslate"><span class="pre">stdout</span></code>) and the
 LC_CTYPE locale are left unchanged. Signal handlers are not installed.</p>
@@ -1449,19 +1449,19 @@ configuration files and avoid the function computing the default path
 configuration.</p>
 </section>
 <section id="python-configuration">
-<span id="init-python-config"></span><h2>Python Configuration<a class="headerlink" href="#python-configuration" title="本標題的永久連結">¶</a></h2>
+<span id="init-python-config"></span><h2>Python Configuration<a class="headerlink" href="#python-configuration" title="本標頭的永久連結">¶</a></h2>
 <p><code class="xref c c-func docutils literal notranslate"><span class="pre">PyPreConfig_InitPythonConfig()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">PyConfig_InitPythonConfig()</span></code>
 functions create a configuration to build a customized Python which behaves as
 the regular Python.</p>
 <p>Environments variables and command line arguments are used to configure
 Python, whereas global configuration variables are ignored.</p>
-<p>This function enables C locale coercion (<span class="target" id="index-28"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0538"><strong>PEP 538</strong></a>)
+<p>This function enables C locale coercion (<span class="target" id="index-28"></span><a class="pep reference external" href="https://peps.python.org/pep-0538/"><strong>PEP 538</strong></a>)
 and <a class="reference internal" href="../library/os.html#utf8-mode"><span class="std std-ref">Python UTF-8 Mode</span></a>
-(<span class="target" id="index-29"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0540"><strong>PEP 540</strong></a>) depending on the LC_CTYPE locale, <span class="target" id="index-30"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONUTF8"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONUTF8</span></code></a> and
+(<span class="target" id="index-29"></span><a class="pep reference external" href="https://peps.python.org/pep-0540/"><strong>PEP 540</strong></a>) depending on the LC_CTYPE locale, <span class="target" id="index-30"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONUTF8"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONUTF8</span></code></a> and
 <span class="target" id="index-31"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONCOERCECLOCALE"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONCOERCECLOCALE</span></code></a> environment variables.</p>
 </section>
 <section id="python-path-configuration">
-<span id="init-path-config"></span><h2>Python Path Configuration<a class="headerlink" href="#python-path-configuration" title="本標題的永久連結">¶</a></h2>
+<span id="init-path-config"></span><h2>Python Path Configuration<a class="headerlink" href="#python-path-configuration" title="本標頭的永久連結">¶</a></h2>
 <p><a class="reference internal" href="#c.PyConfig" title="PyConfig"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyConfig</span></code></a> contains multiple fields for the path configuration:</p>
 <ul class="simple">
 <li><p>Path configuration inputs:</p>
@@ -1539,7 +1539,7 @@ site-package directory to <a class="reference internal" href="../library/sys.htm
 <a class="reference internal" href="#c.PyConfig.base_executable" title="PyConfig.base_executable"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyConfig.base_executable</span></code></a></p>
 </section>
 <section id="py-runmain">
-<h2>Py_RunMain()<a class="headerlink" href="#py-runmain" title="本標題的永久連結">¶</a></h2>
+<h2>Py_RunMain()<a class="headerlink" href="#py-runmain" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_RunMain">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_RunMain</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_RunMain" title="本定義的永久連結">¶</a><br /></dt>
@@ -1557,7 +1557,7 @@ customized Python always running in isolated mode using
 <a class="reference internal" href="#c.Py_RunMain" title="Py_RunMain"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_RunMain()</span></code></a>.</p>
 </section>
 <section id="py-getargcargv">
-<h2>Py_GetArgcArgv()<a class="headerlink" href="#py-getargcargv" title="本標題的永久連結">¶</a></h2>
+<h2>Py_GetArgcArgv()<a class="headerlink" href="#py-getargcargv" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetArgcArgv">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetArgcArgv</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">argc</span></span>, <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetArgcArgv" title="本定義的永久連結">¶</a><br /></dt>
@@ -1567,9 +1567,9 @@ customized Python always running in isolated mode using
 
 </section>
 <section id="multi-phase-initialization-private-provisional-api">
-<h2>Multi-Phase Initialization Private Provisional API<a class="headerlink" href="#multi-phase-initialization-private-provisional-api" title="本標題的永久連結">¶</a></h2>
+<h2>Multi-Phase Initialization Private Provisional API<a class="headerlink" href="#multi-phase-initialization-private-provisional-api" title="本標頭的永久連結">¶</a></h2>
 <p>This section is a private provisional API introducing multi-phase
-initialization, the core feature of the <span class="target" id="index-32"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0432"><strong>PEP 432</strong></a>:</p>
+initialization, the core feature of <span class="target" id="index-32"></span><a class="pep reference external" href="https://peps.python.org/pep-0432/"><strong>PEP 432</strong></a>:</p>
 <ul class="simple">
 <li><p>&quot;Core&quot; initialization phase, &quot;bare minimum Python&quot;:</p>
 <ul>
@@ -1612,7 +1612,7 @@ applied during the &quot;Main&quot; phase. It may allow to customize Python in P
 override or tune the <a class="reference internal" href="#init-path-config"><span class="std std-ref">Path Configuration</span></a>, maybe
 install a custom <a class="reference internal" href="../library/sys.html#sys.meta_path" title="sys.meta_path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.meta_path</span></code></a> importer or an import hook, etc.</p>
 <p>It may become possible to calculatin the <a class="reference internal" href="#init-path-config"><span class="std std-ref">Path Configuration</span></a> in Python, after the Core phase and before the Main phase,
-which is one of the <span class="target" id="index-33"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0432"><strong>PEP 432</strong></a> motivation.</p>
+which is one of the <span class="target" id="index-33"></span><a class="pep reference external" href="https://peps.python.org/pep-0432/"><strong>PEP 432</strong></a> motivation.</p>
 <p>The &quot;Core&quot; phase is not properly defined: what should be and what should
 not be available at this phase is not specified yet. The API is marked
 as private and provisional: the API can be modified or even be removed
@@ -1708,6 +1708,10 @@ phases:</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1737,7 +1741,7 @@ phases:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -1773,11 +1777,11 @@ phases:</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

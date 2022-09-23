@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>types --- Dynamic type creation and names for built-in types &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>types --- Dynamic type creation and names for built-in types &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,19 +14,20 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="copy --- Shallow and deep copy operations" href="copy.html" />
+    <link rel="next" title="copy --- 淺層 (shallow) 和深層 (deep) 複製操作" href="copy.html" />
     <link rel="prev" title="weakref --- Weak references" href="weakref.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/types.html" />
     
@@ -91,7 +92,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="copy.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- 淺層 (shallow) 和深層 (deep) 複製操作</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -119,7 +120,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="copy.html" title="copy --- Shallow and deep copy operations"
+          <a href="copy.html" title="copy --- 淺層 (shallow) 和深層 (deep) 複製操作"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="weakref.html" title="weakref --- Weak references"
@@ -135,11 +136,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">資料型別</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a></li>
                 <li class="right">
                     
@@ -164,7 +165,7 @@
           <div class="body" role="main">
             
   <section id="module-types">
-<span id="types-dynamic-type-creation-and-names-for-built-in-types"></span><h1><a class="reference internal" href="#module-types" title="types: Names for built-in types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a> --- Dynamic type creation and names for built-in types<a class="headerlink" href="#module-types" title="本標題的永久連結">¶</a></h1>
+<span id="types-dynamic-type-creation-and-names-for-built-in-types"></span><h1><a class="reference internal" href="#module-types" title="types: Names for built-in types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a> --- Dynamic type creation and names for built-in types<a class="headerlink" href="#module-types" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/types.py">Lib/types.py</a></p>
 <hr class="docutils" />
 <p>This module defines utility functions to assist in dynamic creation of
@@ -175,7 +176,7 @@ Python interpreter, but not exposed as builtins like <a class="reference interna
 <p>Finally, it provides some additional type-related utility classes and functions
 that are not fundamental enough to be builtins.</p>
 <section id="dynamic-type-creation">
-<h2>Dynamic Type Creation<a class="headerlink" href="#dynamic-type-creation" title="本標題的永久連結">¶</a></h2>
+<h2>Dynamic Type Creation<a class="headerlink" href="#dynamic-type-creation" title="本標頭的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="types.new_class">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">new_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_body</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.new_class" title="本定義的永久連結">¶</a></dt>
@@ -220,14 +221,14 @@ used when the metaclass does not have a <code class="docutils literal notranslat
 <dl class="simple">
 <dt><a class="reference internal" href="../reference/datamodel.html#metaclasses"><span class="std std-ref">Metaclasses</span></a></dt><dd><p>Full details of the class creation process supported by these functions</p>
 </dd>
-<dt><span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3115"><strong>PEP 3115</strong></a> - Metaclasses in Python 3000</dt><dd><p>Introduced the <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code> namespace hook</p>
+<dt><span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-3115/"><strong>PEP 3115</strong></a> - Metaclasses in Python 3000</dt><dd><p>Introduced the <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code> namespace hook</p>
 </dd>
 </dl>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="types.resolve_bases">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">resolve_bases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bases</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.resolve_bases" title="本定義的永久連結">¶</a></dt>
-<dd><p>Resolve MRO entries dynamically as specified by <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0560"><strong>PEP 560</strong></a>.</p>
+<dd><p>Resolve MRO entries dynamically as specified by <span class="target" id="index-1"></span><a class="pep reference external" href="https://peps.python.org/pep-0560/"><strong>PEP 560</strong></a>.</p>
 <p>This function looks for items in <em>bases</em> that are not instances of
 <a class="reference internal" href="functions.html#type" title="type"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a>, and returns a tuple where each such object that has
 an <code class="docutils literal notranslate"><span class="pre">__mro_entries__</span></code> method is replaced with an unpacked result of
@@ -241,11 +242,11 @@ the return tuple unchanged.</p>
 
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<p><span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0560"><strong>PEP 560</strong></a> - Core support for typing module and generic types</p>
+<p><span class="target" id="index-2"></span><a class="pep reference external" href="https://peps.python.org/pep-0560/"><strong>PEP 560</strong></a> - Core support for typing module and generic types</p>
 </div>
 </section>
 <section id="standard-interpreter-types">
-<h2>Standard Interpreter Types<a class="headerlink" href="#standard-interpreter-types" title="本標題的永久連結">¶</a></h2>
+<h2>Standard Interpreter Types<a class="headerlink" href="#standard-interpreter-types" title="本標頭的永久連結">¶</a></h2>
 <p>This module provides names for many of the types that are required to
 implement a Python interpreter. It deliberately avoids including some of
 the types that arise only incidentally during processing such as the
@@ -563,7 +564,7 @@ changes.</p>
 <p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support the new union (<code class="docutils literal notranslate"><span class="pre">|</span></code>) operator from <span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>, which
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support the new union (<code class="docutils literal notranslate"><span class="pre">|</span></code>) operator from <span class="target" id="index-4"></span><a class="pep reference external" href="https://peps.python.org/pep-0584/"><strong>PEP 584</strong></a>, which
 simply delegates to the underlying mapping.</p>
 </div>
 <dl class="describe">
@@ -639,7 +640,7 @@ pairs).</p>
 
 </section>
 <section id="additional-utility-classes-and-functions">
-<h2>Additional Utility Classes and Functions<a class="headerlink" href="#additional-utility-classes-and-functions" title="本標題的永久連結">¶</a></h2>
+<h2>Additional Utility Classes and Functions<a class="headerlink" href="#additional-utility-classes-and-functions" title="本標頭的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="types.SimpleNamespace">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">SimpleNamespace</span></span><a class="headerlink" href="#types.SimpleNamespace" title="本定義的永久連結">¶</a></dt>
@@ -692,7 +693,7 @@ attributes on the class with the same name (see <a class="reference internal" hr
 
 </section>
 <section id="coroutine-utility-functions">
-<h2>Coroutine Utility Functions<a class="headerlink" href="#coroutine-utility-functions" title="本標題的永久連結">¶</a></h2>
+<h2>Coroutine Utility Functions<a class="headerlink" href="#coroutine-utility-functions" title="本標頭的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="types.coroutine">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">coroutine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen_func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.coroutine" title="本定義的永久連結">¶</a></dt>
@@ -743,7 +744,7 @@ of objects will be returned as is.</p>
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="copy.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- 淺層 (shallow) 和深層 (deep) 複製操作</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -757,6 +758,10 @@ of objects will be returned as is.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -770,7 +775,7 @@ of objects will be returned as is.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="copy.html" title="copy --- Shallow and deep copy operations"
+          <a href="copy.html" title="copy --- 淺層 (shallow) 和深層 (deep) 複製操作"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="weakref.html" title="weakref --- Weak references"
@@ -786,11 +791,11 @@ of objects will be returned as is.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="datatypes.html" >資料型別</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a></li>
                 <li class="right">
                     
@@ -823,11 +828,11 @@ of objects will be returned as is.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

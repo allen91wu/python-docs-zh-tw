@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>shutil --- High-level file operations &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shutil --- High-level file operations &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -143,7 +144,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -172,7 +173,7 @@
           <div class="body" role="main">
             
   <section id="module-shutil">
-<span id="shutil-high-level-file-operations"></span><h1><a class="reference internal" href="#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a> --- High-level file operations<a class="headerlink" href="#module-shutil" title="本標題的永久連結">¶</a></h1>
+<span id="shutil-high-level-file-operations"></span><h1><a class="reference internal" href="#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a> --- High-level file operations<a class="headerlink" href="#module-shutil" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/shutil.py">Lib/shutil.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>The <a class="reference internal" href="#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a> module offers a number of high-level operations on files and
@@ -190,7 +191,7 @@ not be correct. On Windows, file owners, ACLs and alternate data streams
 are not copied.</p>
 </div>
 <section id="directory-and-files-operations">
-<span id="file-operations"></span><h2>Directory and files operations<a class="headerlink" href="#directory-and-files-operations" title="本標題的永久連結">¶</a></h2>
+<span id="file-operations"></span><h2>Directory and files operations<a class="headerlink" href="#directory-and-files-operations" title="本標頭的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="shutil.copyfileobj">
 <span class="sig-prename descclassname"><span class="pre">shutil.</span></span><span class="sig-name descname"><span class="pre">copyfileobj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fsrc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fdst</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#shutil.copyfileobj" title="本定義的永久連結">¶</a></dt>
@@ -313,7 +314,8 @@ is unavailable, when asked to modify a symbolic link,
 <dd><p>Copies the file <em>src</em> to the file or directory <em>dst</em>.  <em>src</em> and <em>dst</em>
 should be <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like objects</span></a> or strings.  If
 <em>dst</em> specifies a directory, the file will be copied into <em>dst</em> using the
-base filename from <em>src</em>.  Returns the path to the newly created file.</p>
+base filename from <em>src</em>. If <em>dst</em> specifies a file that already exists,
+it will be replaced. Returns the path to the newly created file.</p>
 <p>If <em>follow_symlinks</em> is false, and <em>src</em> is a symbolic link,
 <em>dst</em> will be created as a symbolic link.  If <em>follow_symlinks</em>
 is true and <em>src</em> is a symbolic link, <em>dst</em> will be a copy of
@@ -343,7 +345,7 @@ copy the file more efficiently. See
 also attempts to preserve file metadata.</p>
 <p>When <em>follow_symlinks</em> is false, and <em>src</em> is a symbolic
 link, <a class="reference internal" href="#shutil.copy2" title="shutil.copy2"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy2()</span></code></a> attempts to copy all metadata from the
-<em>src</em> symbolic link to the newly-created <em>dst</em> symbolic link.
+<em>src</em> symbolic link to the newly created <em>dst</em> symbolic link.
 However, this functionality is not available on all platforms.
 On platforms where some or all of this functionality is
 unavailable, <a class="reference internal" href="#shutil.copy2" title="shutil.copy2"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy2()</span></code></a> will preserve all the metadata
@@ -378,9 +380,8 @@ match one of the glob-style <em>patterns</em> provided.  See the example below.<
 <dt class="sig sig-object py" id="shutil.copytree">
 <span class="sig-prename descclassname"><span class="pre">shutil.</span></span><span class="sig-name descname"><span class="pre">copytree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symlinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">copy2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_dangling_symlinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirs_exist_ok</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.copytree" title="本定義的永久連結">¶</a></dt>
 <dd><p>Recursively copy an entire directory tree rooted at <em>src</em> to a directory
-named <em>dst</em> and return the destination directory. <em>dirs_exist_ok</em> dictates
-whether to raise an exception in case <em>dst</em> or any missing parent directory
-already exists.</p>
+named <em>dst</em> and return the destination directory.  All intermediate
+directories needed to contain <em>dst</em> will also be created by default.</p>
 <p>Permissions and times of directories are copied with <a class="reference internal" href="#shutil.copystat" title="shutil.copystat"><code class="xref py py-func docutils literal notranslate"><span class="pre">copystat()</span></code></a>,
 individual files are copied using <a class="reference internal" href="#shutil.copy2" title="shutil.copy2"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy2()</span></code></a>.</p>
 <p>If <em>symlinks</em> is true, symbolic links in the source tree are represented as
@@ -407,6 +408,11 @@ ignores names based on glob-style patterns.</p>
 each file. It will be called with the source path and the destination path
 as arguments. By default, <a class="reference internal" href="#shutil.copy2" title="shutil.copy2"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy2()</span></code></a> is used, but any function
 that supports the same signature (like <a class="reference internal" href="#shutil.copy" title="shutil.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy()</span></code></a>) can be used.</p>
+<p>If <em>dirs_exist_ok</em> is false (the default) and <em>dst</em> already exists, a
+<a class="reference internal" href="exceptions.html#FileExistsError" title="FileExistsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FileExistsError</span></code></a> is raised. If <em>dirs_exist_ok</em> is true, the copying
+operation will continue if it encounters existing directories, and files
+within the <em>dst</em> tree will be overwritten by corresponding files from the
+<em>src</em> tree.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">shutil.copytree</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">src</span></code>, <code class="docutils literal notranslate"><span class="pre">dst</span></code>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.3 版本變更: </span>Copy metadata when <em>symlinks</em> is false.
@@ -415,7 +421,7 @@ Now returns <em>dst</em>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版本變更: </span>Added the <em>copy_function</em> argument to be able to provide a custom copy
 function.
-Added the <em>ignore_dangling_symlinks</em> argument to silent dangling symlinks
+Added the <em>ignore_dangling_symlinks</em> argument to silence dangling symlinks
 errors when <em>symlinks</em> is false.</p>
 </div>
 <div class="versionchanged">
@@ -581,12 +587,12 @@ operation. For <a class="reference internal" href="#shutil.copytree" title="shut
 </dd></dl>
 
 <section id="platform-dependent-efficient-copy-operations">
-<span id="shutil-platform-dependent-efficient-copy-operations"></span><h3>Platform-dependent efficient copy operations<a class="headerlink" href="#platform-dependent-efficient-copy-operations" title="本標題的永久連結">¶</a></h3>
+<span id="shutil-platform-dependent-efficient-copy-operations"></span><h3>Platform-dependent efficient copy operations<a class="headerlink" href="#platform-dependent-efficient-copy-operations" title="本標頭的永久連結">¶</a></h3>
 <p>Starting from Python 3.8, all functions involving a file copy
 (<a class="reference internal" href="#shutil.copyfile" title="shutil.copyfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">copyfile()</span></code></a>, <a class="reference internal" href="#shutil.copy" title="shutil.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy()</span></code></a>, <a class="reference internal" href="#shutil.copy2" title="shutil.copy2"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy2()</span></code></a>,
 <a class="reference internal" href="#shutil.copytree" title="shutil.copytree"><code class="xref py py-func docutils literal notranslate"><span class="pre">copytree()</span></code></a>, and <a class="reference internal" href="#shutil.move" title="shutil.move"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code></a>) may use
 platform-specific &quot;fast-copy&quot; syscalls in order to copy the file more
-efficiently (see <a class="reference external" href="https://bugs.python.org/issue33671">bpo-33671</a>).
+efficiently (see <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=33671">bpo-33671</a>).
 &quot;fast-copy&quot; means that the copying operation occurs within the kernel, avoiding
 the use of userspace buffers in Python as in &quot;<code class="docutils literal notranslate"><span class="pre">outfd.write(infd.read())</span></code>&quot;.</p>
 <p>On macOS <a class="reference external" href="http://www.manpagez.com/man/3/copyfile/">fcopyfile</a> is used to copy the file content (not metadata).</p>
@@ -602,43 +608,8 @@ file then shutil will silently fallback on using less efficient
 </div>
 </section>
 <section id="copytree-example">
-<span id="shutil-copytree-example"></span><h3>copytree example<a class="headerlink" href="#copytree-example" title="本標題的永久連結">¶</a></h3>
-<p>This example is the implementation of the <a class="reference internal" href="#shutil.copytree" title="shutil.copytree"><code class="xref py py-func docutils literal notranslate"><span class="pre">copytree()</span></code></a> function, described
-above, with the docstring omitted.  It demonstrates many of the other functions
-provided by this module.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">copytree</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">,</span> <span class="n">symlinks</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">names</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
-    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
-        <span class="n">srcname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="n">dstname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">symlinks</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">islink</span><span class="p">(</span><span class="n">srcname</span><span class="p">):</span>
-                <span class="n">linkto</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">readlink</span><span class="p">(</span><span class="n">srcname</span><span class="p">)</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">symlink</span><span class="p">(</span><span class="n">linkto</span><span class="p">,</span> <span class="n">dstname</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">srcname</span><span class="p">):</span>
-                <span class="n">copytree</span><span class="p">(</span><span class="n">srcname</span><span class="p">,</span> <span class="n">dstname</span><span class="p">,</span> <span class="n">symlinks</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">copy2</span><span class="p">(</span><span class="n">srcname</span><span class="p">,</span> <span class="n">dstname</span><span class="p">)</span>
-            <span class="c1"># XXX What about devices, sockets etc.?</span>
-        <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">why</span><span class="p">:</span>
-            <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">srcname</span><span class="p">,</span> <span class="n">dstname</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">why</span><span class="p">)))</span>
-        <span class="c1"># catch the Error from the recursive copytree so that we can</span>
-        <span class="c1"># continue with other files</span>
-        <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-            <span class="n">errors</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">copystat</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">why</span><span class="p">:</span>
-        <span class="c1"># can&#39;t copy file access times on Windows</span>
-        <span class="k">if</span> <span class="n">why</span><span class="o">.</span><span class="n">winerror</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">errors</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">why</span><span class="p">)))</span>
-    <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Another example that uses the <a class="reference internal" href="#shutil.ignore_patterns" title="shutil.ignore_patterns"><code class="xref py py-func docutils literal notranslate"><span class="pre">ignore_patterns()</span></code></a> helper:</p>
+<span id="shutil-copytree-example"></span><h3>copytree example<a class="headerlink" href="#copytree-example" title="本標頭的永久連結">¶</a></h3>
+<p>An example that uses the <a class="reference internal" href="#shutil.ignore_patterns" title="shutil.ignore_patterns"><code class="xref py py-func docutils literal notranslate"><span class="pre">ignore_patterns()</span></code></a> helper:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span> <span class="n">ignore_patterns</span>
 
 <span class="n">copytree</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="n">ignore_patterns</span><span class="p">(</span><span class="s1">&#39;*.pyc&#39;</span><span class="p">,</span> <span class="s1">&#39;tmp*&#39;</span><span class="p">))</span>
@@ -659,7 +630,7 @@ name starts with <code class="docutils literal notranslate"><span class="pre">tm
 </div>
 </section>
 <section id="rmtree-example">
-<span id="shutil-rmtree-example"></span><h3>rmtree 範例<a class="headerlink" href="#rmtree-example" title="本標題的永久連結">¶</a></h3>
+<span id="shutil-rmtree-example"></span><h3>rmtree 範例<a class="headerlink" href="#rmtree-example" title="本標頭的永久連結">¶</a></h3>
 <p>This example shows how to remove a directory tree on Windows where some
 of the files have their read-only bit set. It uses the onerror callback
 to clear the readonly bit and reattempt the remove. Any subsequent failure
@@ -678,7 +649,7 @@ will propagate.</p>
 </section>
 </section>
 <section id="archiving-operations">
-<span id="id1"></span><h2>Archiving operations<a class="headerlink" href="#archiving-operations" title="本標題的永久連結">¶</a></h2>
+<span id="id1"></span><h2>Archiving operations<a class="headerlink" href="#archiving-operations" title="本標頭的永久連結">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
@@ -709,17 +680,24 @@ use <em>base_dir</em> and <em>root_dir</em> together.</p>
 executed are logged to <em>logger</em>.</p>
 <p><em>owner</em> and <em>group</em> are used when creating a tar archive. By default,
 uses the current owner and group.</p>
-<p><em>logger</em> must be an object compatible with <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0282"><strong>PEP 282</strong></a>, usually an instance of
+<p><em>logger</em> must be an object compatible with <span class="target" id="index-2"></span><a class="pep reference external" href="https://peps.python.org/pep-0282/"><strong>PEP 282</strong></a>, usually an instance of
 <a class="reference internal" href="logging.html#logging.Logger" title="logging.Logger"><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Logger</span></code></a>.</p>
 <p>The <em>verbose</em> argument is unused and deprecated.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">shutil.make_archive</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">base_name</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">root_dir</span></code>, <code class="docutils literal notranslate"><span class="pre">base_dir</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>This function is not thread-safe.</p>
+<p>This function is not thread-safe when custom archivers registered
+with <a class="reference internal" href="#shutil.register_archive_format" title="shutil.register_archive_format"><code class="xref py py-func docutils literal notranslate"><span class="pre">register_archive_format()</span></code></a> are used.  In this case it
+temporarily changes the current working directory of the process
+to perform archiving.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版本變更: </span>The modern pax (POSIX.1-2001) format is now used instead of
 the legacy GNU format for archives created with <code class="docutils literal notranslate"><span class="pre">format=&quot;tar&quot;</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10.6 版本變更: </span>This function is now made thread-safe during creation of standard
+<code class="docutils literal notranslate"><span class="pre">.zip</span></code> and tar archives.</p>
 </div>
 </dd></dl>
 
@@ -774,6 +752,13 @@ will use the archive file name extension and see if an unpacker was
 registered for that extension.  In case none is found,
 a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">shutil.unpack_archive</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">filename</span></code>, <code class="docutils literal notranslate"><span class="pre">extract_dir</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>Never extract archives from untrusted sources without prior inspection.
+It is possible that files are created outside of the path specified in
+the <em>extract_dir</em> argument, e.g. members that have absolute filenames
+starting with &quot;/&quot; or filenames with two dots &quot;..&quot;.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.7 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> for <em>filename</em> and <em>extract_dir</em>.</p>
 </div>
@@ -820,7 +805,7 @@ formats, by using <a class="reference internal" href="#shutil.register_unpack_fo
 </dd></dl>
 
 <section id="archiving-example">
-<span id="shutil-archiving-example"></span><h3>Archiving example<a class="headerlink" href="#archiving-example" title="本標題的永久連結">¶</a></h3>
+<span id="shutil-archiving-example"></span><h3>Archiving example<a class="headerlink" href="#archiving-example" title="本標頭的永久連結">¶</a></h3>
 <p>In this example, we create a gzip'ed tar-file archive containing all files
 found in the <code class="file docutils literal notranslate"><span class="pre">.ssh</span></code> directory of the user:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">make_archive</span>
@@ -845,7 +830,7 @@ found in the <code class="file docutils literal notranslate"><span class="pre">.
 </div>
 </section>
 <section id="archiving-example-with-base-dir">
-<span id="shutil-archiving-example-with-basedir"></span><h3>Archiving example with <em>base_dir</em><a class="headerlink" href="#archiving-example-with-base-dir" title="本標題的永久連結">¶</a></h3>
+<span id="shutil-archiving-example-with-basedir"></span><h3>Archiving example with <em>base_dir</em><a class="headerlink" href="#archiving-example-with-base-dir" title="本標頭的永久連結">¶</a></h3>
 <p>In this example, similar to the <a class="reference internal" href="#shutil-archiving-example">one above</a>,
 we show how to use <a class="reference internal" href="#shutil.make_archive" title="shutil.make_archive"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_archive()</span></code></a>, but this time with the usage of
 <em>base_dir</em>.  We now have the following directory structure:</p>
@@ -881,7 +866,7 @@ we show how to use <a class="reference internal" href="#shutil.make_archive" tit
 </section>
 </section>
 <section id="querying-the-size-of-the-output-terminal">
-<h2>Querying the size of the output terminal<a class="headerlink" href="#querying-the-size-of-the-output-terminal" title="本標題的永久連結">¶</a></h2>
+<h2>Querying the size of the output terminal<a class="headerlink" href="#querying-the-size-of-the-output-terminal" title="本標頭的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="shutil.get_terminal_size">
 <span class="sig-prename descclassname"><span class="pre">shutil.</span></span><span class="sig-name descname"><span class="pre">get_terminal_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(columns,</span> <span class="pre">lines)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.get_terminal_size" title="本定義的永久連結">¶</a></dt>
@@ -899,7 +884,7 @@ is used. <code class="docutils literal notranslate"><span class="pre">fallback</
 size used by many terminal emulators.</p>
 <p>The value returned is a named tuple of type <a class="reference internal" href="os.html#os.terminal_size" title="os.terminal_size"><code class="xref py py-class docutils literal notranslate"><span class="pre">os.terminal_size</span></code></a>.</p>
 <p>See also: The Single UNIX Specification, Version 2,
-<a class="reference external" href="http://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html#tag_002_003">Other Environment Variables</a>.</p>
+<a class="reference external" href="https://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html#tag_002_003">Other Environment Variables</a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
@@ -958,6 +943,10 @@ size used by many terminal emulators.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -987,7 +976,7 @@ size used by many terminal emulators.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1024,11 +1013,11 @@ size used by many terminal emulators.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

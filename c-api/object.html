@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Object Protocol &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Protocol &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,19 +14,20 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="Call Protocol" href="call.html" />
+    <link rel="next" title="呼叫協定 (Call Protocol)" href="call.html" />
     <link rel="prev" title="抽象物件層 (Abstract Objects Layer)" href="abstract.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/object.html" />
     
@@ -78,7 +79,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="call.html"
-                          title="下一章">Call Protocol</a></p>
+                          title="下一章">呼叫協定 (Call Protocol)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -106,7 +107,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="call.html" title="Call Protocol"
+          <a href="call.html" title="呼叫協定 (Call Protocol)"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="abstract.html" title="抽象物件層 (Abstract Objects Layer)"
@@ -122,7 +123,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -151,7 +152,7 @@
           <div class="body" role="main">
             
   <section id="object-protocol">
-<span id="object"></span><h1>Object Protocol<a class="headerlink" href="#object-protocol" title="本標題的永久連結">¶</a></h1>
+<span id="object"></span><h1>Object Protocol<a class="headerlink" href="#object-protocol" title="本標頭的永久連結">¶</a></h1>
 <dl class="c var">
 <dt class="sig sig-object c" id="c.Py_NotImplemented">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_NotImplemented</span></span></span><a class="headerlink" href="#c.Py_NotImplemented" title="本定義的永久連結">¶</a><br /></dt>
@@ -233,8 +234,9 @@ descriptors don't.  Otherwise, an <a class="reference internal" href="../library
 <em>v</em>. Raise an exception and return <code class="docutils literal notranslate"><span class="pre">-1</span></code> on failure;
 return <code class="docutils literal notranslate"><span class="pre">0</span></code> on success.  This is the equivalent of the Python statement
 <code class="docutils literal notranslate"><span class="pre">o.attr_name</span> <span class="pre">=</span> <span class="pre">v</span></code>.</p>
-<p>If <em>v</em> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, the attribute is deleted, however this feature is
-deprecated in favour of using <a class="reference internal" href="#c.PyObject_DelAttr" title="PyObject_DelAttr"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_DelAttr()</span></code></a>.</p>
+<p>If <em>v</em> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, the attribute is deleted. This behaviour is deprecated
+in favour of using <a class="reference internal" href="#c.PyObject_DelAttr" title="PyObject_DelAttr"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_DelAttr()</span></code></a>, but there are currently no
+plans to remove it.</p>
 </dd></dl>
 
 <dl class="c function">
@@ -244,7 +246,7 @@ deprecated in favour of using <a class="reference internal" href="#c.PyObject_De
 <em>v</em>. Raise an exception and return <code class="docutils literal notranslate"><span class="pre">-1</span></code> on failure;
 return <code class="docutils literal notranslate"><span class="pre">0</span></code> on success.  This is the equivalent of the Python statement
 <code class="docutils literal notranslate"><span class="pre">o.attr_name</span> <span class="pre">=</span> <span class="pre">v</span></code>.</p>
-<p>If <em>v</em> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, the attribute is deleted, however this feature is
+<p>If <em>v</em> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, the attribute is deleted, but this feature is
 deprecated in favour of using <a class="reference internal" href="#c.PyObject_DelAttrString" title="PyObject_DelAttrString"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_DelAttrString()</span></code></a>.</p>
 </dd></dl>
 
@@ -377,7 +379,7 @@ bytes object.</p>
 The result will be <code class="docutils literal notranslate"><span class="pre">1</span></code> when at least one of the checks returns <code class="docutils literal notranslate"><span class="pre">1</span></code>,
 otherwise it will be <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>If <em>cls</em> has a <a class="reference internal" href="../reference/datamodel.html#class.__subclasscheck__" title="class.__subclasscheck__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__subclasscheck__()</span></code></a> method, it will be called to
-determine the subclass status as described in <span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3119"><strong>PEP 3119</strong></a>.  Otherwise,
+determine the subclass status as described in <span class="target" id="index-4"></span><a class="pep reference external" href="https://peps.python.org/pep-3119/"><strong>PEP 3119</strong></a>.  Otherwise,
 <em>derived</em> is a subclass of <em>cls</em> if it is a direct or indirect subclass,
 i.e. contained in <code class="docutils literal notranslate"><span class="pre">cls.__mro__</span></code>.</p>
 <p>Normally only class objects, i.e. instances of <a class="reference internal" href="../library/functions.html#type" title="type"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a> or a derived
@@ -394,7 +396,7 @@ a <code class="xref py py-attr docutils literal notranslate"><span class="pre">_
 The result will be <code class="docutils literal notranslate"><span class="pre">1</span></code> when at least one of the checks returns <code class="docutils literal notranslate"><span class="pre">1</span></code>,
 otherwise it will be <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>If <em>cls</em> has a <a class="reference internal" href="../reference/datamodel.html#class.__instancecheck__" title="class.__instancecheck__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__instancecheck__()</span></code></a> method, it will be called to
-determine the subclass status as described in <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3119"><strong>PEP 3119</strong></a>.  Otherwise, <em>inst</em>
+determine the subclass status as described in <span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-3119/"><strong>PEP 3119</strong></a>.  Otherwise, <em>inst</em>
 is an instance of <em>cls</em> if its class is a subclass of <em>cls</em>.</p>
 <p>An instance <em>inst</em> can override what is considered its class by having a
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">__class__</span></code> attribute.</p>
@@ -410,7 +412,7 @@ of base classes).</p>
 This is the equivalent of the Python expression <code class="docutils literal notranslate"><span class="pre">hash(o)</span></code>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版本變更: </span>The return type is now Py_hash_t.  This is a signed integer the same size
-as Py_ssize_t.</p>
+as <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_ssize_t</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -446,7 +448,7 @@ This is equivalent to the Python expression <code class="docutils literal notran
 of object <em>o</em>. On failure, raises <a class="reference internal" href="../library/exceptions.html#SystemError" title="SystemError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SystemError</span></code></a> and returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  This
 is equivalent to the Python expression <code class="docutils literal notranslate"><span class="pre">type(o)</span></code>. This function increments the
 reference count of the return value. There's really no reason to use this
-function instead of the common expression <code class="docutils literal notranslate"><span class="pre">o-&gt;ob_type</span></code>, which returns a
+function instead of the <a class="reference internal" href="structures.html#c.Py_TYPE" title="Py_TYPE"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_TYPE()</span></code></a> function, which returns a
 pointer of type <span class="xref c c-texpr"><a class="reference internal" href="type.html#c.PyTypeObject" title="PyTypeObject"><span class="n">PyTypeObject</span></a><span class="p">*</span></span>, except when the incremented reference
 count is needed.</p>
 </dd></dl>
@@ -460,9 +462,9 @@ count is needed.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_Size">
-<span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Size</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Size" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Size</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Size" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyObject_Length">
-<span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Length</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Length" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Length</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Length" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-8">Return the length of object <em>o</em>.  If the object <em>o</em> provides either the sequence
 and mapping protocols, the sequence length is returned.  On error, <code class="docutils literal notranslate"><span class="pre">-1</span></code> is
 returned.  This is the equivalent to the Python expression <code class="docutils literal notranslate"><span class="pre">len(o)</span></code>.</p>
@@ -470,7 +472,7 @@ returned.  This is the equivalent to the Python expression <code class="docutils
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_LengthHint">
-<span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_LengthHint</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">defaultvalue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_LengthHint" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_LengthHint</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">defaultvalue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_LengthHint" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Return an estimated length for the object <em>o</em>. First try to return its
 actual length, then an estimate using <a class="reference internal" href="../reference/datamodel.html#object.__length_hint__" title="object.__length_hint__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__length_hint__()</span></code></a>, and
 finally return the default value. On error return <code class="docutils literal notranslate"><span class="pre">-1</span></code>. This is the
@@ -552,7 +554,7 @@ returns <code class="docutils literal notranslate"><span class="pre">NULL</span>
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="call.html"
-                          title="下一章">Call Protocol</a></p>
+                          title="下一章">呼叫協定 (Call Protocol)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -566,6 +568,10 @@ returns <code class="docutils literal notranslate"><span class="pre">NULL</span>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -579,7 +585,7 @@ returns <code class="docutils literal notranslate"><span class="pre">NULL</span>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="call.html" title="Call Protocol"
+          <a href="call.html" title="呼叫協定 (Call Protocol)"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="abstract.html" title="抽象物件層 (Abstract Objects Layer)"
@@ -595,7 +601,7 @@ returns <code class="docutils literal notranslate"><span class="pre">NULL</span>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -632,11 +638,11 @@ returns <code class="docutils literal notranslate"><span class="pre">NULL</span>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

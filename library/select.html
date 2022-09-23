@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>select --- Waiting for I/O completion &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select --- Waiting for I/O completion &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -136,7 +137,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -165,7 +166,7 @@
           <div class="body" role="main">
             
   <section id="module-select">
-<span id="select-waiting-for-i-o-completion"></span><h1><a class="reference internal" href="#module-select" title="select: Wait for I/O completion on multiple streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> --- Waiting for I/O completion<a class="headerlink" href="#module-select" title="本標題的永久連結">¶</a></h1>
+<span id="select-waiting-for-i-o-completion"></span><h1><a class="reference internal" href="#module-select" title="select: Wait for I/O completion on multiple streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> --- Waiting for I/O completion<a class="headerlink" href="#module-select" title="本標頭的永久連結">¶</a></h1>
 <hr class="docutils" />
 <p>This module provides access to the <code class="xref c c-func docutils literal notranslate"><span class="pre">select()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> functions
 available in most operating systems, <code class="xref c c-func docutils literal notranslate"><span class="pre">devpoll()</span></code> available on
@@ -188,7 +189,7 @@ precise control over the OS-level primitives used.</p>
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">select.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#select.error" title="本定義的永久連結">¶</a></dt>
 <dd><p>A deprecated alias of <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.3 版本變更: </span>Following <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3151"><strong>PEP 3151</strong></a>, this class was made an alias of <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Following <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-3151/"><strong>PEP 3151</strong></a>, this class was made an alias of <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -214,7 +215,7 @@ incomplete list of active file descriptors.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="select.epoll">
-<span class="sig-prename descclassname"><span class="pre">select.</span></span><span class="sig-name descname"><span class="pre">epoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizehint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">select.</span></span><span class="sig-name descname"><span class="pre">epoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizehint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll" title="本定義的永久連結">¶</a></dt>
 <dd><p>(Only supported on Linux 2.5.44 and newer.) Return an edge polling object,
 which can be used as Edge or Level Triggered interface for I/O
 events.</p>
@@ -309,7 +310,7 @@ WinSock.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>The function is now retried with a recomputed timeout when interrupted by
 a signal, except if the signal handler raises an exception (see
-<span class="target" id="index-3"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale), instead of raising
+<span class="target" id="index-3"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale), instead of raising
 <a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -329,7 +330,7 @@ to other kind of file-like objects such as sockets.</p>
 </dd></dl>
 
 <section id="dev-poll-polling-objects">
-<span id="devpoll-objects"></span><h2><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects<a class="headerlink" href="#dev-poll-polling-objects" title="本標題的永久連結">¶</a></h2>
+<span id="devpoll-objects"></span><h2><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects<a class="headerlink" href="#dev-poll-polling-objects" title="本標頭的永久連結">¶</a></h2>
 <p>Solaris and derivatives have <code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code>. While <code class="xref c c-func docutils literal notranslate"><span class="pre">select()</span></code> is
 O(highest file descriptor) and <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> is O(number of file
 descriptors), <code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> is O(active file descriptors).</p>
@@ -404,7 +405,7 @@ safely ignored.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="select.devpoll.poll">
 <span class="sig-prename descclassname"><span class="pre">devpoll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#select.devpoll.poll" title="本定義的永久連結">¶</a></dt>
-<dd><p>Polls the set of registered file descriptors, and returns a possibly-empty list
+<dd><p>Polls the set of registered file descriptors, and returns a possibly empty list
 containing <code class="docutils literal notranslate"><span class="pre">(fd,</span> <span class="pre">event)</span></code> 2-tuples for the descriptors that have events or
 errors to report. <em>fd</em> is the file descriptor, and <em>event</em> is a bitmask with
 bits set for the reported events for that descriptor --- <code class="xref py py-const docutils literal notranslate"><span class="pre">POLLIN</span></code> for
@@ -417,22 +418,18 @@ block until there is an event for this poll object.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>The function is now retried with a recomputed timeout when interrupted by
 a signal, except if the signal handler raises an exception (see
-<span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale), instead of raising
+<span class="target" id="index-4"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale), instead of raising
 <a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a>.</p>
 </div>
 </dd></dl>
 
 </section>
 <section id="edge-and-level-trigger-polling-epoll-objects">
-<span id="epoll-objects"></span><h2>Edge and Level Trigger Polling (epoll) Objects<a class="headerlink" href="#edge-and-level-trigger-polling-epoll-objects" title="本標題的永久連結">¶</a></h2>
+<span id="epoll-objects"></span><h2>Edge and Level Trigger Polling (epoll) Objects<a class="headerlink" href="#edge-and-level-trigger-polling-epoll-objects" title="本標頭的永久連結">¶</a></h2>
 <blockquote>
 <div><p><a class="reference external" href="https://linux.die.net/man/4/epoll">https://linux.die.net/man/4/epoll</a></p>
 <p><em>eventmask</em></p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -541,19 +538,19 @@ or later.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="select.epoll.poll">
-<span class="sig-prename descclassname"><span class="pre">epoll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxevents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll.poll" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">epoll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxevents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll.poll" title="本定義的永久連結">¶</a></dt>
 <dd><p>Wait for events. timeout in seconds (float)</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>The function is now retried with a recomputed timeout when interrupted by
 a signal, except if the signal handler raises an exception (see
-<span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale), instead of raising
+<span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale), instead of raising
 <a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a>.</p>
 </div>
 </dd></dl>
 
 </section>
 <section id="polling-objects">
-<span id="poll-objects"></span><h2>Polling Objects<a class="headerlink" href="#polling-objects" title="本標題的永久連結">¶</a></h2>
+<span id="poll-objects"></span><h2>Polling Objects<a class="headerlink" href="#polling-objects" title="本標頭的永久連結">¶</a></h2>
 <p>The <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> system call, supported on most Unix systems, provides better
 scalability for network servers that service many, many clients at the same
 time. <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> scales better because the system call only requires listing
@@ -574,10 +571,6 @@ check for, and can be a combination of the constants <code class="xref py py-con
 <code class="xref py py-const docutils literal notranslate"><span class="pre">POLLPRI</span></code>, and <code class="xref py py-const docutils literal notranslate"><span class="pre">POLLOUT</span></code>, described in the table below.  If not
 specified, the default value used will check for all 3 types of events.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 69%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -634,7 +627,7 @@ that was never registered causes an <a class="reference internal" href="exceptio
 <dl class="py method">
 <dt class="sig sig-object py" id="select.poll.poll">
 <span class="sig-prename descclassname"><span class="pre">poll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#select.poll.poll" title="本定義的永久連結">¶</a></dt>
-<dd><p>Polls the set of registered file descriptors, and returns a possibly-empty list
+<dd><p>Polls the set of registered file descriptors, and returns a possibly empty list
 containing <code class="docutils literal notranslate"><span class="pre">(fd,</span> <span class="pre">event)</span></code> 2-tuples for the descriptors that have events or
 errors to report. <em>fd</em> is the file descriptor, and <em>event</em> is a bitmask with
 bits set for the reported events for that descriptor --- <code class="xref py py-const docutils literal notranslate"><span class="pre">POLLIN</span></code> for
@@ -647,14 +640,14 @@ block until there is an event for this poll object.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>The function is now retried with a recomputed timeout when interrupted by
 a signal, except if the signal handler raises an exception (see
-<span class="target" id="index-6"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale), instead of raising
+<span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale), instead of raising
 <a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a>.</p>
 </div>
 </dd></dl>
 
 </section>
 <section id="kqueue-objects">
-<span id="id1"></span><h2>Kqueue Objects<a class="headerlink" href="#kqueue-objects" title="本標題的永久連結">¶</a></h2>
+<span id="id1"></span><h2>Kqueue Objects<a class="headerlink" href="#kqueue-objects" title="本標頭的永久連結">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="select.kqueue.close">
 <span class="sig-prename descclassname"><span class="pre">kqueue.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#select.kqueue.close" title="本定義的永久連結">¶</a></dt>
@@ -692,14 +685,14 @@ to wait forever</p></li>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>The function is now retried with a recomputed timeout when interrupted by
 a signal, except if the signal handler raises an exception (see
-<span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale), instead of raising
+<span class="target" id="index-7"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale), instead of raising
 <a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a>.</p>
 </div>
 </dd></dl>
 
 </section>
 <section id="kevent-objects">
-<span id="id2"></span><h2>Kevent Objects<a class="headerlink" href="#kevent-objects" title="本標題的永久連結">¶</a></h2>
+<span id="id2"></span><h2>Kevent Objects<a class="headerlink" href="#kevent-objects" title="本標頭的永久連結">¶</a></h2>
 <p><a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?query=kqueue&amp;sektion=2">https://www.freebsd.org/cgi/man.cgi?query=kqueue&amp;sektion=2</a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="select.kevent.ident">
@@ -715,10 +708,6 @@ stores the integer internally.</p>
 <span class="sig-prename descclassname"><span class="pre">kevent.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><a class="headerlink" href="#select.kevent.filter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Name of the kernel filter.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -763,10 +752,6 @@ delivered to the process</p></td>
 <span class="sig-prename descclassname"><span class="pre">kevent.</span></span><span class="sig-name descname"><span class="pre">flags</span></span><a class="headerlink" href="#select.kevent.flags" title="本定義的永久連結">¶</a></dt>
 <dd><p>Filter action.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -813,10 +798,6 @@ delivered to the process</p></td>
 <dd><p>Filter specific flags.</p>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_READ</span></code> and  <code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_WRITE</span></code> filter flags:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -830,10 +811,6 @@ delivered to the process</p></td>
 </table>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_VNODE</span></code> filter flags:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -865,10 +842,6 @@ delivered to the process</p></td>
 </table>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_PROC</span></code> filter flags:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -904,10 +877,6 @@ delivered to the process</p></td>
 </table>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_NETDEV</span></code> filter flags (not available on macOS):</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>常數</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -985,6 +954,10 @@ delivered to the process</p></td>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1014,7 +987,7 @@ delivered to the process</p></td>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1051,11 +1024,11 @@ delivered to the process</p></td>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

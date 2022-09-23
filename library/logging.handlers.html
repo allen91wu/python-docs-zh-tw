@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>logging.handlers --- Logging handlers &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logging.handlers --- Logging handlers &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,19 +14,20 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="getpass --- Portable password input" href="getpass.html" />
+    <link rel="next" title="getpass --- 可攜式密碼輸入工具" href="getpass.html" />
     <link rel="prev" title="logging.config --- Logging configuration" href="logging.config.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/logging.handlers.html" />
     
@@ -103,7 +104,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="getpass.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- 可攜式密碼輸入工具</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -131,7 +132,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="getpass.html" title="getpass --- Portable password input"
+          <a href="getpass.html" title="getpass --- 可攜式密碼輸入工具"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="logging.config.html" title="logging.config --- Logging configuration"
@@ -147,11 +148,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="allos.html" accesskey="U">Generic Operating System Services</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="allos.html" accesskey="U">通用作業系統服務</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a></li>
                 <li class="right">
                     
@@ -176,7 +177,7 @@
           <div class="body" role="main">
             
   <section id="module-logging.handlers">
-<span id="logging-handlers-logging-handlers"></span><h1><a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> --- Logging handlers<a class="headerlink" href="#module-logging.handlers" title="本標題的永久連結">¶</a></h1>
+<span id="logging-handlers-logging-handlers"></span><h1><a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> --- Logging handlers<a class="headerlink" href="#module-logging.handlers" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/logging/handlers.py">Lib/logging/handlers.py</a></p>
 <aside class="sidebar">
 <p class="sidebar-title">Important</p>
@@ -194,7 +195,7 @@ the handlers (<a class="reference internal" href="#logging.StreamHandler" title=
 <a class="reference internal" href="#logging.NullHandler" title="logging.NullHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullHandler</span></code></a>) are actually defined in the <a class="reference internal" href="logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> module itself,
 but have been documented here along with the other handlers.</p>
 <section id="streamhandler">
-<span id="stream-handler"></span><h2>StreamHandler<a class="headerlink" href="#streamhandler" title="本標題的永久連結">¶</a></h2>
+<span id="stream-handler"></span><h2>StreamHandler<a class="headerlink" href="#streamhandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.StreamHandler" title="logging.StreamHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamHandler</span></code></a> class, located in the core <a class="reference internal" href="logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> package,
 sends logging output to streams such as <em>sys.stdout</em>, <em>sys.stderr</em> or any
 file-like object (or, more precisely, any object which supports <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code>
@@ -228,10 +229,10 @@ does no output, so an explicit <a class="reference internal" href="#logging.Stre
 <dd><p>Sets the instance's stream to the specified value, if it is different.
 The old stream is flushed before the new stream is set.</p>
 <dl class="field-list simple">
-<dt class="field-odd">參數</dt>
+<dt class="field-odd">參數<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>stream</strong> -- The stream that the handler should use.</p>
 </dd>
-<dt class="field-even">回傳</dt>
+<dt class="field-even">回傳<span class="colon">:</span></dt>
 <dd class="field-even"><p>the old stream, if the stream was changed, or <em>None</em> if it wasn't.</p>
 </dd>
 </dl>
@@ -257,7 +258,7 @@ Default value is <code class="docutils literal notranslate"><span class="pre">'\
 
 </section>
 <section id="filehandler">
-<span id="file-handler"></span><h2>FileHandler<a class="headerlink" href="#filehandler" title="本標題的永久連結">¶</a></h2>
+<span id="file-handler"></span><h2>FileHandler<a class="headerlink" href="#filehandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.FileHandler" title="logging.FileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHandler</span></code></a> class, located in the core <a class="reference internal" href="logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> package,
 sends logging output to a disk file.  It inherits the output functionality from
 <a class="reference internal" href="#logging.StreamHandler" title="logging.StreamHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamHandler</span></code></a>.</p>
@@ -288,14 +289,14 @@ for the <em>filename</em> argument.</p>
 <span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logging.FileHandler.emit" title="本定義的永久連結">¶</a></dt>
 <dd><p>Outputs the record to the file.</p>
 <p>Note that if the file was closed due to logging shutdown at exit and the file
-mode is 'w', the record will not be emitted (see <a class="reference external" href="https://bugs.python.org/issue42378">bpo-42378</a>).</p>
+mode is 'w', the record will not be emitted (see <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42378">bpo-42378</a>).</p>
 </dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="nullhandler">
-<span id="null-handler"></span><h2>NullHandler<a class="headerlink" href="#nullhandler" title="本標題的永久連結">¶</a></h2>
+<span id="null-handler"></span><h2>NullHandler<a class="headerlink" href="#nullhandler" title="本標頭的永久連結">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
@@ -331,7 +332,7 @@ underlying I/O to which access needs to be serialized.</p>
 <a class="reference internal" href="#logging.NullHandler" title="logging.NullHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullHandler</span></code></a>.</p>
 </section>
 <section id="watchedfilehandler">
-<span id="watched-file-handler"></span><h2>WatchedFileHandler<a class="headerlink" href="#watchedfilehandler" title="本標題的永久連結">¶</a></h2>
+<span id="watched-file-handler"></span><h2>WatchedFileHandler<a class="headerlink" href="#watchedfilehandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.WatchedFileHandler" title="logging.handlers.WatchedFileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">WatchedFileHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a>
 module, is a <code class="xref py py-class docutils literal notranslate"><span class="pre">FileHandler</span></code> which watches the file it is logging to. If
 the file changes, it is closed and reopened using the file name.</p>
@@ -384,7 +385,7 @@ reopen the file if it has changed.</p>
 
 </section>
 <section id="baserotatinghandler">
-<span id="base-rotating-handler"></span><h2>BaseRotatingHandler<a class="headerlink" href="#baserotatinghandler" title="本標題的永久連結">¶</a></h2>
+<span id="base-rotating-handler"></span><h2>BaseRotatingHandler<a class="headerlink" href="#baserotatinghandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.BaseRotatingHandler" title="logging.handlers.BaseRotatingHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRotatingHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a>
 module, is the base class for the rotating file handlers,
 <a class="reference internal" href="#logging.handlers.RotatingFileHandler" title="logging.handlers.RotatingFileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">RotatingFileHandler</span></code></a> and <a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler" title="logging.handlers.TimedRotatingFileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimedRotatingFileHandler</span></code></a>. You should
@@ -444,7 +445,7 @@ those passed to <a class="reference internal" href="#logging.handlers.BaseRotati
 if it's callable, passing the default name to it. If the attribute isn't
 callable (the default is <code class="docutils literal notranslate"><span class="pre">None</span></code>), the name is returned unchanged.</p>
 <dl class="field-list simple">
-<dt class="field-odd">參數</dt>
+<dt class="field-odd">參數<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>default_name</strong> -- The default name for the log file.</p>
 </dd>
 </dl>
@@ -462,7 +463,7 @@ if it's callable, passing the source and dest arguments to it. If the
 attribute isn't callable (the default is <code class="docutils literal notranslate"><span class="pre">None</span></code>), the source is simply
 renamed to the destination.</p>
 <dl class="field-list simple">
-<dt class="field-odd">參數</dt>
+<dt class="field-odd">參數<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> -- The source filename. This is normally the base
 filename, e.g. 'test.log'.</p></li>
@@ -489,7 +490,7 @@ override the methods.</p>
 <p>For an example, see <a class="reference internal" href="../howto/logging-cookbook.html#cookbook-rotator-namer"><span class="std std-ref">Using a rotator and namer to customize log rotation processing</span></a>.</p>
 </section>
 <section id="rotatingfilehandler">
-<span id="rotating-file-handler"></span><h2>RotatingFileHandler<a class="headerlink" href="#rotatingfilehandler" title="本標題的永久連結">¶</a></h2>
+<span id="rotating-file-handler"></span><h2>RotatingFileHandler<a class="headerlink" href="#rotatingfilehandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.RotatingFileHandler" title="logging.handlers.RotatingFileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">RotatingFileHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a>
 module, supports rotation of disk log files.</p>
 <dl class="py class">
@@ -539,7 +540,7 @@ previously.</p>
 
 </section>
 <section id="timedrotatingfilehandler">
-<span id="timed-rotating-file-handler"></span><h2>TimedRotatingFileHandler<a class="headerlink" href="#timedrotatingfilehandler" title="本標題的永久連結">¶</a></h2>
+<span id="timed-rotating-file-handler"></span><h2>TimedRotatingFileHandler<a class="headerlink" href="#timedrotatingfilehandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler" title="logging.handlers.TimedRotatingFileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimedRotatingFileHandler</span></code></a> class, located in the
 <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> module, supports rotation of disk log files at certain
 timed intervals.</p>
@@ -553,11 +554,6 @@ sets the filename suffix. Rotating happens based on the product of <em>when</em>
 <p>You can use the <em>when</em> to specify the type of <em>interval</em>. The list of possible
 values is below.  Note that they are not case sensitive.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 41%" />
-<col style="width: 36%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Value</p></th>
 <th class="head"><p>Type of interval</p></th>
@@ -669,7 +665,7 @@ are the absolute paths of the oldest backup log files written by the handler.</p
 
 </section>
 <section id="sockethandler">
-<span id="socket-handler"></span><h2>SocketHandler<a class="headerlink" href="#sockethandler" title="本標題的永久連結">¶</a></h2>
+<span id="socket-handler"></span><h2>SocketHandler<a class="headerlink" href="#sockethandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.SocketHandler" title="logging.handlers.SocketHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocketHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> module,
 sends logging output to a network socket. The base class uses a TCP socket.</p>
 <dl class="py class">
@@ -768,7 +764,7 @@ during the delay period).</p>
 
 </section>
 <section id="datagramhandler">
-<span id="datagram-handler"></span><h2>DatagramHandler<a class="headerlink" href="#datagramhandler" title="本標題的永久連結">¶</a></h2>
+<span id="datagram-handler"></span><h2>DatagramHandler<a class="headerlink" href="#datagramhandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.DatagramHandler" title="logging.handlers.DatagramHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatagramHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a>
 module, inherits from <a class="reference internal" href="#logging.handlers.SocketHandler" title="logging.handlers.SocketHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocketHandler</span></code></a> to support sending logging messages
 over UDP sockets.</p>
@@ -777,6 +773,15 @@ over UDP sockets.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logging.handlers.</span></span><span class="sig-name descname"><span class="pre">DatagramHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logging.handlers.DatagramHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a new instance of the <a class="reference internal" href="#logging.handlers.DatagramHandler" title="logging.handlers.DatagramHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatagramHandler</span></code></a> class intended to
 communicate with a remote machine whose address is given by <em>host</em> and <em>port</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>As UDP is not a streaming protocol, there is no persistent connection
+between an instance of this handler and <em>host</em>. For this reason, when using a
+network socket, a DNS lookup might have to be made each time an event is
+logged, which can introduce some latency into the system. If this affects you,
+you can do a lookup yourself and initialize this handler using the looked-up IP
+address rather than the hostname.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.4 版本變更: </span>If <code class="docutils literal notranslate"><span class="pre">port</span></code> is specified as <code class="docutils literal notranslate"><span class="pre">None</span></code>, a Unix domain socket is created
 using the value in <code class="docutils literal notranslate"><span class="pre">host</span></code> - otherwise, a UDP socket is created.</p>
@@ -809,7 +814,7 @@ is as described in the documentation for <a class="reference internal" href="#lo
 
 </section>
 <section id="sysloghandler">
-<span id="syslog-handler"></span><h2>SysLogHandler<a class="headerlink" href="#sysloghandler" title="本標題的永久連結">¶</a></h2>
+<span id="syslog-handler"></span><h2>SysLogHandler<a class="headerlink" href="#sysloghandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.SysLogHandler" title="logging.handlers.SysLogHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SysLogHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> module,
 supports sending logging messages to a remote or local Unix syslog.</p>
 <dl class="py class">
@@ -834,6 +839,13 @@ For example, on Linux it's usually '/dev/log' but on OS/X it's
 appropriate address (you may need to do this check at runtime if your
 application needs to run on several platforms). On Windows, you pretty
 much have to use the UDP option.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>On macOS 12.x (Monterey), Apple has changed the behaviour of their
+syslog daemon - it no longer listens on a domain socket. Therefore, you cannot
+expect <a class="reference internal" href="#logging.handlers.SysLogHandler" title="logging.handlers.SysLogHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SysLogHandler</span></code></a> to work on this system.</p>
+<p>See <a class="reference external" href="https://github.com/python/cpython/issues/91070">gh-91070</a> for more information.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版本變更: </span>新增 <em>socktype</em>。</p>
 </div>
@@ -849,7 +861,7 @@ much have to use the UDP option.</p>
 <dd><p>The record is formatted, and then sent to the syslog server. If exception
 information is present, it is <em>not</em> sent to the server.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.2.1 版本變更: </span>(See: <a class="reference external" href="https://bugs.python.org/issue12168">bpo-12168</a>.) In earlier versions, the message sent to the
+<p><span class="versionmodified changed">在 3.2.1 版本變更: </span>(See: <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=12168">bpo-12168</a>.) In earlier versions, the message sent to the
 syslog daemons was always terminated with a NUL byte, because early
 versions of these daemons expected a NUL terminated message - even
 though it's not in the relevant specification (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5424.html"><strong>RFC 5424</strong></a>). More recent
@@ -864,7 +876,7 @@ behaviour) but can be set to <code class="docutils literal notranslate"><span cl
 in order for that instance to <em>not</em> append the NUL terminator.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.3 版本變更: </span>(See: <a class="reference external" href="https://bugs.python.org/issue12419">bpo-12419</a>.) In earlier versions, there was no facility for
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>(See: <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=12419">bpo-12419</a>.) In earlier versions, there was no facility for
 an &quot;ident&quot; or &quot;tag&quot; prefix to identify the source of the message. This
 can now be specified using a class-level attribute, defaulting to
 <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> to preserve existing behaviour, but which can be overridden on
@@ -884,10 +896,6 @@ used to convert them to integers.</p>
 mirror the values defined in the <code class="docutils literal notranslate"><span class="pre">sys/syslog.h</span></code> header file.</p>
 <p><strong>Priorities</strong></p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 63%" />
-<col style="width: 37%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name (string)</p></th>
 <th class="head"><p>Symbolic value</p></th>
@@ -922,10 +930,6 @@ mirror the values defined in the <code class="docutils literal notranslate"><spa
 </table>
 <p><strong>Facilities</strong></p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name (string)</p></th>
 <th class="head"><p>Symbolic value</p></th>
@@ -1011,7 +1015,7 @@ names to 'warning'.</p>
 
 </section>
 <section id="nteventloghandler">
-<span id="nt-eventlog-handler"></span><h2>NTEventLogHandler<a class="headerlink" href="#nteventloghandler" title="本標題的永久連結">¶</a></h2>
+<span id="nt-eventlog-handler"></span><h2>NTEventLogHandler<a class="headerlink" href="#nteventloghandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.NTEventLogHandler" title="logging.handlers.NTEventLogHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">NTEventLogHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a>
 module, supports sending logging messages to a local Windows NT, Windows 2000 or
 Windows XP event log. Before you can use it, you need Mark Hammond's Win32
@@ -1081,7 +1085,7 @@ message ID in <code class="file docutils literal notranslate"><span class="pre">
 
 </section>
 <section id="smtphandler">
-<span id="smtp-handler"></span><h2>SMTPHandler<a class="headerlink" href="#smtphandler" title="本標題的永久連結">¶</a></h2>
+<span id="smtp-handler"></span><h2>SMTPHandler<a class="headerlink" href="#smtphandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.SMTPHandler" title="logging.handlers.SMTPHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SMTPHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> module,
 supports sending logging messages to an email address via SMTP.</p>
 <dl class="py class">
@@ -1121,7 +1125,7 @@ this method.</p>
 
 </section>
 <section id="memoryhandler">
-<span id="memory-handler"></span><h2>MemoryHandler<a class="headerlink" href="#memoryhandler" title="本標題的永久連結">¶</a></h2>
+<span id="memory-handler"></span><h2>MemoryHandler<a class="headerlink" href="#memoryhandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.MemoryHandler" title="logging.handlers.MemoryHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoryHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> module,
 supports buffering of logging records in memory, periodically flushing them to a
 <em class="dfn">target</em> handler. Flushing occurs whenever the buffer is full, or when an
@@ -1204,7 +1208,7 @@ this happens. Override if you want different behavior.</p>
 
 </section>
 <section id="httphandler">
-<span id="http-handler"></span><h2>HTTPHandler<a class="headerlink" href="#httphandler" title="本標題的永久連結">¶</a></h2>
+<span id="http-handler"></span><h2>HTTPHandler<a class="headerlink" href="#httphandler" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#logging.handlers.HTTPHandler" title="logging.handlers.HTTPHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPHandler</span></code></a> class, located in the <a class="reference internal" href="#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code></a> module,
 supports sending logging messages to a web server, using either <code class="docutils literal notranslate"><span class="pre">GET</span></code> or
 <code class="docutils literal notranslate"><span class="pre">POST</span></code> semantics.</p>
@@ -1256,7 +1260,7 @@ dictionary in a form suitable for sending to a web server.</p>
 
 </section>
 <section id="queuehandler">
-<span id="queue-handler"></span><h2>QueueHandler<a class="headerlink" href="#queuehandler" title="本標題的永久連結">¶</a></h2>
+<span id="queue-handler"></span><h2>QueueHandler<a class="headerlink" href="#queuehandler" title="本標頭的永久連結">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
@@ -1278,6 +1282,11 @@ queue-like object; it's used as-is by the <a class="reference internal" href="#l
 needs to know how to send messages to it. The queue is not <em>required</em> to
 have the task tracking API, which means that you can use
 <a class="reference internal" href="queue.html#queue.SimpleQueue" title="queue.SimpleQueue"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleQueue</span></code></a> instances for <em>queue</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>If you are using <a class="reference internal" href="multiprocessing.html#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a>, you should avoid using
+<a class="reference internal" href="queue.html#queue.SimpleQueue" title="queue.SimpleQueue"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleQueue</span></code></a> and instead use <a class="reference internal" href="multiprocessing.html#multiprocessing.Queue" title="multiprocessing.Queue"><code class="xref py py-class docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code></a>.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="logging.handlers.QueueHandler.emit">
 <span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logging.handlers.QueueHandler.emit" title="本定義的永久連結">¶</a></dt>
@@ -1295,11 +1304,31 @@ error. This can result in the record silently being dropped (if
 <dd><p>Prepares a record for queuing. The object returned by this
 method is enqueued.</p>
 <p>The base implementation formats the record to merge the message,
-arguments, and exception information, if present.  It also
-removes unpickleable items from the record in-place.</p>
+arguments, exception and stack information, if present.  It also removes
+unpickleable items from the record in-place. Specifically, it overwrites
+the record's <code class="xref py py-attr docutils literal notranslate"><span class="pre">msg</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">message</span></code> attributes with the merged
+message (obtained by calling the handler's <a class="reference internal" href="functions.html#format" title="format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">format()</span></code></a> method), and
+sets the <code class="xref py py-attr docutils literal notranslate"><span class="pre">args</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">exc_info</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">exc_text</span></code> attributes
+to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>You might want to override this method if you want to convert
 the record to a dict or JSON string, or send a modified copy
 of the record while leaving the original intact.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>The base implementation formats the message with arguments, sets
+the <code class="docutils literal notranslate"><span class="pre">message</span></code> and <code class="docutils literal notranslate"><span class="pre">msg</span></code> attributes to the formatted message and
+sets the <code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">exc_text</span></code> attributes to <code class="docutils literal notranslate"><span class="pre">None</span></code> to allow
+pickling and to prevent further attempts at formatting. This means
+that a handler on the <a class="reference internal" href="#logging.handlers.QueueListener" title="logging.handlers.QueueListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueListener</span></code></a> side won't have the
+information to do custom formatting, e.g. of exceptions. You may wish
+to subclass <code class="docutils literal notranslate"><span class="pre">QueueHandler</span></code> and override this method to e.g. avoid
+setting <code class="docutils literal notranslate"><span class="pre">exc_text</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code>. Note that the <code class="docutils literal notranslate"><span class="pre">message</span></code> / <code class="docutils literal notranslate"><span class="pre">msg</span></code>
+/ <code class="docutils literal notranslate"><span class="pre">args</span></code> changes are related to ensuring the record is pickleable,
+and you might or might not be able to avoid doing that depending on
+whether your <code class="docutils literal notranslate"><span class="pre">args</span></code> are pickleable. (Note that you may have to
+consider not only your own code but also code in any libraries that
+you use.)</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1310,11 +1339,22 @@ want to override this if you want to use blocking behaviour, or a
 timeout, or a customized queue implementation.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logging.handlers.QueueHandler.listener">
+<span class="sig-name descname"><span class="pre">listener</span></span><a class="headerlink" href="#logging.handlers.QueueHandler.listener" title="本定義的永久連結">¶</a></dt>
+<dd><p>When created via configuration using <a class="reference internal" href="logging.config.html#logging.config.dictConfig" title="logging.config.dictConfig"><code class="xref py py-func docutils literal notranslate"><span class="pre">dictConfig()</span></code></a>, this
+attribute will contain a <a class="reference internal" href="#logging.handlers.QueueListener" title="logging.handlers.QueueListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueListener</span></code></a> instance for use with this
+handler. Otherwise, it will be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.12 版本新加入.</span></p>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </section>
 <section id="queuelistener">
-<span id="queue-listener"></span><h2>QueueListener<a class="headerlink" href="#queuelistener" title="本標題的永久連結">¶</a></h2>
+<span id="queue-listener"></span><h2>QueueListener<a class="headerlink" href="#queuelistener" title="本標頭的永久連結">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
@@ -1341,6 +1381,11 @@ object; it's passed as-is to the <a class="reference internal" href="#logging.ha
 to know how to get messages from it. The queue is not <em>required</em> to have the
 task tracking API (though it's used if available), which means that you can
 use <a class="reference internal" href="queue.html#queue.SimpleQueue" title="queue.SimpleQueue"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleQueue</span></code></a> instances for <em>queue</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>If you are using <a class="reference internal" href="multiprocessing.html#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a>, you should avoid using
+<a class="reference internal" href="queue.html#queue.SimpleQueue" title="queue.SimpleQueue"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleQueue</span></code></a> and instead use <a class="reference internal" href="multiprocessing.html#multiprocessing.Queue" title="multiprocessing.Queue"><code class="xref py py-class docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code></a>.</p>
+</div>
 <p>If <code class="docutils literal notranslate"><span class="pre">respect_handler_level</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a handler's level is respected
 (compared with the level for the message) when deciding whether to pass
 messages to that handler; otherwise, the behaviour is as in previous Python
@@ -1458,7 +1503,7 @@ implementations.</p>
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="getpass.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- 可攜式密碼輸入工具</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -1472,6 +1517,10 @@ implementations.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1485,7 +1534,7 @@ implementations.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="getpass.html" title="getpass --- Portable password input"
+          <a href="getpass.html" title="getpass --- 可攜式密碼輸入工具"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="logging.config.html" title="logging.config --- Logging configuration"
@@ -1501,11 +1550,11 @@ implementations.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="allos.html" >Generic Operating System Services</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="allos.html" >通用作業系統服務</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a></li>
                 <li class="right">
                     
@@ -1538,11 +1587,11 @@ implementations.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

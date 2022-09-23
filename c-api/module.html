@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>模組物件模組 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模組物件模組 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -139,7 +140,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -168,7 +169,7 @@
           <div class="body" role="main">
             
   <section id="module-objects">
-<span id="moduleobjects"></span><h1>模組物件模組<a class="headerlink" href="#module-objects" title="本標題的永久連結">¶</a></h1>
+<span id="moduleobjects"></span><h1>模組物件模組<a class="headerlink" href="#module-objects" title="本標頭的永久連結">¶</a></h1>
 <span class="target" id="index-0"></span><dl class="c var">
 <dt class="sig sig-object c" id="c.PyModule_Type">
 <a class="reference internal" href="type.html#c.PyTypeObject" title="PyTypeObject"><span class="n"><span class="pre">PyTypeObject</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyModule_Type</span></span></span><a class="headerlink" href="#c.PyModule_Type" title="本定義的永久連結">¶</a><br /></dt>
@@ -281,7 +282,7 @@ unencodable filenames, use <a class="reference internal" href="#c.PyModule_GetFi
 </dd></dl>
 
 <section id="initializing-c-modules">
-<span id="initializing-modules"></span><h2>Initializing C modules<a class="headerlink" href="#initializing-c-modules" title="本標題的永久連結">¶</a></h2>
+<span id="initializing-modules"></span><h2>Initializing C modules<a class="headerlink" href="#initializing-c-modules" title="本標頭的永久連結">¶</a></h2>
 <p>Modules objects are usually created from extension modules (shared libraries
 which export an initialization function), or compiled-in modules
 (where the initialization function is added using <a class="reference internal" href="import.html#c.PyImport_AppendInittab" title="PyImport_AppendInittab"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyImport_AppendInittab()</span></code></a>).
@@ -292,7 +293,7 @@ or request &quot;multi-phase initialization&quot; by returning the definition st
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyModuleDef">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyModuleDef</span></span></span><a class="headerlink" href="#c.PyModuleDef" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>The module definition struct, which holds all information needed to create
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> (including all members).</em><p>The module definition struct, which holds all information needed to create
 a module object. There is usually only one statically initialized variable
 of this type for each module.</p>
 <dl class="c member">
@@ -316,7 +317,7 @@ of this type for each module.</p>
 
 <dl class="c member">
 <dt class="sig sig-object c" id="c.PyModuleDef.m_size">
-<span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_size</span></span></span><a class="headerlink" href="#c.PyModuleDef.m_size" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_size</span></span></span><a class="headerlink" href="#c.PyModuleDef.m_size" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Module state may be kept in a per-module memory area that can be
 retrieved with <a class="reference internal" href="#c.PyModule_GetState" title="PyModule_GetState"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyModule_GetState()</span></code></a>, rather than in static globals.
 This makes modules safe for use in multiple sub-interpreters.</p>
@@ -329,7 +330,7 @@ sub-interpreters, because it has global state.</p>
 re-initialized and specifies the additional amount of memory it requires
 for its state. Non-negative <code class="docutils literal notranslate"><span class="pre">m_size</span></code> is required for multi-phase
 initialization.</p>
-<p>更多詳情請見 <span class="target" id="index-10"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3121"><strong>PEP 3121</strong></a>。</p>
+<p>更多詳情請見 <span class="target" id="index-10"></span><a class="pep reference external" href="https://peps.python.org/pep-3121/"><strong>PEP 3121</strong></a>。</p>
 </dd></dl>
 
 <dl class="c member">
@@ -414,7 +415,7 @@ is <code class="docutils literal notranslate"><span class="pre">NULL</span></cod
 </dd></dl>
 
 <section id="single-phase-initialization">
-<h3>Single-phase initialization<a class="headerlink" href="#single-phase-initialization" title="本標題的永久連結">¶</a></h3>
+<h3>Single-phase initialization<a class="headerlink" href="#single-phase-initialization" title="本標頭的永久連結">¶</a></h3>
 <p>The module initialization function may create and return the module object
 directly. This is referred to as &quot;single-phase initialization&quot;, and uses one
 of the following two module creation functions:</p>
@@ -443,7 +444,7 @@ instead; only use this if you are sure you need it.</p>
 object is typically populated using functions like <a class="reference internal" href="#c.PyModule_AddObjectRef" title="PyModule_AddObjectRef"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyModule_AddObjectRef()</span></code></a>.</p>
 </section>
 <section id="multi-phase-initialization">
-<span id="id1"></span><h3>Multi-phase initialization<a class="headerlink" href="#multi-phase-initialization" title="本標題的永久連結">¶</a></h3>
+<span id="id1"></span><h3>Multi-phase initialization<a class="headerlink" href="#multi-phase-initialization" title="本標頭的永久連結">¶</a></h3>
 <p>An alternate way to specify extensions is to request &quot;multi-phase initialization&quot;.
 Extension modules created this way behave more like Python modules: the
 initialization is split between the <em>creation phase</em>, when the module object
@@ -512,7 +513,7 @@ The <em>value</em> pointer of this slot must point to a function of the signatur
 <dd></dd></dl>
 
 <p>The function receives a <a class="reference internal" href="../library/importlib.html#importlib.machinery.ModuleSpec" title="importlib.machinery.ModuleSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleSpec</span></code></a>
-instance, as defined in <span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0451"><strong>PEP 451</strong></a>, and the module definition.
+instance, as defined in <span class="target" id="index-7"></span><a class="pep reference external" href="https://peps.python.org/pep-0451/"><strong>PEP 451</strong></a>, and the module definition.
 It should return a new module object, or set an error
 and return <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 <p>This function should be kept minimal. In particular, it should not
@@ -549,10 +550,10 @@ The signature of the function is:</p>
 order they appear in the <em>m_slots</em> array.</p>
 </dd></dl>
 
-<p>See <span class="target" id="index-8"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0489"><strong>PEP 489</strong></a> for more details on multi-phase initialization.</p>
+<p>See <span class="target" id="index-8"></span><a class="pep reference external" href="https://peps.python.org/pep-0489/"><strong>PEP 489</strong></a> for more details on multi-phase initialization.</p>
 </section>
 <section id="low-level-module-creation-functions">
-<h3>Low-level module creation functions<a class="headerlink" href="#low-level-module-creation-functions" title="本標題的永久連結">¶</a></h3>
+<h3>Low-level module creation functions<a class="headerlink" href="#low-level-module-creation-functions" title="本標頭的永久連結">¶</a></h3>
 <p>The following functions are called under the hood when using multi-phase
 initialization. They can be used directly, for example when creating module
 objects dynamically. Note that both <code class="docutils literal notranslate"><span class="pre">PyModule_FromDefAndSpec</span></code> and
@@ -624,7 +625,7 @@ This function is called automatically when creating a module from
 
 </section>
 <section id="support-functions">
-<h3>Support functions<a class="headerlink" href="#support-functions" title="本標題的永久連結">¶</a></h3>
+<h3>Support functions<a class="headerlink" href="#support-functions" title="本標頭的永久連結">¶</a></h3>
 <p>The module initialization function (if using single phase initialization) or
 a function called from a module execution slot (if using multi-phase
 initialization), can use the following functions to help initialize the module
@@ -770,7 +771,7 @@ Return <code class="docutils literal notranslate"><span class="pre">-1</span></c
 </section>
 </section>
 <section id="module-lookup">
-<h2>Module lookup<a class="headerlink" href="#module-lookup" title="本標題的永久連結">¶</a></h2>
+<h2>Module lookup<a class="headerlink" href="#module-lookup" title="本標頭的永久連結">¶</a></h2>
 <p>Single-phase initialization creates singleton modules that can be looked up
 in the context of the current interpreter. This allows the module object to be
 retrieved later with only a reference to the module definition.</p>
@@ -865,6 +866,10 @@ Return 0 on success or -1 on failure.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -894,7 +899,7 @@ Return 0 on success or -1 on failure.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -931,11 +936,11 @@ Return 0 on success or -1 on failure.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

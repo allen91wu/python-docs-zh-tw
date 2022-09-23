@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>abc --- Abstract Base Classes &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abc --- Abstract Base Classes &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -122,7 +123,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -151,12 +152,12 @@
           <div class="body" role="main">
             
   <section id="module-abc">
-<span id="abc-abstract-base-classes"></span><h1><a class="reference internal" href="#module-abc" title="abc: Abstract base classes according to :pep:`3119`."><code class="xref py py-mod docutils literal notranslate"><span class="pre">abc</span></code></a> --- Abstract Base Classes<a class="headerlink" href="#module-abc" title="本標題的永久連結">¶</a></h1>
+<span id="abc-abstract-base-classes"></span><h1><a class="reference internal" href="#module-abc" title="abc: Abstract base classes according to :pep:`3119`."><code class="xref py py-mod docutils literal notranslate"><span class="pre">abc</span></code></a> --- Abstract Base Classes<a class="headerlink" href="#module-abc" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/abc.py">Lib/abc.py</a></p>
 <hr class="docutils" />
 <p>This module provides the infrastructure for defining <a class="reference internal" href="../glossary.html#term-abstract-base-class"><span class="xref std std-term">abstract base
-classes</span></a> (ABCs) in Python, as outlined in <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3119"><strong>PEP 3119</strong></a>;
-see the PEP for why this was added to Python. (See also <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3141"><strong>PEP 3141</strong></a> and the
+classes</span></a> (ABCs) in Python, as outlined in <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-3119/"><strong>PEP 3119</strong></a>;
+see the PEP for why this was added to Python. (See also <span class="target" id="index-1"></span><a class="pep reference external" href="https://peps.python.org/pep-3141/"><strong>PEP 3141</strong></a> and the
 <a class="reference internal" href="numbers.html#module-numbers" title="numbers: Numeric abstract base classes (Complex, Real, Integral, etc.)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code></a> module regarding a type hierarchy for numbers based on ABCs.)</p>
 <p>The <a class="reference internal" href="collections.html#module-collections" title="collections: Container datatypes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a> module has some concrete classes that derive from
 ABCs; these can, of course, be further derived. In addition, the
@@ -204,7 +205,7 @@ these and their descendants will be considered subclasses of the registering
 ABC by the built-in <a class="reference internal" href="functions.html#issubclass" title="issubclass"><code class="xref py py-func docutils literal notranslate"><span class="pre">issubclass()</span></code></a> function, but the registering ABC
 won't show up in their MRO (Method Resolution Order) nor will method
 implementations defined by the registering ABC be callable (not even via
-<a class="reference internal" href="functions.html#super" title="super"><code class="xref py py-func docutils literal notranslate"><span class="pre">super()</span></code></a>). <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<a class="reference internal" href="functions.html#super" title="super"><code class="xref py py-func docutils literal notranslate"><span class="pre">super()</span></code></a>). <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>Classes created with a metaclass of <a class="reference internal" href="#abc.ABCMeta" title="abc.ABCMeta"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABCMeta</span></code></a> have the following method:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="abc.ABCMeta.register">
@@ -316,15 +317,15 @@ descriptors, it should be applied as the innermost decorator, as shown in
 the following usage examples:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">my_abstract_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_abstract_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">):</span>
         <span class="o">...</span>
     <span class="nd">@classmethod</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">my_abstract_classmethod</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_abstract_classmethod</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
         <span class="o">...</span>
     <span class="nd">@staticmethod</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">my_abstract_staticmethod</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_abstract_staticmethod</span><span class="p">(</span><span class="n">arg3</span><span class="p">):</span>
         <span class="o">...</span>
 
     <span class="nd">@property</span>
@@ -388,7 +389,7 @@ method:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">my_abstract_classmethod</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_abstract_classmethod</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
         <span class="o">...</span>
 </pre></div>
 </div>
@@ -412,7 +413,7 @@ method:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="nd">@staticmethod</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">my_abstract_staticmethod</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_abstract_staticmethod</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
         <span class="o">...</span>
 </pre></div>
 </div>
@@ -495,12 +496,13 @@ It does not update any subclasses.</p>
 </dd></dl>
 
 <p class="rubric">註解</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>C++ programmers should note that Python's virtual base class
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>C++ programmers should note that Python's virtual base class
 concept is not the same as C++'s.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 
 
@@ -532,6 +534,10 @@ concept is not the same as C++'s.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -561,7 +567,7 @@ concept is not the same as C++'s.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -598,11 +604,11 @@ concept is not the same as C++'s.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

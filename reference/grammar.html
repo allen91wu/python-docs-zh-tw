@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>10. 完整的語法規格書 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10. 完整的語法規格書 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -122,7 +123,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 語言參考手冊</a> &#187;</li>
@@ -150,7 +151,7 @@
           <div class="body" role="main">
             
   <section id="full-grammar-specification">
-<h1><span class="section-number">10. </span>完整的語法規格書<a class="headerlink" href="#full-grammar-specification" title="本標題的永久連結">¶</a></h1>
+<h1><span class="section-number">10. </span>完整的語法規格書<a class="headerlink" href="#full-grammar-specification" title="本標頭的永久連結">¶</a></h1>
 <p>This is the full Python grammar, derived directly from the grammar
 used to generate the CPython parser (see <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Grammar/python.gram">Grammar/python.gram</a>).
 The version here omits details related to code generation and
@@ -162,7 +163,7 @@ group indicates a positive lookahead (i.e., is required to match but
 not consumed), while <code class="docutils literal notranslate"><span class="pre">!</span></code> indicates a negative lookahead (i.e., is
 required _not_ to match).  We use the <code class="docutils literal notranslate"><span class="pre">|</span></code> separator to mean PEG's
 &quot;ordered choice&quot; (written as <code class="docutils literal notranslate"><span class="pre">/</span></code> in traditional PEG grammars). See
-<span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0617"><strong>PEP 617</strong></a> for more details on the grammar's syntax.</p>
+<span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0617/"><strong>PEP 617</strong></a> for more details on the grammar's syntax.</p>
 <div class="highlight-peg notranslate"><div class="highlight"><pre><span></span><span class="c c-Singleline"># PEG grammar for Python</span>
 
 
@@ -327,6 +328,7 @@ required _not_ to match).  We use the <code class="docutils literal notranslate"
     <span class="o">|</span> <span class="nf">or_pattern</span> <span class="k">&#39;as&#39;</span> <span class="nf">pattern_capture_target</span> 
 <span class="nf">or_pattern</span><span class="p">:</span>
     <span class="o">|</span> &#39;|&#39;<span class="o">.</span><span class="nf">closed_pattern</span><span class="o">+</span> 
+
 <span class="nf">closed_pattern</span><span class="p">:</span>
     <span class="o">|</span> <span class="nf">literal_pattern</span>
     <span class="o">|</span> <span class="nf">capture_pattern</span>
@@ -403,6 +405,7 @@ required _not_ to match).  We use the <code class="docutils literal notranslate"
 <span class="nf">maybe_star_pattern</span><span class="p">:</span>
     <span class="o">|</span> <span class="nf">star_pattern</span>
     <span class="o">|</span> <span class="nf">pattern</span>
+
 <span class="nf">star_pattern</span><span class="p">:</span>
     <span class="o">|</span> &#39;*&#39; <span class="nf">pattern_capture_target</span> 
     <span class="o">|</span> &#39;*&#39; <span class="nf">wildcard_pattern</span> 
@@ -818,6 +821,10 @@ required _not_ to match).  We use the <code class="docutils literal notranslate"
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -847,7 +854,7 @@ required _not_ to match).  We use the <code class="docutils literal notranslate"
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 語言參考手冊</a> &#187;</li>
@@ -883,11 +890,11 @@ required _not_ to match).  We use the <code class="docutils literal notranslate"
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

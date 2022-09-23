@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>MS Windows Specific Services &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Windows 特有服務 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,19 +14,20 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="msilib --- Read and write Microsoft Installer files" href="msilib.html" />
+    <link rel="next" title="msvcrt --- Useful routines from the MS VC++ runtime" href="msvcrt.html" />
     <link rel="prev" title="pickletools --- Tools for pickle developers" href="pickletools.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/windows.html" />
     
@@ -77,8 +78,8 @@
   </div>
   <div>
     <h4>下個主題</h4>
-    <p class="topless"><a href="msilib.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msilib</span></code> --- Read and write Microsoft Installer files</a></p>
+    <p class="topless"><a href="msvcrt.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -106,7 +107,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="msilib.html" title="msilib --- Read and write Microsoft Installer files"
+          <a href="msvcrt.html" title="msvcrt --- Useful routines from the MS VC++ runtime"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="pickletools.html" title="pickletools --- Tools for pickle developers"
@@ -122,11 +123,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">MS Windows Specific Services</a></li>
+        <li class="nav-item nav-item-this"><a href="">MS Windows 特有服務</a></li>
                 <li class="right">
                     
 
@@ -150,23 +151,10 @@
           <div class="body" role="main">
             
   <section id="ms-windows-specific-services">
-<span id="mswin-specific-services"></span><h1>MS Windows Specific Services<a class="headerlink" href="#ms-windows-specific-services" title="本標題的永久連結">¶</a></h1>
-<p>This chapter describes modules that are only available on MS Windows platforms.</p>
+<span id="mswin-specific-services"></span><h1>MS Windows 特有服務<a class="headerlink" href="#ms-windows-specific-services" title="本標頭的永久連結">¶</a></h1>
+<p>此章節描述僅在 MS Windows 系統上可用的模組 (module)。</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="msilib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msilib</span></code> --- Read and write Microsoft Installer files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#database-objects">Database Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#view-objects">View Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#summary-information-objects">Summary Information Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#record-objects">Record Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#errors">Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#cab-objects">CAB 物件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#directory-objects">Directory Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#gui-classes">GUI classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msilib.html#precomputed-tables">Precomputed tables</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="msvcrt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="msvcrt.html#file-operations">File Operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="msvcrt.html#console-i-o">Console I/O</a></li>
@@ -206,8 +194,8 @@
   </div>
   <div>
     <h4>下個主題</h4>
-    <p class="topless"><a href="msilib.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msilib</span></code> --- Read and write Microsoft Installer files</a></p>
+    <p class="topless"><a href="msvcrt.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -221,6 +209,10 @@
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -234,7 +226,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="msilib.html" title="msilib --- Read and write Microsoft Installer files"
+          <a href="msvcrt.html" title="msvcrt --- Useful routines from the MS VC++ runtime"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="pickletools.html" title="pickletools --- Tools for pickle developers"
@@ -250,11 +242,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">MS Windows Specific Services</a></li>
+        <li class="nav-item nav-item-this"><a href="">MS Windows 特有服務</a></li>
                 <li class="right">
                     
 
@@ -286,11 +278,11 @@
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

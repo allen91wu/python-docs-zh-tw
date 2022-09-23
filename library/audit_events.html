@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>稽核事件表 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>稽核事件表 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -122,7 +123,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -151,18 +152,13 @@
           <div class="body" role="main">
             
   <span class="target" id="audit-events"></span><section id="audit-events-table">
-<span id="index-0"></span><h1>稽核事件表<a class="headerlink" href="#audit-events-table" title="本標題的永久連結">¶</a></h1>
-<p>這張表包含了所有在 CPython 運行環境 (runtime) 與標準函式庫對於 <a class="reference internal" href="sys.html#sys.audit" title="sys.audit"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.audit()</span></code></a> 或 <a class="reference internal" href="../c-api/sys.html#c.PySys_Audit" title="PySys_Audit"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_Audit()</span></code></a> 的呼叫所觸發的事件。這些呼叫是在 3.8.0 或更新的版本中被新增（請見 <span class="target" id="index-3"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0578"><strong>PEP 578</strong></a>）。</p>
+<span id="index-0"></span><h1>稽核事件表<a class="headerlink" href="#audit-events-table" title="本標頭的永久連結">¶</a></h1>
+<p>這張表包含了所有在 CPython 運行環境 (runtime) 與標準函式庫對於 <a class="reference internal" href="sys.html#sys.audit" title="sys.audit"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.audit()</span></code></a> 或 <a class="reference internal" href="../c-api/sys.html#c.PySys_Audit" title="PySys_Audit"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_Audit()</span></code></a> 的呼叫所觸發的事件。這些呼叫是在 3.8.0 或更新的版本中被新增（請見 <span class="target" id="index-3"></span><a class="pep reference external" href="https://peps.python.org/pep-0578/"><strong>PEP 578</strong></a>）。</p>
 <p>請參考 <a class="reference internal" href="sys.html#sys.addaudithook" title="sys.addaudithook"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.addaudithook()</span></code></a> 及 <a class="reference internal" href="../c-api/sys.html#c.PySys_AddAuditHook" title="PySys_AddAuditHook"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_AddAuditHook()</span></code></a> 來了解如何處理這些事件。</p>
 <div class="impl-detail compound">
 <p><strong>CPython implementation detail:</strong> 這張表是從 CPython 文件產生的，可能不包含其它實作所觸發的事件。請參考你的運行環境 (runtime) 特定文件來了解實際會觸發的事件。</p>
 </div>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 55%" />
-<col style="width: 15%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Audit event</p></th>
 <th class="head"><p>Arguments</p></th>
@@ -423,7 +419,7 @@
 <td><p><a class="reference internal" href="../reference/datamodel.html#object.__setattr__">[1]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>open</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">file</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">flags</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">path</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">flags</span></code></p></td>
 <td><p><a class="reference internal" href="functions.html#open">[1]</a><a class="reference internal" href="io.html#io.open">[2]</a><a class="reference internal" href="os.html#os.open">[3]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>os.add_dll_directory</p></td>
@@ -712,11 +708,11 @@
 </tr>
 <tr class="row-odd"><td><p>sqlite3.enable_load_extension</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">connection</span></code>, <code class="docutils literal notranslate"><span class="pre">enabled</span></code></p></td>
-<td><p><a class="reference internal" href="sqlite3.html#sqlite3.enable_load_extension">[1]</a></p></td>
+<td><p><a class="reference internal" href="sqlite3.html#sqlite3.Connection.enable_load_extension">[1]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>sqlite3.load_extension</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">connection</span></code>, <code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
-<td><p><a class="reference internal" href="sqlite3.html#sqlite3.load_extension">[1]</a></p></td>
+<td><p><a class="reference internal" href="sqlite3.html#sqlite3.Connection.load_extension">[1]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>subprocess.Popen</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">executable</span></code>, <code class="docutils literal notranslate"><span class="pre">args</span></code>, <code class="docutils literal notranslate"><span class="pre">cwd</span></code>, <code class="docutils literal notranslate"><span class="pre">env</span></code></p></td>
@@ -878,10 +874,6 @@
 </table>
 <p>下列事件是內部觸發的，與任何 CPython 的公開 API 並無關係：</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 62%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>稽核事件</p></th>
 <th class="head"><p>引數</p></th>
@@ -948,6 +940,10 @@
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -977,7 +973,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1014,11 +1010,11 @@
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>struct --- Interpret bytes as packed binary data &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>struct --- Interpret bytes as packed binary data &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -139,7 +140,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -168,7 +169,7 @@
           <div class="body" role="main">
             
   <section id="module-struct">
-<span id="struct-interpret-bytes-as-packed-binary-data"></span><h1><a class="reference internal" href="#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> --- Interpret bytes as packed binary data<a class="headerlink" href="#module-struct" title="本標題的永久連結">¶</a></h1>
+<span id="struct-interpret-bytes-as-packed-binary-data"></span><h1><a class="reference internal" href="#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> --- Interpret bytes as packed binary data<a class="headerlink" href="#module-struct" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/struct.py">Lib/struct.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>This module performs conversions between Python values and C structs represented
@@ -193,7 +194,7 @@ for that purpose are <a class="reference internal" href="stdtypes.html#bytes" ti
 that can be viewed as an array of bytes implement the buffer protocol, so that
 they can be read/filled without additional copying from a <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object.</p>
 <section id="functions-and-exceptions">
-<h2>函式與例外<a class="headerlink" href="#functions-and-exceptions" title="本標題的永久連結">¶</a></h2>
+<h2>函式與例外<a class="headerlink" href="#functions-and-exceptions" title="本標頭的永久連結">¶</a></h2>
 <p>The module defines the following exception and functions:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="struct.error">
@@ -241,7 +242,7 @@ least the size required by the format, as reflected by <a class="reference inter
 <span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">iter_unpack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.iter_unpack" title="本定義的永久連結">¶</a></dt>
 <dd><p>Iteratively unpack from the buffer <em>buffer</em> according to the format
 string <em>format</em>.  This function returns an iterator which will read
-equally-sized chunks from the buffer until all its contents have been
+equally sized chunks from the buffer until all its contents have been
 consumed.  The buffer's size in bytes must be a multiple of the size
 required by the format, as reflected by <a class="reference internal" href="#struct.calcsize" title="struct.calcsize"><code class="xref py py-func docutils literal notranslate"><span class="pre">calcsize()</span></code></a>.</p>
 <p>Each iteration yields a tuple as specified by the format string.</p>
@@ -259,13 +260,13 @@ required by the format, as reflected by <a class="reference internal" href="#str
 
 </section>
 <section id="format-strings">
-<span id="struct-format-strings"></span><h2>Format Strings<a class="headerlink" href="#format-strings" title="本標題的永久連結">¶</a></h2>
+<span id="struct-format-strings"></span><h2>Format Strings<a class="headerlink" href="#format-strings" title="本標頭的永久連結">¶</a></h2>
 <p>Format strings are the mechanism used to specify the expected layout when
 packing and unpacking data.  They are built up from <a class="reference internal" href="#format-characters"><span class="std std-ref">Format Characters</span></a>,
 which specify the type of data being packed/unpacked.  In addition, there are
 special characters for controlling the <a class="reference internal" href="#struct-alignment"><span class="std std-ref">Byte Order, Size, and Alignment</span></a>.</p>
 <section id="byte-order-size-and-alignment">
-<span id="struct-alignment"></span><h3>Byte Order, Size, and Alignment<a class="headerlink" href="#byte-order-size-and-alignment" title="本標題的永久連結">¶</a></h3>
+<span id="struct-alignment"></span><h3>Byte Order, Size, and Alignment<a class="headerlink" href="#byte-order-size-and-alignment" title="本標頭的永久連結">¶</a></h3>
 <p>By default, C types are represented in the machine's native format and byte
 order, and properly aligned by skipping pad bytes if necessary (according to the
 rules used by the C compiler).</p>
@@ -273,12 +274,6 @@ rules used by the C compiler).</p>
 the byte order, size and alignment of the packed data, according to the
 following table:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 43%" />
-<col style="width: 18%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Character</p></th>
 <th class="head"><p>Byte order</p></th>
@@ -317,9 +312,10 @@ following table:</p>
 <p>If the first character is not one of these, <code class="docutils literal notranslate"><span class="pre">'&#64;'</span></code> is assumed.</p>
 <p>Native byte order is big-endian or little-endian, depending on the host
 system. For example, Intel x86 and AMD64 (x86-64) are little-endian;
-Motorola 68000 and PowerPC G5 are big-endian; ARM and Intel Itanium feature
-switchable endianness (bi-endian). Use <code class="docutils literal notranslate"><span class="pre">sys.byteorder</span></code> to check the
-endianness of your system.</p>
+IBM z and most legacy architectures are big-endian;
+and ARM, RISC-V and IBM Power feature switchable endianness
+(bi-endian, though the former two are nearly always little-endian in practice).
+Use <code class="docutils literal notranslate"><span class="pre">sys.byteorder</span></code> to check the endianness of your system.</p>
 <p>Native size and alignment are determined using the C compiler's
 <code class="docutils literal notranslate"><span class="pre">sizeof</span></code> expression.  This is always combined with native byte order.</p>
 <p>Standard size depends only on the format character;  see the table in
@@ -342,7 +338,7 @@ count of zero.  See <a class="reference internal" href="#struct-examples"><span 
 </ol>
 </section>
 <section id="format-characters">
-<span id="id1"></span><h3>Format Characters<a class="headerlink" href="#format-characters" title="本標題的永久連結">¶</a></h3>
+<span id="id1"></span><h3>Format Characters<a class="headerlink" href="#format-characters" title="本標頭的永久連結">¶</a></h3>
 <p>Format characters have the following meaning; the conversion between C and
 Python values should be obvious given their types.  The 'Standard size' column
 refers to the size of the packed value in bytes when using standard size; that
@@ -350,13 +346,6 @@ is, when the format string starts with one of <code class="docutils literal notr
 <code class="docutils literal notranslate"><span class="pre">'='</span></code>.  When using native size, the size of the packed value is
 platform-dependent.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 32%" />
-<col style="width: 24%" />
-<col style="width: 20%" />
-<col style="width: 15%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Format</p></th>
 <th class="head"><p>C Type</p></th>
@@ -527,7 +516,7 @@ order character <code class="docutils literal notranslate"><span class="pre">'='
 on the host system. The struct module does not interpret this as native
 ordering, so the <code class="docutils literal notranslate"><span class="pre">'P'</span></code> format is not available.</p></li>
 <li><p>The IEEE 754 binary16 &quot;half precision&quot; type was introduced in the 2008
-revision of the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_floating_point#IEEE_754-2008">IEEE 754 standard</a>. It has a sign
+revision of the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754-2008_revision">IEEE 754 standard</a>. It has a sign
 bit, a 5-bit exponent and 11-bit precision (with 10 bits explicitly stored),
 and can represent numbers between approximately <code class="docutils literal notranslate"><span class="pre">6.1e-05</span></code> and <code class="docutils literal notranslate"><span class="pre">6.5e+04</span></code>
 at full precision. This type is not widely supported by C compilers: on a
@@ -571,7 +560,7 @@ Either 0 or 1 in the native or standard bool representation will be packed, and
 any non-zero value will be <code class="docutils literal notranslate"><span class="pre">True</span></code> when unpacking.</p>
 </section>
 <section id="examples">
-<span id="struct-examples"></span><h3>範例<a class="headerlink" href="#examples" title="本標題的永久連結">¶</a></h3>
+<span id="struct-examples"></span><h3>範例<a class="headerlink" href="#examples" title="本標頭的永久連結">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>All examples assume a native byte order, size, and alignment with a
@@ -623,14 +612,14 @@ alignment does not enforce any alignment.</p>
 <dl class="simple">
 <dt><a class="reference internal" href="array.html#module-array" title="array: Space efficient arrays of uniformly typed numeric values."><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> 模組</dt><dd><p>Packed binary storage of homogeneous data.</p>
 </dd>
-<dt><a class="reference internal" href="xdrlib.html#module-xdrlib" title="xdrlib: Encoders and decoders for the External Data Representation (XDR)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code></a> 模組</dt><dd><p>Packing and unpacking of XDR data.</p>
+<dt><a class="reference internal" href="xdrlib.html#module-xdrlib" title="xdrlib: Encoders and decoders for the External Data Representation (XDR).（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code></a> 模組</dt><dd><p>Packing and unpacking of XDR data.</p>
 </dd>
 </dl>
 </div>
 </section>
 </section>
 <section id="classes">
-<span id="struct-objects"></span><h2>Classes<a class="headerlink" href="#classes" title="本標題的永久連結">¶</a></h2>
+<span id="struct-objects"></span><h2>Classes<a class="headerlink" href="#classes" title="本標頭的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> module also defines the following type:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="struct.Struct">
@@ -752,6 +741,10 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -781,7 +774,7 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -818,11 +811,11 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

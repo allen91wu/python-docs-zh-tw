@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>fractions --- Rational numbers &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fractions --- Rational numbers &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -122,7 +123,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -151,7 +152,7 @@
           <div class="body" role="main">
             
   <section id="module-fractions">
-<span id="fractions-rational-numbers"></span><h1><a class="reference internal" href="#module-fractions" title="fractions: Rational numbers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">fractions</span></code></a> --- Rational numbers<a class="headerlink" href="#module-fractions" title="本標題的永久連結">¶</a></h1>
+<span id="fractions-rational-numbers"></span><h1><a class="reference internal" href="#module-fractions" title="fractions: Rational numbers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">fractions</span></code></a> --- Rational numbers<a class="headerlink" href="#module-fractions" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/fractions.py">Lib/fractions.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-fractions" title="fractions: Rational numbers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">fractions</span></code></a> module provides support for rational number arithmetic.</p>
@@ -256,9 +257,9 @@ to the Fraction and with a positive denominator.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fractions.Fraction.from_float">
-<span class="sig-name descname"><span class="pre">from_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractions.Fraction.from_float" title="本定義的永久連結">¶</a></dt>
-<dd><p>This class method constructs a <a class="reference internal" href="#fractions.Fraction" title="fractions.Fraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Fraction</span></code></a> representing the exact
-value of <em>flt</em>, which must be a <a class="reference internal" href="functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>. Beware that
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractions.Fraction.from_float" title="本定義的永久連結">¶</a></dt>
+<dd><p>Alternative constructor which only accepts instances of
+<a class="reference internal" href="functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference internal" href="numbers.html#numbers.Integral" title="numbers.Integral"><code class="xref py py-class docutils literal notranslate"><span class="pre">numbers.Integral</span></code></a>. Beware that
 <code class="docutils literal notranslate"><span class="pre">Fraction.from_float(0.3)</span></code> is not the same value as <code class="docutils literal notranslate"><span class="pre">Fraction(3,</span> <span class="pre">10)</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -269,9 +270,9 @@ value of <em>flt</em>, which must be a <a class="reference internal" href="funct
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fractions.Fraction.from_decimal">
-<span class="sig-name descname"><span class="pre">from_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractions.Fraction.from_decimal" title="本定義的永久連結">¶</a></dt>
-<dd><p>This class method constructs a <a class="reference internal" href="#fractions.Fraction" title="fractions.Fraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Fraction</span></code></a> representing the exact
-value of <em>dec</em>, which must be a <a class="reference internal" href="decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">decimal.Decimal</span></code></a> instance.</p>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractions.Fraction.from_decimal" title="本定義的永久連結">¶</a></dt>
+<dd><p>Alternative constructor which only accepts instances of
+<a class="reference internal" href="decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">decimal.Decimal</span></code></a> or <a class="reference internal" href="numbers.html#numbers.Integral" title="numbers.Integral"><code class="xref py py-class docutils literal notranslate"><span class="pre">numbers.Integral</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>From Python 3.2 onwards, you can also construct a
@@ -374,6 +375,10 @@ method can also be accessed through the <a class="reference internal" href="func
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -403,7 +408,7 @@ method can also be accessed through the <a class="reference internal" href="func
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -440,11 +445,11 @@ method can also be accessed through the <a class="reference internal" href="func
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

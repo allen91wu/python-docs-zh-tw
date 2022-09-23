@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>內建的例外 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>內建的例外 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,20 +14,21 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="文本處理 (Text Processing) 服務" href="text.html" />
-    <link rel="prev" title="內建型態" href="stdtypes.html" />
+    <link rel="prev" title="內建型別" href="stdtypes.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/exceptions.html" />
     
       
@@ -91,7 +92,7 @@
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="stdtypes.html"
-                          title="上一章">內建型態</a></p>
+                          title="上一章">內建型別</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -127,7 +128,7 @@
           <a href="text.html" title="文本處理 (Text Processing) 服務"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="stdtypes.html" title="內建型態"
+          <a href="stdtypes.html" title="內建型別"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -140,7 +141,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -168,7 +169,7 @@
           <div class="body" role="main">
             
   <section id="built-in-exceptions">
-<span id="bltin-exceptions"></span><h1>內建的例外<a class="headerlink" href="#built-in-exceptions" title="本標題的永久連結">¶</a></h1>
+<span id="bltin-exceptions"></span><h1>內建的例外<a class="headerlink" href="#built-in-exceptions" title="本標頭的永久連結">¶</a></h1>
 <p id="index-0">In Python, all exceptions must be instances of a class that derives from
 <a class="reference internal" href="#BaseException" title="BaseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseException</span></code></a>.  In a <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> statement with an <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a>
 clause that mentions a particular class, that clause also handles any exception
@@ -191,15 +192,14 @@ class or one of its subclasses, and not from <a class="reference internal" href=
 information on defining exceptions is available in the Python Tutorial under
 <a class="reference internal" href="../tutorial/errors.html#tut-userexceptions"><span class="std std-ref">使用者自定的例外</span></a>.</p>
 <section id="exception-context">
-<h2>Exception context<a class="headerlink" href="#exception-context" title="本標題的永久連結">¶</a></h2>
-<p>When raising (or re-raising) an exception in an <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> or
-<a class="reference internal" href="../reference/compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> clause
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">__context__</span></code> is automatically set to the last exception caught; if the
-new exception is not handled the traceback that is eventually displayed will
-include the originating exception(s) and the final exception.</p>
-<p>When raising a new exception (rather than using a bare <code class="docutils literal notranslate"><span class="pre">raise</span></code> to re-raise
-the exception currently being handled), the implicit exception context can be
-supplemented with an explicit cause by using <a class="reference internal" href="../reference/simple_stmts.html#raise"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">from</span></code></a> with
+<h2>Exception context<a class="headerlink" href="#exception-context" title="本標頭的永久連結">¶</a></h2>
+<p>When raising a new exception while another exception
+is already being handled, the new exception's
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">__context__</span></code> attribute is automatically set to the handled
+exception.  An exception may be handled when an <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> or
+<a class="reference internal" href="../reference/compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> clause, or a <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement, is used.</p>
+<p>This implicit exception context can be
+supplemented with an explicit cause by using <code class="xref std std-keyword docutils literal notranslate"><span class="pre">from</span></code> with
 <a class="reference internal" href="../reference/simple_stmts.html#raise"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">raise</span></code></a>:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="n">new_exc</span> <span class="kn">from</span> <span class="nn">original_exc</span>
 </pre></div>
@@ -222,7 +222,7 @@ exceptions so that the final line of the traceback always shows the last
 exception that was raised.</p>
 </section>
 <section id="inheriting-from-built-in-exceptions">
-<h2>繼承自內建的例外<a class="headerlink" href="#inheriting-from-built-in-exceptions" title="本標題的永久連結">¶</a></h2>
+<h2>繼承自內建的例外<a class="headerlink" href="#inheriting-from-built-in-exceptions" title="本標頭的永久連結">¶</a></h2>
 <p>User code can create subclasses that inherit from an exception type.
 It's recommended to only subclass one exception type at a time to avoid
 any possible conflicts between how the bases handle the <code class="docutils literal notranslate"><span class="pre">args</span></code>
@@ -238,7 +238,7 @@ subclassing multiple exception types altogether.</p>
 </div>
 </section>
 <section id="base-classes">
-<h2>Base classes<a class="headerlink" href="#base-classes" title="本標題的永久連結">¶</a></h2>
+<h2>Base classes<a class="headerlink" href="#base-classes" title="本標頭的永久連結">¶</a></h2>
 <p>The following exceptions are used mostly as base classes for other exceptions.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="BaseException">
@@ -262,7 +262,7 @@ usually called only with a single string giving an error message.</p>
 <span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseException.with_traceback" title="本定義的永久連結">¶</a></dt>
 <dd><p>This method sets <em>tb</em> as the new traceback for the exception and returns
 the exception object.  It was more commonly used before the exception
-chaining features of <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3134"><strong>PEP 3134</strong></a> became available.  The following example
+chaining features of <span class="target" id="index-2"></span><a class="pep reference external" href="https://peps.python.org/pep-3134/"><strong>PEP 3134</strong></a> became available.  The following example
 shows how we can convert an instance of <code class="docutils literal notranslate"><span class="pre">SomeException</span></code> into an
 instance of <code class="docutils literal notranslate"><span class="pre">OtherException</span></code> while preserving the traceback.  Once
 raised, the current frame is pushed onto the traceback of the
@@ -311,7 +311,7 @@ can be raised directly by <a class="reference internal" href="codecs.html#codecs
 
 </section>
 <section id="concrete-exceptions">
-<h2>Concrete exceptions<a class="headerlink" href="#concrete-exceptions" title="本標題的永久連結">¶</a></h2>
+<h2>Concrete exceptions<a class="headerlink" href="#concrete-exceptions" title="本標頭的永久連結">¶</a></h2>
 <p>The following exceptions are the exceptions that are usually raised.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="AssertionError">
@@ -405,6 +405,15 @@ integer, <a class="reference internal" href="#TypeError" title="TypeError"><code
 regularly. The exception inherits from <a class="reference internal" href="#BaseException" title="BaseException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BaseException</span></code></a> so as to not be
 accidentally caught by code that catches <a class="reference internal" href="#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> and thus prevent
 the interpreter from exiting.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>Catching a <a class="reference internal" href="#KeyboardInterrupt" title="KeyboardInterrupt"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code></a> requires special consideration.
+Because it can be raised at unpredictable points, it may, in some
+circumstances, leave the running program in an inconsistent state. It is
+generally best to allow <a class="reference internal" href="#KeyboardInterrupt" title="KeyboardInterrupt"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code></a> to end the program as
+quickly as possible or avoid raising it entirely. (See
+<a class="reference internal" href="signal.html#handlers-and-exceptions"><span class="std std-ref">Note on Signal Handlers and Exceptions</span></a>.)</p>
+</div>
 </dd></dl>
 
 <dl class="py exception">
@@ -587,10 +596,10 @@ use it to return a value.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>Introduced the RuntimeError transformation via
-<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">generator_stop</span></code>, see <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0479"><strong>PEP 479</strong></a>.</p>
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">generator_stop</span></code>, see <span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0479/"><strong>PEP 479</strong></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.7 版本變更: </span>Enable <span class="target" id="index-6"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0479"><strong>PEP 479</strong></a> for all code by default: a <a class="reference internal" href="#StopIteration" title="StopIteration"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StopIteration</span></code></a>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Enable <span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0479/"><strong>PEP 479</strong></a> for all code by default: a <a class="reference internal" href="#StopIteration" title="StopIteration"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StopIteration</span></code></a>
 error raised in a generator is transformed into a <a class="reference internal" href="#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -838,7 +847,7 @@ starting from Python 3.3, they are aliases of <a class="reference internal" href
 </dd></dl>
 
 <section id="os-exceptions">
-<h3>OS exceptions<a class="headerlink" href="#os-exceptions" title="本標題的永久連結">¶</a></h3>
+<h3>OS exceptions<a class="headerlink" href="#os-exceptions" title="本標頭的永久連結">¶</a></h3>
 <p>The following exceptions are subclasses of <a class="reference internal" href="#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>, they get raised
 depending on the system error code.</p>
 <dl class="py exception">
@@ -846,8 +855,8 @@ depending on the system error code.</p>
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlockingIOError</span></span><a class="headerlink" href="#BlockingIOError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an operation would block on an object (e.g. socket) set
 for non-blocking operation.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">EAGAIN</span></code>, <code class="docutils literal notranslate"><span class="pre">EALREADY</span></code>,
-<code class="docutils literal notranslate"><span class="pre">EWOULDBLOCK</span></code> and <code class="docutils literal notranslate"><span class="pre">EINPROGRESS</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.EAGAIN" title="errno.EAGAIN"><code class="xref py py-data docutils literal notranslate"><span class="pre">EAGAIN</span></code></a>, <a class="reference internal" href="errno.html#errno.EALREADY" title="errno.EALREADY"><code class="xref py py-data docutils literal notranslate"><span class="pre">EALREADY</span></code></a>,
+<a class="reference internal" href="errno.html#errno.EWOULDBLOCK" title="errno.EWOULDBLOCK"><code class="xref py py-data docutils literal notranslate"><span class="pre">EWOULDBLOCK</span></code></a> and <a class="reference internal" href="errno.html#errno.EINPROGRESS" title="errno.EINPROGRESS"><code class="xref py py-data docutils literal notranslate"><span class="pre">EINPROGRESS</span></code></a>.</p>
 <p>In addition to those of <a class="reference internal" href="#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>, <a class="reference internal" href="#BlockingIOError" title="BlockingIOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BlockingIOError</span></code></a> can have
 one more attribute:</p>
 <dl class="py attribute">
@@ -864,7 +873,7 @@ buffered I/O classes from the <a class="reference internal" href="io.html#module
 <dt class="sig sig-object py" id="ChildProcessError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChildProcessError</span></span><a class="headerlink" href="#ChildProcessError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an operation on a child process failed.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ECHILD</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ECHILD" title="errno.ECHILD"><code class="xref py py-data docutils literal notranslate"><span class="pre">ECHILD</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -881,7 +890,7 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 <dd><p>A subclass of <a class="reference internal" href="#ConnectionError" title="ConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionError</span></code></a>, raised when trying to write on a
 pipe while the other end has been closed, or trying to write on a socket
 which has been shutdown for writing.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">EPIPE</span></code> and <code class="docutils literal notranslate"><span class="pre">ESHUTDOWN</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.EPIPE" title="errno.EPIPE"><code class="xref py py-data docutils literal notranslate"><span class="pre">EPIPE</span></code></a> and <a class="reference internal" href="errno.html#errno.ESHUTDOWN" title="errno.ESHUTDOWN"><code class="xref py py-data docutils literal notranslate"><span class="pre">ESHUTDOWN</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -889,7 +898,7 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConnectionAbortedError</span></span><a class="headerlink" href="#ConnectionAbortedError" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#ConnectionError" title="ConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionError</span></code></a>, raised when a connection attempt
 is aborted by the peer.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ECONNABORTED</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ECONNABORTED" title="errno.ECONNABORTED"><code class="xref py py-data docutils literal notranslate"><span class="pre">ECONNABORTED</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -897,7 +906,7 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConnectionRefusedError</span></span><a class="headerlink" href="#ConnectionRefusedError" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#ConnectionError" title="ConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionError</span></code></a>, raised when a connection attempt
 is refused by the peer.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ECONNREFUSED</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ECONNREFUSED" title="errno.ECONNREFUSED"><code class="xref py py-data docutils literal notranslate"><span class="pre">ECONNREFUSED</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -905,21 +914,21 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConnectionResetError</span></span><a class="headerlink" href="#ConnectionResetError" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#ConnectionError" title="ConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionError</span></code></a>, raised when a connection is
 reset by the peer.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ECONNRESET</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ECONNRESET" title="errno.ECONNRESET"><code class="xref py py-data docutils literal notranslate"><span class="pre">ECONNRESET</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="FileExistsError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FileExistsError</span></span><a class="headerlink" href="#FileExistsError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when trying to create a file or directory which already exists.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">EEXIST</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.EEXIST" title="errno.EEXIST"><code class="xref py py-data docutils literal notranslate"><span class="pre">EEXIST</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="FileNotFoundError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FileNotFoundError</span></span><a class="headerlink" href="#FileNotFoundError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a file or directory is requested but doesn't exist.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ENOENT</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ENOENT" title="errno.ENOENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">ENOENT</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -929,7 +938,7 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.EINTR" title="errno.EINTR"><code class="xref py py-data docutils literal notranslate"><span class="pre">EINTR</span></code></a>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>Python now retries system calls when a syscall is interrupted by a
-signal, except if the signal handler raises an exception (see <span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a>
+signal, except if the signal handler raises an exception (see <span class="target" id="index-7"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a>
 for the rationale), instead of raising <a class="reference internal" href="#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -939,7 +948,7 @@ for the rationale), instead of raising <a class="reference internal" href="#Inte
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IsADirectoryError</span></span><a class="headerlink" href="#IsADirectoryError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a file operation (such as <a class="reference internal" href="os.html#os.remove" title="os.remove"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.remove()</span></code></a>) is requested
 on a directory.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">EISDIR</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.EISDIR" title="errno.EISDIR"><code class="xref py py-data docutils literal notranslate"><span class="pre">EISDIR</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -949,7 +958,7 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 something which is not a directory.  On most POSIX platforms, it may also be
 raised if an operation attempts to open or traverse a non-directory file as if
 it were a directory.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ENOTDIR</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ENOTDIR" title="errno.ENOTDIR"><code class="xref py py-data docutils literal notranslate"><span class="pre">ENOTDIR</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -957,21 +966,21 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PermissionError</span></span><a class="headerlink" href="#PermissionError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when trying to run an operation without the adequate access
 rights - for example filesystem permissions.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">EACCES</span></code> and <code class="docutils literal notranslate"><span class="pre">EPERM</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.EACCES" title="errno.EACCES"><code class="xref py py-data docutils literal notranslate"><span class="pre">EACCES</span></code></a> and <a class="reference internal" href="errno.html#errno.EPERM" title="errno.EPERM"><code class="xref py py-data docutils literal notranslate"><span class="pre">EPERM</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="ProcessLookupError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProcessLookupError</span></span><a class="headerlink" href="#ProcessLookupError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a given process doesn't exist.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ESRCH</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ESRCH" title="errno.ESRCH"><code class="xref py py-data docutils literal notranslate"><span class="pre">ESRCH</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="TimeoutError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TimeoutError</span></span><a class="headerlink" href="#TimeoutError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a system function timed out at the system level.
-Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <code class="docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code>.</p>
+Corresponds to <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> <a class="reference internal" href="errno.html#errno.ETIMEDOUT" title="errno.ETIMEDOUT"><code class="xref py py-data docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code></a>.</p>
 </dd></dl>
 
 <div class="versionadded">
@@ -979,12 +988,12 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<p><span class="target" id="index-8"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3151"><strong>PEP 3151</strong></a> - Reworking the OS and IO exception hierarchy</p>
+<p><span class="target" id="index-8"></span><a class="pep reference external" href="https://peps.python.org/pep-3151/"><strong>PEP 3151</strong></a> - Reworking the OS and IO exception hierarchy</p>
 </div>
 </section>
 </section>
 <section id="warnings">
-<span id="warning-categories-as-exceptions"></span><h2>警告<a class="headerlink" href="#warnings" title="本標題的永久連結">¶</a></h2>
+<span id="warning-categories-as-exceptions"></span><h2>警告<a class="headerlink" href="#warnings" title="本標頭的永久連結">¶</a></h2>
 <p>The following exceptions are used as warning categories; see the
 <a class="reference internal" href="warnings.html#warning-categories"><span class="std std-ref">Warning Categories</span></a> documentation for more details.</p>
 <dl class="py exception">
@@ -1005,9 +1014,9 @@ Corresponds to <code class="xref c c-data docutils literal notranslate"><span cl
 <dd><p>Base class for warnings about deprecated features when those warnings are
 intended for other Python developers.</p>
 <p>Ignored by the default warning filters, except in the <code class="docutils literal notranslate"><span class="pre">__main__</span></code> module
-(<span class="target" id="index-9"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0565"><strong>PEP 565</strong></a>). Enabling the <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> shows
+(<span class="target" id="index-9"></span><a class="pep reference external" href="https://peps.python.org/pep-0565/"><strong>PEP 565</strong></a>). Enabling the <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> shows
 this warning.</p>
-<p>The deprecation policy is described in <span class="target" id="index-10"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0387"><strong>PEP 387</strong></a>.</p>
+<p>The deprecation policy is described in <span class="target" id="index-10"></span><a class="pep reference external" href="https://peps.python.org/pep-0387/"><strong>PEP 387</strong></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -1021,7 +1030,7 @@ upcoming deprecation is unusual, and <a class="reference internal" href="#Deprec
 is preferred for already active deprecations.</p>
 <p>Ignored by the default warning filters. Enabling the <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python
 Development Mode</span></a> shows this warning.</p>
-<p>The deprecation policy is described in <span class="target" id="index-11"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0387"><strong>PEP 387</strong></a>.</p>
+<p>The deprecation policy is described in <span class="target" id="index-11"></span><a class="pep reference external" href="https://peps.python.org/pep-0387/"><strong>PEP 387</strong></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -1086,7 +1095,7 @@ Development Mode</span></a> shows this warning.</p>
 
 </section>
 <section id="exception-hierarchy">
-<h2>Exception hierarchy<a class="headerlink" href="#exception-hierarchy" title="本標題的永久連結">¶</a></h2>
+<h2>Exception hierarchy<a class="headerlink" href="#exception-hierarchy" title="本標頭的永久連結">¶</a></h2>
 <p>The class hierarchy for built-in exceptions is:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="ne">BaseException</span>
  <span class="o">+--</span> <span class="ne">SystemExit</span>
@@ -1151,7 +1160,7 @@ Development Mode</span></a> shows this warning.</p>
            <span class="o">+--</span> <span class="ne">ImportWarning</span>
            <span class="o">+--</span> <span class="ne">UnicodeWarning</span>
            <span class="o">+--</span> <span class="ne">BytesWarning</span>
-           <span class="o">+--</span> <span class="n">EncodingWarning</span>
+           <span class="o">+--</span> <span class="ne">EncodingWarning</span>
            <span class="o">+--</span> <span class="ne">ResourceWarning</span>
 </pre></div>
 </div>
@@ -1186,7 +1195,7 @@ Development Mode</span></a> shows this warning.</p>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="stdtypes.html"
-                          title="上一章">內建型態</a></p>
+                          title="上一章">內建型別</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -1205,6 +1214,10 @@ Development Mode</span></a> shows this warning.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1221,7 +1234,7 @@ Development Mode</span></a> shows this warning.</p>
           <a href="text.html" title="文本處理 (Text Processing) 服務"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="stdtypes.html" title="內建型態"
+          <a href="stdtypes.html" title="內建型別"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -1234,7 +1247,7 @@ Development Mode</span></a> shows this warning.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1270,11 +1283,11 @@ Development Mode</span></a> shows this warning.</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

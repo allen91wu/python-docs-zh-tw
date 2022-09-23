@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>wave --- Read and write WAV files &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wave --- Read and write WAV files &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,20 +14,21 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="chunk --- Read IFF chunked data" href="chunk.html" />
-    <link rel="prev" title="sunau --- Read and write Sun AU files" href="sunau.html" />
+    <link rel="next" title="colorsys --- 顏色系統間的轉換" href="colorsys.html" />
+    <link rel="prev" title="Multimedia Services" href="mm.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/wave.html" />
     
       
@@ -83,13 +84,13 @@
   </div>
   <div>
     <h4>上個主題</h4>
-    <p class="topless"><a href="sunau.html"
-                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sunau</span></code> --- Read and write Sun AU files</a></p>
+    <p class="topless"><a href="mm.html"
+                          title="上一章">Multimedia Services</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
-    <p class="topless"><a href="chunk.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chunk</span></code> --- Read IFF chunked data</a></p>
+    <p class="topless"><a href="colorsys.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">colorsys</span></code> --- 顏色系統間的轉換</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -117,10 +118,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="chunk.html" title="chunk --- Read IFF chunked data"
+          <a href="colorsys.html" title="colorsys --- 顏色系統間的轉換"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="sunau.html" title="sunau --- Read and write Sun AU files"
+          <a href="mm.html" title="Multimedia Services"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -133,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -162,7 +163,7 @@
           <div class="body" role="main">
             
   <section id="module-wave">
-<span id="wave-read-and-write-wav-files"></span><h1><a class="reference internal" href="#module-wave" title="wave: Provide an interface to the WAV sound format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code></a> --- Read and write WAV files<a class="headerlink" href="#module-wave" title="本標題的永久連結">¶</a></h1>
+<span id="wave-read-and-write-wav-files"></span><h1><a class="reference internal" href="#module-wave" title="wave: Provide an interface to the WAV sound format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code></a> --- Read and write WAV files<a class="headerlink" href="#module-wave" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/wave.py">Lib/wave.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-wave" title="wave: Provide an interface to the WAV sound format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code></a> module provides a convenient interface to the WAV sound format.
@@ -202,7 +203,7 @@ specification or hits an implementation deficiency.</p>
 </dd></dl>
 
 <section id="wave-read-objects">
-<span id="id1"></span><h2>Wave_read 物件<a class="headerlink" href="#wave-read-objects" title="本標題的永久連結">¶</a></h2>
+<span id="id1"></span><h2>Wave_read 物件<a class="headerlink" href="#wave-read-objects" title="本標頭的永久連結">¶</a></h2>
 <p>Wave_read objects, as returned by <a class="reference internal" href="#wave.open" title="wave.open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a>, have the following methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="wave.Wave_read.close">
@@ -268,7 +269,7 @@ parallels <code class="docutils literal notranslate"><span class="pre">'NONE'</s
 <dd><p>Rewind the file pointer to the beginning of the audio stream.</p>
 </dd></dl>
 
-<p>The following two methods are defined for compatibility with the <a class="reference internal" href="aifc.html#module-aifc" title="aifc: Read and write audio files in AIFF or AIFC format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">aifc</span></code></a>
+<p>The following two methods are defined for compatibility with the <a class="reference internal" href="aifc.html#module-aifc" title="aifc: Read and write audio files in AIFF or AIFC format.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">aifc</span></code></a>
 module, and don't do anything interesting.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="wave.Wave_read.getmarkers">
@@ -298,7 +299,7 @@ them, and is otherwise implementation dependent.</p>
 
 </section>
 <section id="wave-write-objects">
-<span id="id2"></span><h2>Wave_write 物件<a class="headerlink" href="#wave-write-objects" title="本標題的永久連結">¶</a></h2>
+<span id="id2"></span><h2>Wave_write 物件<a class="headerlink" href="#wave-write-objects" title="本標頭的永久連結">¶</a></h2>
 <p>For seekable output streams, the <code class="docutils literal notranslate"><span class="pre">wave</span></code> header will automatically be updated
 to reflect the number of frames actually written.  For unseekable streams, the
 <em>nframes</em> value must be accurate when the first frame data is written.  An
@@ -422,13 +423,13 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
   </div>
   <div>
     <h4>上個主題</h4>
-    <p class="topless"><a href="sunau.html"
-                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sunau</span></code> --- Read and write Sun AU files</a></p>
+    <p class="topless"><a href="mm.html"
+                          title="上一章">Multimedia Services</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
-    <p class="topless"><a href="chunk.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chunk</span></code> --- Read IFF chunked data</a></p>
+    <p class="topless"><a href="colorsys.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">colorsys</span></code> --- 顏色系統間的轉換</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -442,6 +443,10 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -455,10 +460,10 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="chunk.html" title="chunk --- Read IFF chunked data"
+          <a href="colorsys.html" title="colorsys --- 顏色系統間的轉換"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="sunau.html" title="sunau --- Read and write Sun AU files"
+          <a href="mm.html" title="Multimedia Services"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -471,7 +476,7 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -508,11 +513,11 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

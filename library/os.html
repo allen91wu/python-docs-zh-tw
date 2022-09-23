@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>os --- Miscellaneous operating system interfaces &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>os --- Miscellaneous operating system interfaces &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,20 +14,21 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="io --- Core tools for working with streams" href="io.html" />
-    <link rel="prev" title="Generic Operating System Services" href="allos.html" />
+    <link rel="prev" title="通用作業系統服務" href="allos.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/os.html" />
     
       
@@ -99,7 +100,7 @@
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="allos.html"
-                          title="上一章">Generic Operating System Services</a></p>
+                          title="上一章">通用作業系統服務</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -135,7 +136,7 @@
           <a href="io.html" title="io --- Core tools for working with streams"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="allos.html" title="Generic Operating System Services"
+          <a href="allos.html" title="通用作業系統服務"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -148,11 +149,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="allos.html" accesskey="U">Generic Operating System Services</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="allos.html" accesskey="U">通用作業系統服務</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a></li>
                 <li class="right">
                     
@@ -177,7 +178,7 @@
           <div class="body" role="main">
             
   <section id="module-os">
-<span id="os-miscellaneous-operating-system-interfaces"></span><h1><a class="reference internal" href="#module-os" title="os: Miscellaneous operating system interfaces."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code></a> --- Miscellaneous operating system interfaces<a class="headerlink" href="#module-os" title="本標題的永久連結">¶</a></h1>
+<span id="os-miscellaneous-operating-system-interfaces"></span><h1><a class="reference internal" href="#module-os" title="os: Miscellaneous operating system interfaces."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code></a> --- Miscellaneous operating system interfaces<a class="headerlink" href="#module-os" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/os.py">Lib/os.py</a></p>
 <hr class="docutils" />
 <p>This module provides a portable way of using operating system dependent
@@ -230,7 +231,7 @@ system's identity.</p>
 </dd></dl>
 
 <section id="file-names-command-line-arguments-and-environment-variables">
-<span id="filesystem-encoding"></span><span id="os-filenames"></span><h2>File Names, Command Line Arguments, and Environment Variables<a class="headerlink" href="#file-names-command-line-arguments-and-environment-variables" title="本標題的永久連結">¶</a></h2>
+<span id="filesystem-encoding"></span><span id="os-filenames"></span><h2>File Names, Command Line Arguments, and Environment Variables<a class="headerlink" href="#file-names-command-line-arguments-and-environment-variables" title="本標頭的永久連結">¶</a></h2>
 <p>In Python, file names, command line arguments, and environment variables are
 represented using the string type. On some systems, decoding these strings to
 and from bytes is necessary before passing them to the operating system. Python
@@ -253,9 +254,9 @@ encoding fails to provide this guarantee, API functions can raise
 <p>另請參閱 <a class="reference internal" href="../glossary.html#term-locale-encoding"><span class="xref std std-term">locale encoding</span></a>。</p>
 </section>
 <section id="python-utf-8-mode">
-<span id="utf8-mode"></span><h2>Python UTF-8 Mode<a class="headerlink" href="#python-utf-8-mode" title="本標題的永久連結">¶</a></h2>
+<span id="utf8-mode"></span><h2>Python UTF-8 Mode<a class="headerlink" href="#python-utf-8-mode" title="本標頭的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版本新加入: </span>更多資訊請見 <span class="target" id="index-54"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0540"><strong>PEP 540</strong></a>。</p>
+<p><span class="versionmodified added">在 3.7 版本新加入: </span>更多資訊請見 <span class="target" id="index-54"></span><a class="pep reference external" href="https://peps.python.org/pep-0540/"><strong>PEP 540</strong></a>。</p>
 </div>
 <p>The Python UTF-8 Mode ignores the <a class="reference internal" href="../glossary.html#term-locale-encoding"><span class="xref std std-term">locale encoding</span></a> and forces the usage
 of the UTF-8 encoding:</p>
@@ -269,7 +270,7 @@ UTF-8 as their text encoding, with the <code class="docutils literal notranslate
 <a class="reference internal" href="codecs.html#error-handlers"><span class="std std-ref">error handler</span></a> being enabled for <a class="reference internal" href="sys.html#sys.stdin" title="sys.stdin"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stdin</span></code></a>
 and <a class="reference internal" href="sys.html#sys.stdout" title="sys.stdout"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stdout</span></code></a> (<a class="reference internal" href="sys.html#sys.stderr" title="sys.stderr"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a> continues to use
 <code class="docutils literal notranslate"><span class="pre">backslashreplace</span></code> as it does in the default locale-aware mode)</p></li>
-<li><p>On Unix, <a class="reference internal" href="#os.device_encoding" title="os.device_encoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.device_encoding()</span></code></a> returns <code class="docutils literal notranslate"><span class="pre">'UTF-8'</span></code>. rather than the
+<li><p>On Unix, <a class="reference internal" href="#os.device_encoding" title="os.device_encoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.device_encoding()</span></code></a> returns <code class="docutils literal notranslate"><span class="pre">'UTF-8'</span></code> rather than the
 device encoding.</p></li>
 </ul>
 <p>Note that the standard stream settings in UTF-8 mode can be overridden by
@@ -303,7 +304,7 @@ can be read from <a class="reference internal" href="sys.html#sys.flags" title="
 and the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding and error handler</span></a>.</p>
 </section>
 <section id="process-parameters">
-<span id="os-procinfo"></span><h2>Process Parameters<a class="headerlink" href="#process-parameters" title="本標題的永久連結">¶</a></h2>
+<span id="os-procinfo"></span><h2>Process Parameters<a class="headerlink" href="#process-parameters" title="本標頭的永久連結">¶</a></h2>
 <p>These functions and data items provide information and operate on the current
 process and user.</p>
 <dl class="py function">
@@ -322,8 +323,8 @@ of your home directory (on some platforms), and is equivalent to
 <code class="docutils literal notranslate"><span class="pre">getenv(&quot;HOME&quot;)</span></code> in C.</p>
 <p>This mapping is captured the first time the <a class="reference internal" href="#module-os" title="os: Miscellaneous operating system interfaces."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code></a> module is imported,
 typically during Python startup as part of processing <code class="file docutils literal notranslate"><span class="pre">site.py</span></code>.  Changes
-to the environment made after this time are not reflected in <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>,
-except for changes made by modifying <code class="docutils literal notranslate"><span class="pre">os.environ</span></code> directly.</p>
+to the environment made after this time are not reflected in <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>,
+except for changes made by modifying <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a> directly.</p>
 <p>This mapping may be used to modify the environment as well as query the
 environment.  <a class="reference internal" href="#os.putenv" title="os.putenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">putenv()</span></code></a> will be called automatically when the mapping
 is modified.</p>
@@ -332,8 +333,8 @@ is modified.</p>
 to use a different encoding.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>Calling <a class="reference internal" href="#os.putenv" title="os.putenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">putenv()</span></code></a> directly does not change <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>, so it's better
-to modify <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>.</p>
+<p>Calling <a class="reference internal" href="#os.putenv" title="os.putenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">putenv()</span></code></a> directly does not change <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>, so it's better
+to modify <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -343,10 +344,10 @@ cause memory leaks.  Refer to the system documentation for
 </div>
 <p>You can delete items in this mapping to unset environment variables.
 <a class="reference internal" href="#os.unsetenv" title="os.unsetenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">unsetenv()</span></code></a> will be called automatically when an item is deleted from
-<code class="docutils literal notranslate"><span class="pre">os.environ</span></code>, and when one of the <code class="xref py py-meth docutils literal notranslate"><span class="pre">pop()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">clear()</span></code> methods is
+<a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>, and when one of the <code class="xref py py-meth docutils literal notranslate"><span class="pre">pop()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">clear()</span></code> methods is
 called.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>'s merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support <span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0584/"><strong>PEP 584</strong></a>'s merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators.</p>
 </div>
 </dd></dl>
 
@@ -363,7 +364,7 @@ and values are <a class="reference internal" href="stdtypes.html#bytes" title="b
 <p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support <span class="target" id="index-6"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>'s merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support <span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0584/"><strong>PEP 584</strong></a>'s merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators.</p>
 </div>
 </dd></dl>
 
@@ -444,7 +445,10 @@ with the preference being for <a class="reference internal" href="stdtypes.html#
 <dt class="sig sig-object py" id="os.getenv">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">getenv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.getenv" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the value of the environment variable <em>key</em> if it exists, or
-<em>default</em> if it doesn't. <em>key</em>, <em>default</em> and the result are str.</p>
+<em>default</em> if it doesn't. <em>key</em>, <em>default</em> and the result are str. Note that
+since <a class="reference internal" href="#os.getenv" title="os.getenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenv()</span></code></a> uses <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>, the mapping of <a class="reference internal" href="#os.getenv" title="os.getenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenv()</span></code></a> is
+similarly also captured on import, and the function may not reflect
+future environment changes.</p>
 <p>On Unix, keys and values are decoded with <a class="reference internal" href="sys.html#sys.getfilesystemencoding" title="sys.getfilesystemencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getfilesystemencoding()</span></code></a>
 and <code class="docutils literal notranslate"><span class="pre">'surrogateescape'</span></code> error handler. Use <a class="reference internal" href="#os.getenvb" title="os.getenvb"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getenvb()</span></code></a> if you
 would like to use a different encoding.</p>
@@ -455,7 +459,10 @@ would like to use a different encoding.</p>
 <dt class="sig sig-object py" id="os.getenvb">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">getenvb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.getenvb" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the value of the environment variable <em>key</em> if it exists, or
-<em>default</em> if it doesn't. <em>key</em>, <em>default</em> and the result are bytes.</p>
+<em>default</em> if it doesn't. <em>key</em>, <em>default</em> and the result are bytes. Note that
+since <a class="reference internal" href="#os.getenvb" title="os.getenvb"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenvb()</span></code></a> uses <a class="reference internal" href="#os.environb" title="os.environb"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environb</span></code></a>, the mapping of <a class="reference internal" href="#os.getenvb" title="os.getenvb"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenvb()</span></code></a> is
+similarly also captured on import, and the function may not reflect
+future environment changes.</p>
 <p><a class="reference internal" href="#os.getenvb" title="os.getenvb"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenvb()</span></code></a> is only available if <a class="reference internal" href="#os.supports_bytes_environ" title="os.supports_bytes_environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">supports_bytes_environ</span></code></a>
 is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：大部分的 Unix。</p>
@@ -656,10 +663,11 @@ group id.</p>
 <dd><p id="index-16">Set the environment variable named <em>key</em> to the string <em>value</em>.  Such
 changes to the environment affect subprocesses started with <a class="reference internal" href="#os.system" title="os.system"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.system()</span></code></a>,
 <a class="reference internal" href="#os.popen" title="os.popen"><code class="xref py py-func docutils literal notranslate"><span class="pre">popen()</span></code></a> or <a class="reference internal" href="#os.fork" title="os.fork"><code class="xref py py-func docutils literal notranslate"><span class="pre">fork()</span></code></a> and <a class="reference internal" href="#os.execv" title="os.execv"><code class="xref py py-func docutils literal notranslate"><span class="pre">execv()</span></code></a>.</p>
-<p>Assignments to items in <code class="docutils literal notranslate"><span class="pre">os.environ</span></code> are automatically translated into
+<p>Assignments to items in <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a> are automatically translated into
 corresponding calls to <a class="reference internal" href="#os.putenv" title="os.putenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">putenv()</span></code></a>; however, calls to <a class="reference internal" href="#os.putenv" title="os.putenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">putenv()</span></code></a>
-don't update <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>, so it is actually preferable to assign to items
-of <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>.</p>
+don't update <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>, so it is actually preferable to assign to items
+of <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>. This also applies to <a class="reference internal" href="#os.getenv" title="os.getenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenv()</span></code></a> and <a class="reference internal" href="#os.getenvb" title="os.getenvb"><code class="xref py py-func docutils literal notranslate"><span class="pre">getenvb()</span></code></a>, which
+respectively use <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a> and <a class="reference internal" href="#os.environb" title="os.environb"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environb</span></code></a> in their implementations.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>On some platforms, including FreeBSD and macOS, setting <code class="docutils literal notranslate"><span class="pre">environ</span></code> may
@@ -855,10 +863,10 @@ with named attributes.</p>
 <dd><p id="index-20">Unset (delete) the environment variable named <em>key</em>. Such changes to the
 environment affect subprocesses started with <a class="reference internal" href="#os.system" title="os.system"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.system()</span></code></a>, <a class="reference internal" href="#os.popen" title="os.popen"><code class="xref py py-func docutils literal notranslate"><span class="pre">popen()</span></code></a> or
 <a class="reference internal" href="#os.fork" title="os.fork"><code class="xref py py-func docutils literal notranslate"><span class="pre">fork()</span></code></a> and <a class="reference internal" href="#os.execv" title="os.execv"><code class="xref py py-func docutils literal notranslate"><span class="pre">execv()</span></code></a>.</p>
-<p>Deletion of items in <code class="docutils literal notranslate"><span class="pre">os.environ</span></code> is automatically translated into a
+<p>Deletion of items in <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a> is automatically translated into a
 corresponding call to <a class="reference internal" href="#os.unsetenv" title="os.unsetenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">unsetenv()</span></code></a>; however, calls to <a class="reference internal" href="#os.unsetenv" title="os.unsetenv"><code class="xref py py-func docutils literal notranslate"><span class="pre">unsetenv()</span></code></a>
-don't update <code class="docutils literal notranslate"><span class="pre">os.environ</span></code>, so it is actually preferable to delete items of
-<code class="docutils literal notranslate"><span class="pre">os.environ</span></code>.</p>
+don't update <a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>, so it is actually preferable to delete items of
+<a class="reference internal" href="#os.environ" title="os.environ"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">os.unsetenv</span></code> with argument <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.9 版本變更: </span>The function is now always available and is also available on Windows.</p>
@@ -867,7 +875,7 @@ don't update <code class="docutils literal notranslate"><span class="pre">os.env
 
 </section>
 <section id="file-object-creation">
-<span id="os-newstreams"></span><h2>File Object Creation<a class="headerlink" href="#file-object-creation" title="本標題的永久連結">¶</a></h2>
+<span id="os-newstreams"></span><h2>File Object Creation<a class="headerlink" href="#file-object-creation" title="本標頭的永久連結">¶</a></h2>
 <p>These functions create new <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file objects</span></a>.  (See also
 <a class="reference internal" href="#os.open" title="os.open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> for opening file descriptors.)</p>
 <dl class="py function">
@@ -881,7 +889,7 @@ be an integer.</p>
 
 </section>
 <section id="file-descriptor-operations">
-<span id="os-fd-ops"></span><h2>File Descriptor Operations<a class="headerlink" href="#file-descriptor-operations" title="本標題的永久連結">¶</a></h2>
+<span id="os-fd-ops"></span><h2>File Descriptor Operations<a class="headerlink" href="#file-descriptor-operations" title="本標頭的永久連結">¶</a></h2>
 <p>These functions operate on I/O streams referenced using file descriptors.</p>
 <p>File descriptors are small integers corresponding to a file that has been opened
 by the current process.  For example, standard input is usually file descriptor
@@ -1179,7 +1187,7 @@ wrap a file descriptor in a file object, use <a class="reference internal" href=
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>If the system call is interrupted and the signal handler does not raise an
 exception, the function now retries the system call instead of raising an
-<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-21"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale).</p>
+<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale).</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -1540,7 +1548,7 @@ descriptor as returned by <a class="reference internal" href="#os.open" title="o
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>If the system call is interrupted and the signal handler does not raise an
 exception, the function now retries the system call instead of raising an
-<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-23"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale).</p>
+<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-23"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale).</p>
 </div>
 </dd></dl>
 
@@ -1702,7 +1710,7 @@ object&quot; returned by the built-in function <a class="reference internal" hre
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>If the system call is interrupted and the signal handler does not raise an
 exception, the function now retries the system call instead of raising an
-<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-24"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale).</p>
+<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-24"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale).</p>
 </div>
 </dd></dl>
 
@@ -1723,7 +1731,7 @@ before proceeding to the second, and so on.</p>
 </dd></dl>
 
 <section id="querying-the-size-of-a-terminal">
-<span id="terminal-size"></span><h3>Querying the size of a terminal<a class="headerlink" href="#querying-the-size-of-a-terminal" title="本標題的永久連結">¶</a></h3>
+<span id="terminal-size"></span><h3>Querying the size of a terminal<a class="headerlink" href="#querying-the-size-of-a-terminal" title="本標頭的永久連結">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
@@ -1762,7 +1770,7 @@ implementation.</p>
 
 </section>
 <section id="inheritance-of-file-descriptors">
-<span id="fd-inheritance"></span><h3>Inheritance of File Descriptors<a class="headerlink" href="#inheritance-of-file-descriptors" title="本標題的永久連結">¶</a></h3>
+<span id="fd-inheritance"></span><h3>Inheritance of File Descriptors<a class="headerlink" href="#inheritance-of-file-descriptors" title="本標頭的永久連結">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
@@ -1807,7 +1815,7 @@ streams are closed, and inheritable handles are only inherited if the
 </section>
 </section>
 <section id="files-and-directories">
-<span id="os-file-dir"></span><h2>Files and Directories<a class="headerlink" href="#files-and-directories" title="本標題的永久連結">¶</a></h2>
+<span id="os-file-dir"></span><h2>Files and Directories<a class="headerlink" href="#files-and-directories" title="本標頭的永久連結">¶</a></h2>
 <p>On some Unix platforms, many of these functions support one or more of these
 features:</p>
 <ul id="path-fd">
@@ -2066,7 +2074,7 @@ open file.  As of Python 3.3, this is equivalent to <code class="docutils litera
 <dd><p>Return a bytestring representing the current working directory.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版本變更: </span>The function now uses the UTF-8 encoding on Windows, rather than the ANSI
-code page: see <span class="target" id="index-26"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0529"><strong>PEP 529</strong></a> for the rationale. The function is no longer
+code page: see <span class="target" id="index-26"></span><a class="pep reference external" href="https://peps.python.org/pep-0529/"><strong>PEP 529</strong></a> for the rationale. The function is no longer
 deprecated on Windows.</p>
 </div>
 </dd></dl>
@@ -2202,7 +2210,8 @@ for <a class="reference internal" href="#os.stat" title="os.stat"><code class="x
 <dt class="sig sig-object py" id="os.mkdir">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0o777</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_fd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.mkdir" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a directory named <em>path</em> with numeric mode <em>mode</em>.</p>
-<p>If the directory already exists, <a class="reference internal" href="exceptions.html#FileExistsError" title="FileExistsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FileExistsError</span></code></a> is raised.</p>
+<p>If the directory already exists, <a class="reference internal" href="exceptions.html#FileExistsError" title="FileExistsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FileExistsError</span></code></a> is raised. If a parent
+directory in the path does not exist, <a class="reference internal" href="exceptions.html#FileNotFoundError" title="FileNotFoundError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></a> is raised.</p>
 <p id="mkdir-modebits">On some systems, <em>mode</em> is ignored.  Where it is used, the current umask
 value is first masked out.  If bits other than the last 9 (i.e. the last 3
 digits of the octal representation of the <em>mode</em>) are set, their meaning is
@@ -2227,7 +2236,7 @@ platform-dependent.  On some platforms, they are ignored and you should call
 intermediate-level directories needed to contain the leaf directory.</p>
 <p>The <em>mode</em> parameter is passed to <a class="reference internal" href="#os.mkdir" title="os.mkdir"><code class="xref py py-func docutils literal notranslate"><span class="pre">mkdir()</span></code></a> for creating the leaf
 directory; see <a class="reference internal" href="#mkdir-modebits"><span class="std std-ref">the mkdir() description</span></a> for how it
-is interpreted.  To set the file permission bits of any newly-created parent
+is interpreted.  To set the file permission bits of any newly created parent
 directories you can set the umask before invoking <a class="reference internal" href="#os.makedirs" title="os.makedirs"><code class="xref py py-func docutils literal notranslate"><span class="pre">makedirs()</span></code></a>.  The
 file permission bits of existing parent directories are not changed.</p>
 <p>If <em>exist_ok</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code> (the default), an <a class="reference internal" href="exceptions.html#FileExistsError" title="FileExistsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FileExistsError</span></code></a> is
@@ -2246,14 +2255,14 @@ include <a class="reference internal" href="#os.pardir" title="os.pardir"><code 
 <p><span class="versionmodified changed">在 3.4.1 版本變更: </span>Before Python 3.4.1, if <em>exist_ok</em> was <code class="docutils literal notranslate"><span class="pre">True</span></code> and the directory existed,
 <a class="reference internal" href="#os.makedirs" title="os.makedirs"><code class="xref py py-func docutils literal notranslate"><span class="pre">makedirs()</span></code></a> would still raise an error if <em>mode</em> did not match the
 mode of the existing directory. Since this behavior was impossible to
-implement safely, it was removed in Python 3.4.1. See <a class="reference external" href="https://bugs.python.org/issue21082">bpo-21082</a>.</p>
+implement safely, it was removed in Python 3.4.1. See <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=21082">bpo-21082</a>.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.7 版本變更: </span>The <em>mode</em> argument no longer affects the file permission bits of
-newly-created intermediate-level directories.</p>
+newly created intermediate-level directories.</p>
 </div>
 </dd></dl>
 
@@ -2429,7 +2438,7 @@ will fail with an <a class="reference internal" href="exceptions.html#OSError" t
 <a class="reference internal" href="exceptions.html#IsADirectoryError" title="IsADirectoryError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IsADirectoryError</span></code></a> or a <a class="reference internal" href="exceptions.html#NotADirectoryError" title="NotADirectoryError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotADirectoryError</span></code></a> will be raised
 respectively.  If both are directories and <em>dst</em> is empty, <em>dst</em> will be
 silently replaced.  If <em>dst</em> is a non-empty directory, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>
-is raised. If both are files, <em>dst</em> it will be replaced silently if the user
+is raised. If both are files, <em>dst</em> will be replaced silently if the user
 has permission.  The operation may fail on some Unix flavors if <em>src</em> and
 <em>dst</em> are on different filesystems.  If successful, the renaming will be an
 atomic operation (this is a POSIX requirement).</p>
@@ -2466,7 +2475,7 @@ permissions needed to remove the leaf directory or file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="os.replace">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_dir_fd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir_fd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.replace" title="本定義的永久連結">¶</a></dt>
-<dd><p>Rename the file or directory <em>src</em> to <em>dst</em>.  If <em>dst</em> is a directory,
+<dd><p>Rename the file or directory <em>src</em> to <em>dst</em>.  If <em>dst</em> is a non-empty directory,
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> will be raised.  If <em>dst</em> exists and is a file, it will
 be replaced silently if the user has permission.  The operation may fail
 if <em>src</em> and <em>dst</em> are on different filesystems.  If successful,
@@ -2552,9 +2561,9 @@ system call:</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>On Unix-based systems, <a class="reference internal" href="#os.scandir" title="os.scandir"><code class="xref py py-func docutils literal notranslate"><span class="pre">scandir()</span></code></a> uses the system's
-<a class="reference external" href="http://pubs.opengroup.org/onlinepubs/009695399/functions/opendir.html">opendir()</a>
+<a class="reference external" href="https://pubs.opengroup.org/onlinepubs/009695399/functions/opendir.html">opendir()</a>
 and
-<a class="reference external" href="http://pubs.opengroup.org/onlinepubs/009695399/functions/readdir_r.html">readdir()</a>
+<a class="reference external" href="https://pubs.opengroup.org/onlinepubs/009695399/functions/readdir_r.html">readdir()</a>
 functions. On Windows, it uses the Win32
 <a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa364418(v=vs.85).aspx">FindFirstFileW</a>
 and
@@ -3575,7 +3584,7 @@ descriptor. On read the internal counter is decremented by one.</p>
 </dd></dl>
 
 <section id="linux-extended-attributes">
-<h3>Linux extended attributes<a class="headerlink" href="#linux-extended-attributes" title="本標題的永久連結">¶</a></h3>
+<h3>Linux extended attributes<a class="headerlink" href="#linux-extended-attributes" title="本標頭的永久連結">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
@@ -3673,7 +3682,7 @@ indicates the operation must replace an existing attribute.</p>
 </section>
 </section>
 <section id="process-management">
-<span id="os-process"></span><h2>Process Management<a class="headerlink" href="#process-management" title="本標題的永久連結">¶</a></h2>
+<span id="os-process"></span><h2>Process Management<a class="headerlink" href="#process-management" title="本標頭的永久連結">¶</a></h2>
 <p>These functions may be used to create and manage processes.</p>
 <p>The various <a class="reference internal" href="#os.execl" title="os.execl"><code class="xref py py-func docutils literal notranslate"><span class="pre">exec*</span></code></a> functions take a list of arguments for the new
 program loaded into the process.  In each case, the first of these arguments is
@@ -3697,8 +3706,8 @@ Python signal handler registered for <code class="xref py py-const docutils lite
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">add_dll_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.add_dll_directory" title="本定義的永久連結">¶</a></dt>
 <dd><p>Add a path to the DLL search path.</p>
 <p>This search path is used when resolving dependencies for imported
-extension modules (the module itself is resolved through sys.path),
-and also by <a class="reference internal" href="ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ctypes</span></code></a>.</p>
+extension modules (the module itself is resolved through
+<a class="reference internal" href="sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a>), and also by <a class="reference internal" href="ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ctypes</span></code></a>.</p>
 <p>Remove the directory by calling <strong>close()</strong> on the returned object
 or using it in a <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement.</p>
 <p>See the <a class="reference external" href="https://msdn.microsoft.com/44228cf2-6306-466c-8f16-f513cd3ba8b5">Microsoft documentation</a>
@@ -4022,7 +4031,7 @@ defined.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="os.popen">
-<span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">popen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.popen" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">popen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.popen" title="本定義的永久連結">¶</a></dt>
 <dd><p>Open a pipe to or from command <em>cmd</em>.
 The return value is an open file object
 connected to the pipe, which can be read or written depending on whether <em>mode</em>
@@ -4361,7 +4370,7 @@ The return value is an object with five attributes:</p>
 containing <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">system</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">children_user</span></code>,
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">children_system</span></code>, and <code class="xref py py-attr docutils literal notranslate"><span class="pre">elapsed</span></code> in that order.</p>
 <p>See the Unix manual page
-<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/times(2)">times(2)</a></em> and <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/times(3)">times(3)</a></em> manual page on Unix or <a class="reference external" href="https://docs.microsoft.com/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesstimes">the GetProcessTimes MSDN</a>
+<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/times(2)">times(2)</a></em> and <a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?time(3)">times(3)</a> manual page on Unix or <a class="reference external" href="https://docs.microsoft.com/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesstimes">the GetProcessTimes MSDN</a>
 on Windows. On Windows, only <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">system</span></code> are known; the other attributes are zero.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、Windows。</p>
 <div class="versionchanged">
@@ -4501,7 +4510,7 @@ exit code.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版本變更: </span>If the system call is interrupted and the signal handler does not raise an
 exception, the function now retries the system call instead of raising an
-<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-43"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> for the rationale).</p>
+<a class="reference internal" href="exceptions.html#InterruptedError" title="InterruptedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InterruptedError</span></code></a> exception (see <span class="target" id="index-43"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale).</p>
 </div>
 </dd></dl>
 
@@ -4662,7 +4671,7 @@ otherwise return <code class="docutils literal notranslate"><span class="pre">Fa
 
 </section>
 <section id="interface-to-the-scheduler">
-<h2>Interface to the scheduler<a class="headerlink" href="#interface-to-the-scheduler" title="本標題的永久連結">¶</a></h2>
+<h2>Interface to the scheduler<a class="headerlink" href="#interface-to-the-scheduler" title="本標頭的永久連結">¶</a></h2>
 <p>These functions control how a process is allocated CPU time by the operating
 system. They are only available on some Unix platforms. For more detailed
 information, consult your Unix manpages.</p>
@@ -4805,7 +4814,7 @@ if zero) is restricted to.</p>
 
 </section>
 <section id="miscellaneous-system-information">
-<span id="os-path"></span><h2>Miscellaneous System Information<a class="headerlink" href="#miscellaneous-system-information" title="本標題的永久連結">¶</a></h2>
+<span id="os-path"></span><h2>Miscellaneous System Information<a class="headerlink" href="#miscellaneous-system-information" title="本標頭的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="os.confstr">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">confstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.confstr" title="本定義的永久連結">¶</a></dt>
@@ -4977,7 +4986,7 @@ POSIX, <code class="docutils literal notranslate"><span class="pre">'nul'</span>
 
 </section>
 <section id="random-numbers">
-<h2>Random numbers<a class="headerlink" href="#random-numbers" title="本標題的永久連結">¶</a></h2>
+<h2>Random numbers<a class="headerlink" href="#random-numbers" title="本標頭的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="os.getrandom">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">getrandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.getrandom" title="本定義的永久連結">¶</a></dt>
@@ -4992,7 +5001,7 @@ data will have a negative impact on  other users  of the <code class="docutils l
 <p>The flags argument is a bit mask that can contain zero or more of the
 following values ORed together: <a class="reference internal" href="#os.GRND_RANDOM" title="os.GRND_RANDOM"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.GRND_RANDOM</span></code></a> and
 <a class="reference internal" href="#os.GRND_NONBLOCK" title="os.GRND_NONBLOCK"><code class="xref py py-data docutils literal notranslate"><span class="pre">GRND_NONBLOCK</span></code></a>.</p>
-<p>See also the <a class="reference external" href="http://man7.org/linux/man-pages/man2/getrandom.2.html">Linux getrandom() manual page</a>.</p>
+<p>See also the <a class="reference external" href="https://man7.org/linux/man-pages/man2/getrandom.2.html">Linux getrandom() manual page</a>.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Linux 3.17 以上。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
@@ -5002,13 +5011,13 @@ following values ORed together: <a class="reference internal" href="#os.GRND_RAN
 <dl class="py function">
 <dt class="sig sig-object py" id="os.urandom">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">urandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.urandom" title="本定義的永久連結">¶</a></dt>
-<dd><p>Return a string of <em>size</em> random bytes suitable for cryptographic use.</p>
+<dd><p>Return a bytestring of <em>size</em> random bytes suitable for cryptographic use.</p>
 <p>This function returns random bytes from an OS-specific randomness source.  The
 returned data should be unpredictable enough for cryptographic applications,
 though its exact quality depends on the OS implementation.</p>
 <p>On Linux, if the <code class="docutils literal notranslate"><span class="pre">getrandom()</span></code> syscall is available, it is used in
 blocking mode: block until the system urandom entropy pool is initialized
-(128 bits of entropy are collected by the kernel). See the <span class="target" id="index-52"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0524"><strong>PEP 524</strong></a> for
+(128 bits of entropy are collected by the kernel). See the <span class="target" id="index-52"></span><a class="pep reference external" href="https://peps.python.org/pep-0524/"><strong>PEP 524</strong></a> for
 the rationale. On Linux, the <a class="reference internal" href="#os.getrandom" title="os.getrandom"><code class="xref py py-func docutils literal notranslate"><span class="pre">getrandom()</span></code></a> function can be used to get
 random bytes in non-blocking mode (using the <a class="reference internal" href="#os.GRND_NONBLOCK" title="os.GRND_NONBLOCK"><code class="xref py py-data docutils literal notranslate"><span class="pre">GRND_NONBLOCK</span></code></a> flag) or
 to poll until the system urandom entropy pool is initialized.</p>
@@ -5100,7 +5109,7 @@ block in these cases, but instead immediately raises <a class="reference interna
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="allos.html"
-                          title="上一章">Generic Operating System Services</a></p>
+                          title="上一章">通用作業系統服務</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -5119,6 +5128,10 @@ block in these cases, but instead immediately raises <a class="reference interna
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -5135,7 +5148,7 @@ block in these cases, but instead immediately raises <a class="reference interna
           <a href="io.html" title="io --- Core tools for working with streams"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="allos.html" title="Generic Operating System Services"
+          <a href="allos.html" title="通用作業系統服務"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -5148,11 +5161,11 @@ block in these cases, but instead immediately raises <a class="reference interna
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="allos.html" >Generic Operating System Services</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="allos.html" >通用作業系統服務</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a></li>
                 <li class="right">
                     
@@ -5185,11 +5198,11 @@ block in these cases, but instead immediately raises <a class="reference interna
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

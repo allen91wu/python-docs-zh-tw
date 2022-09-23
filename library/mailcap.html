@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>mailcap --- Mailcap file handling &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mailcap --- Mailcap file handling &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,20 +14,21 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="mailbox --- Manipulate mailboxes in various formats" href="mailbox.html" />
-    <link rel="prev" title="json --- JSON encoder and decoder" href="json.html" />
+    <link rel="next" title="msilib --- 讀寫 Microsoft Installer 檔案" href="msilib.html" />
+    <link rel="prev" title="imp --- Access the import internals" href="imp.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/mailcap.html" />
     
       
@@ -72,13 +73,13 @@
             <div class="language_switcher_placeholder"></div>
   <div>
     <h4>上個主題</h4>
-    <p class="topless"><a href="json.html"
-                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> --- JSON encoder and decoder</a></p>
+    <p class="topless"><a href="imp.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code> --- Access the <span class="xref std std-ref">import</span> internals</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
-    <p class="topless"><a href="mailbox.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailbox</span></code> --- Manipulate mailboxes in various formats</a></p>
+    <p class="topless"><a href="msilib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msilib</span></code> --- 讀寫 Microsoft Installer 檔案</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -106,10 +107,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="mailbox.html" title="mailbox --- Manipulate mailboxes in various formats"
+          <a href="msilib.html" title="msilib --- 讀寫 Microsoft Installer 檔案"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="json.html" title="json --- JSON encoder and decoder"
+          <a href="imp.html" title="imp --- Access the import internals"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -122,11 +123,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="netdata.html" accesskey="U">Internet Data Handling</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="superseded.html" accesskey="U">已被取代的模組</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></li>
                 <li class="right">
                     
@@ -151,8 +152,13 @@
           <div class="body" role="main">
             
   <section id="module-mailcap">
-<span id="mailcap-mailcap-file-handling"></span><h1><a class="reference internal" href="#module-mailcap" title="mailcap: Mailcap file handling."><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code></a> --- Mailcap file handling<a class="headerlink" href="#module-mailcap" title="本標題的永久連結">¶</a></h1>
+<span id="mailcap-mailcap-file-handling"></span><h1><a class="reference internal" href="#module-mailcap" title="mailcap: Mailcap file handling.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code></a> --- Mailcap file handling<a class="headerlink" href="#module-mailcap" title="本標頭的永久連結">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/mailcap.py">Lib/mailcap.py</a></p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">在 3.11 版本開始棄用: </span>The <a class="reference internal" href="#module-mailcap" title="mailcap: Mailcap file handling.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code></a> module is deprecated
+(see <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0594/#mailcap"><strong>PEP 594</strong></a> for details).
+The <a class="reference internal" href="mimetypes.html#module-mimetypes" title="mimetypes: Mapping of filename extensions to MIME types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code></a> module provides an alternative.</p>
+</div>
 <hr class="docutils" />
 <p>Mailcap files are used to configure how MIME-aware applications such as mail
 readers and web browsers react to files with different MIME types. (The name
@@ -162,7 +168,7 @@ encounters an email message or web document with the MIME type
 <em class="mimetype">video/mpeg</em>, <code class="docutils literal notranslate"><span class="pre">%s</span></code> will be replaced by a filename (usually one
 belonging to a temporary file) and the <strong class="program">xmpeg</strong> program can be
 automatically started to view the file.</p>
-<p>The mailcap format is documented in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1524.html"><strong>RFC 1524</strong></a>, &quot;A User Agent Configuration
+<p>The mailcap format is documented in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1524.html"><strong>RFC 1524</strong></a>, &quot;A User Agent Configuration
 Mechanism For Multimedia Mail Format Information&quot;, but is not an internet
 standard.  However, mailcap files are supported on most Unix systems.</p>
 <dl class="py function">
@@ -176,7 +182,7 @@ found, <code class="docutils literal notranslate"><span class="pre">(None,</span
 be performed; the default value is 'view', since in the  most common case you
 simply want to view the body of the MIME-typed data.  Other possible values
 might be 'compose' and 'edit', if you wanted to create a new body of the given
-MIME type or alter the existing body data.  See <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1524.html"><strong>RFC 1524</strong></a> for a complete list
+MIME type or alter the existing body data.  See <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1524.html"><strong>RFC 1524</strong></a> for a complete list
 of these fields.</p>
 <p><em>filename</em> is the filename to be substituted for <code class="docutils literal notranslate"><span class="pre">%s</span></code> in the command line; the
 default value is <code class="docutils literal notranslate"><span class="pre">'/dev/null'</span></code> which is almost certainly not what you want, so
@@ -193,6 +199,17 @@ of the parameter named 'foo'.  For example, if the command line <code class="doc
 external condition (such as the machine architecture, or the window system in
 use) to determine whether or not the mailcap line applies.  <a class="reference internal" href="#mailcap.findmatch" title="mailcap.findmatch"><code class="xref py py-func docutils literal notranslate"><span class="pre">findmatch()</span></code></a>
 will automatically check such conditions and skip the entry if the check fails.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10.8 版本變更: </span>To prevent security issues with shell metacharacters (symbols that have
+special effects in a shell command line), <code class="docutils literal notranslate"><span class="pre">findmatch</span></code> will refuse
+to inject ASCII characters other than alphanumerics and <code class="docutils literal notranslate"><span class="pre">&#64;+=:,./-_</span></code>
+into the returned command line.</p>
+<p>If a disallowed character appears in <em>filename</em>, <code class="docutils literal notranslate"><span class="pre">findmatch</span></code> will always
+return <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code> as if no entry was found.
+If such a character appears elsewhere (a value in <em>plist</em> or in <em>MIMEtype</em>),
+<code class="docutils literal notranslate"><span class="pre">findmatch</span></code> will ignore all mailcap entries which use that value.
+A <a class="reference internal" href="warnings.html#module-warnings" title="warnings: Issue warning messages and control their disposition."><code class="xref py py-mod docutils literal notranslate"><span class="pre">warning</span></code></a> will be raised in either case.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -226,13 +243,13 @@ settings in the system mailcap files <code class="file docutils literal notransl
         <div class="sphinxsidebarwrapper">
   <div>
     <h4>上個主題</h4>
-    <p class="topless"><a href="json.html"
-                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> --- JSON encoder and decoder</a></p>
+    <p class="topless"><a href="imp.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code> --- Access the <span class="xref std std-ref">import</span> internals</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
-    <p class="topless"><a href="mailbox.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailbox</span></code> --- Manipulate mailboxes in various formats</a></p>
+    <p class="topless"><a href="msilib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msilib</span></code> --- 讀寫 Microsoft Installer 檔案</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -246,6 +263,10 @@ settings in the system mailcap files <code class="file docutils literal notransl
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -259,10 +280,10 @@ settings in the system mailcap files <code class="file docutils literal notransl
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="mailbox.html" title="mailbox --- Manipulate mailboxes in various formats"
+          <a href="msilib.html" title="msilib --- 讀寫 Microsoft Installer 檔案"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="json.html" title="json --- JSON encoder and decoder"
+          <a href="imp.html" title="imp --- Access the import internals"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -275,11 +296,11 @@ settings in the system mailcap files <code class="file docutils literal notransl
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="superseded.html" >已被取代的模組</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></li>
                 <li class="right">
                     
@@ -312,11 +333,11 @@ settings in the system mailcap files <code class="file docutils literal notransl
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>

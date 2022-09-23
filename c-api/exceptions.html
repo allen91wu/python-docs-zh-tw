@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_TW">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>例外處理 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>例外處理 &#8212; Python 3.10.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -14,13 +14,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.10.2 說明文件 中搜尋"
+          title="在 Python 3.10.7 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -142,7 +143,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API 參考手冊</a> &#187;</li>
@@ -170,7 +171,7 @@
           <div class="body" role="main">
             
   <section id="exception-handling">
-<span id="exceptionhandling"></span><h1>例外處理<a class="headerlink" href="#exception-handling" title="本標題的永久連結">¶</a></h1>
+<span id="exceptionhandling"></span><h1>例外處理<a class="headerlink" href="#exception-handling" title="本標頭的永久連結">¶</a></h1>
 <p>The functions described in this chapter will let you handle and raise Python
 exceptions.  It is important to understand some of the basics of Python
 exception handling.  It works somewhat like the POSIX <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> variable:
@@ -202,7 +203,7 @@ therefore still propagating), while the latter returns an exception after
 it is caught (and has therefore stopped propagating).</p>
 </div>
 <section id="printing-and-clearing">
-<h2>Printing and clearing<a class="headerlink" href="#printing-and-clearing" title="本標題的永久連結">¶</a></h2>
+<h2>Printing and clearing<a class="headerlink" href="#printing-and-clearing" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_Clear">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_Clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_Clear" title="本定義的永久連結">¶</a><br /></dt>
@@ -247,7 +248,7 @@ the repr of <em>obj</em> will be printed in the warning message.</p>
 
 </section>
 <section id="raising-exceptions">
-<h2>Raising exceptions<a class="headerlink" href="#raising-exceptions" title="本標題的永久連結">¶</a></h2>
+<h2>Raising exceptions<a class="headerlink" href="#raising-exceptions" title="本標頭的永久連結">¶</a></h2>
 <p>These functions help you set the current thread's error indicator.
 For convenience, some of these functions will always return a
 <code class="docutils literal notranslate"><span class="pre">NULL</span></code> pointer for use in a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
@@ -424,6 +425,16 @@ and <code class="docutils literal notranslate"><span class="pre">path</span></co
 </dd></dl>
 
 <dl class="c function">
+<dt class="sig sig-object c" id="c.PyErr_SetImportErrorSubclass">
+<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SetImportErrorSubclass</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exception</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">msg</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">path</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SetImportErrorSubclass" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.6.</em><p>Much like <a class="reference internal" href="#c.PyErr_SetImportError" title="PyErr_SetImportError"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetImportError()</span></code></a> but this function allows for
+specifying a subclass of <a class="reference internal" href="../library/exceptions.html#ImportError" title="ImportError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportError</span></code></a> to raise.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_SyntaxLocationObject">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SyntaxLocationObject</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">lineno</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">col_offset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SyntaxLocationObject" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Set file, line, and offset information for the current exception.  If the
@@ -448,7 +459,7 @@ decoded from the <a class="reference internal" href="../glossary.html#term-files
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_SyntaxLocation">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SyntaxLocation</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">lineno</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SyntaxLocation" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Like <a class="reference internal" href="#c.PyErr_SyntaxLocationEx" title="PyErr_SyntaxLocationEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SyntaxLocationEx()</span></code></a>, but the col_offset parameter is
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Like <a class="reference internal" href="#c.PyErr_SyntaxLocationEx" title="PyErr_SyntaxLocationEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SyntaxLocationEx()</span></code></a>, but the <em>col_offset</em> parameter is
 omitted.</p>
 </dd></dl>
 
@@ -463,7 +474,7 @@ use.</p>
 
 </section>
 <section id="issuing-warnings">
-<h2>Issuing warnings<a class="headerlink" href="#issuing-warnings" title="本標題的永久連結">¶</a></h2>
+<h2>Issuing warnings<a class="headerlink" href="#issuing-warnings" title="本標頭的永久連結">¶</a></h2>
 <p>Use these functions to issue warnings from C code.  They mirror similar
 functions exported by the Python <a class="reference internal" href="../library/warnings.html#module-warnings" title="warnings: Issue warning messages and control their disposition."><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code></a> module.  They normally
 print a warning message to <em>sys.stderr</em>; however, it is
@@ -478,7 +489,7 @@ exception handling (for example, <a class="reference internal" href="refcounting
 an error value).</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_WarnEx">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_WarnEx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">category</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">message</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">stack_level</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_WarnEx" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_WarnEx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">category</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">message</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stack_level</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_WarnEx" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Issue a warning message.  The <em>category</em> argument is a warning category (see
 below) or <code class="docutils literal notranslate"><span class="pre">NULL</span></code>; the <em>message</em> argument is a UTF-8 encoded string.  <em>stack_level</em> is a
 positive number giving a number of stack frames; the warning will be issued from
@@ -496,21 +507,11 @@ documentation.  There is no C API for warning control.</p>
 </dd></dl>
 
 <dl class="c function">
-<dt class="sig sig-object c" id="c.PyErr_SetImportErrorSubclass">
-<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SetImportErrorSubclass</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exception</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">msg</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">path</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SetImportErrorSubclass" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.6.</em><p>Much like <a class="reference internal" href="#c.PyErr_SetImportError" title="PyErr_SetImportError"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetImportError()</span></code></a> but this function allows for
-specifying a subclass of <a class="reference internal" href="../library/exceptions.html#ImportError" title="ImportError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportError</span></code></a> to raise.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
-</div>
-</dd></dl>
-
-<dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_WarnExplicitObject">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_WarnExplicitObject</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">category</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">message</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">lineno</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">module</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">registry</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_WarnExplicitObject" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Issue a warning message with explicit control over all warning attributes.  This
 is a straightforward wrapper around the Python function
-<a class="reference internal" href="../library/warnings.html#warnings.warn_explicit" title="warnings.warn_explicit"><code class="xref py py-func docutils literal notranslate"><span class="pre">warnings.warn_explicit()</span></code></a>, see there for more information.  The <em>module</em>
+<a class="reference internal" href="../library/warnings.html#warnings.warn_explicit" title="warnings.warn_explicit"><code class="xref py py-func docutils literal notranslate"><span class="pre">warnings.warn_explicit()</span></code></a>; see there for more information.  The <em>module</em>
 and <em>registry</em> arguments may be set to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> to get the default effect
 described there.</p>
 <div class="versionadded">
@@ -528,7 +529,7 @@ described there.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_WarnFormat">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_WarnFormat</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">category</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">stack_level</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_WarnFormat" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_WarnFormat</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">category</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stack_level</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_WarnFormat" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Function similar to <a class="reference internal" href="#c.PyErr_WarnEx" title="PyErr_WarnEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_WarnEx()</span></code></a>, but use
 <a class="reference internal" href="unicode.html#c.PyUnicode_FromFormat" title="PyUnicode_FromFormat"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyUnicode_FromFormat()</span></code></a> to format the warning message.  <em>format</em> is
 an ASCII-encoded string.</p>
@@ -539,7 +540,7 @@ an ASCII-encoded string.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_ResourceWarning">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_ResourceWarning</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">source</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">stack_level</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_ResourceWarning" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_ResourceWarning</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">source</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stack_level</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_ResourceWarning" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.6.</em><p>Function similar to <a class="reference internal" href="#c.PyErr_WarnFormat" title="PyErr_WarnFormat"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_WarnFormat()</span></code></a>, but <em>category</em> is
 <a class="reference internal" href="../library/exceptions.html#ResourceWarning" title="ResourceWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResourceWarning</span></code></a> and it passes <em>source</em> to <code class="xref py py-func docutils literal notranslate"><span class="pre">warnings.WarningMessage()</span></code>.</p>
 <div class="versionadded">
@@ -549,7 +550,7 @@ an ASCII-encoded string.</p>
 
 </section>
 <section id="querying-the-error-indicator">
-<h2>Querying the error indicator<a class="headerlink" href="#querying-the-error-indicator" title="本標題的永久連結">¶</a></h2>
+<h2>Querying the error indicator<a class="headerlink" href="#querying-the-error-indicator" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_Occurred">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_Occurred</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_Occurred" title="本定義的永久連結">¶</a><br /></dt>
@@ -691,7 +692,7 @@ state.</p>
 
 </section>
 <section id="signal-handling">
-<h2>Signal Handling<a class="headerlink" href="#signal-handling" title="本標題的永久連結">¶</a></h2>
+<h2>Signal Handling<a class="headerlink" href="#signal-handling" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_CheckSignals">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_CheckSignals</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_CheckSignals" title="本定義的永久連結">¶</a><br /></dt>
@@ -770,7 +771,7 @@ only be called from the main thread.</p>
 
 </section>
 <section id="exception-classes">
-<h2>例外類別<a class="headerlink" href="#exception-classes" title="本標題的永久連結">¶</a></h2>
+<h2>例外類別<a class="headerlink" href="#exception-classes" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_NewException">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_NewException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">base</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">dict</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_NewException" title="本定義的永久連結">¶</a><br /></dt>
@@ -799,7 +800,7 @@ docstring for the exception class.</p>
 
 </section>
 <section id="exception-objects">
-<h2>例外物件<a class="headerlink" href="#exception-objects" title="本標題的永久連結">¶</a></h2>
+<h2>例外物件<a class="headerlink" href="#exception-objects" title="本標頭的永久連結">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyException_GetTraceback">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyException_GetTraceback</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ex</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyException_GetTraceback" title="本定義的永久連結">¶</a><br /></dt>
@@ -851,11 +852,11 @@ instance or <a class="reference internal" href="../library/constants.html#None" 
 
 </section>
 <section id="unicode-exception-objects">
-<span id="unicodeexceptions"></span><h2>Unicode Exception Objects<a class="headerlink" href="#unicode-exception-objects" title="本標題的永久連結">¶</a></h2>
+<span id="unicodeexceptions"></span><h2>Unicode Exception Objects<a class="headerlink" href="#unicode-exception-objects" title="本標頭的永久連結">¶</a></h2>
 <p>The following functions are used to create and modify Unicode exceptions from C.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeDecodeError_Create">
-<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_Create</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">encoding</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">start</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reason</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_Create" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_Create</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">encoding</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">start</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reason</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_Create" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="refcount">Return value: New reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Create a <a class="reference internal" href="../library/exceptions.html#UnicodeDecodeError" title="UnicodeDecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnicodeDecodeError</span></code></a> object with the attributes <em>encoding</em>,
 <em>object</em>, <em>length</em>, <em>start</em>, <em>end</em> and <em>reason</em>. <em>encoding</em> and <em>reason</em> are
 UTF-8 encoded strings.</p>
@@ -863,7 +864,7 @@ UTF-8 encoded strings.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeEncodeError_Create">
-<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_Create</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">encoding</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="unicode.html#c.Py_UNICODE" title="Py_UNICODE"><span class="n"><span class="pre">Py_UNICODE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">start</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reason</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_Create" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_Create</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">encoding</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="unicode.html#c.Py_UNICODE" title="Py_UNICODE"><span class="n"><span class="pre">Py_UNICODE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">start</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reason</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_Create" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="refcount">Return value: New reference.</em><p>Create a <a class="reference internal" href="../library/exceptions.html#UnicodeEncodeError" title="UnicodeEncodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnicodeEncodeError</span></code></a> object with the attributes <em>encoding</em>,
 <em>object</em>, <em>length</em>, <em>start</em>, <em>end</em> and <em>reason</em>. <em>encoding</em> and <em>reason</em> are
 UTF-8 encoded strings.</p>
@@ -876,7 +877,7 @@ UTF-8 encoded strings.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeTranslateError_Create">
-<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_Create</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="unicode.html#c.Py_UNICODE" title="Py_UNICODE"><span class="n"><span class="pre">Py_UNICODE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">start</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reason</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_Create" title="本定義的永久連結">¶</a><br /></dt>
+<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_Create</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="unicode.html#c.Py_UNICODE" title="Py_UNICODE"><span class="n"><span class="pre">Py_UNICODE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">length</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">start</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reason</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_Create" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="refcount">Return value: New reference.</em><p>Create a <a class="reference internal" href="../library/exceptions.html#UnicodeTranslateError" title="UnicodeTranslateError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnicodeTranslateError</span></code></a> object with the attributes <em>object</em>,
 <em>length</em>, <em>start</em>, <em>end</em> and <em>reason</em>. <em>reason</em> is a UTF-8 encoded string.</p>
 <div class="deprecated">
@@ -906,11 +907,11 @@ UTF-8 encoded strings.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeDecodeError_GetStart">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_GetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_GetStart" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_GetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_GetStart" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeEncodeError_GetStart">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_GetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_GetStart" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_GetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_GetStart" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeTranslateError_GetStart">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_GetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_GetStart" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_GetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_GetStart" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Get the <em>start</em> attribute of the given exception object and place it into
 <em>*start</em>.  <em>start</em> must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  Return <code class="docutils literal notranslate"><span class="pre">0</span></code> on success, <code class="docutils literal notranslate"><span class="pre">-1</span></code> on
 failure.</p>
@@ -918,22 +919,22 @@ failure.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeDecodeError_SetStart">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_SetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_SetStart" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_SetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_SetStart" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeEncodeError_SetStart">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_SetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_SetStart" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_SetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_SetStart" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeTranslateError_SetStart">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_SetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_SetStart" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_SetStart</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">start</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_SetStart" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Set the <em>start</em> attribute of the given exception object to <em>start</em>.  Return
 <code class="docutils literal notranslate"><span class="pre">0</span></code> on success, <code class="docutils literal notranslate"><span class="pre">-1</span></code> on failure.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeDecodeError_GetEnd">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_GetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_GetEnd" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_GetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_GetEnd" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeEncodeError_GetEnd">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_GetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_GetEnd" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_GetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_GetEnd" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeTranslateError_GetEnd">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_GetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_GetEnd" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_GetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_GetEnd" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Get the <em>end</em> attribute of the given exception object and place it into
 <em>*end</em>.  <em>end</em> must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  Return <code class="docutils literal notranslate"><span class="pre">0</span></code> on success, <code class="docutils literal notranslate"><span class="pre">-1</span></code> on
 failure.</p>
@@ -941,11 +942,11 @@ failure.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeDecodeError_SetEnd">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_SetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_SetEnd" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeDecodeError_SetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeDecodeError_SetEnd" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeEncodeError_SetEnd">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_SetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_SetEnd" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeEncodeError_SetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeEncodeError_SetEnd" title="本定義的永久連結">¶</a><br /></dt>
 <dt class="sig sig-object c" id="c.PyUnicodeTranslateError_SetEnd">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_SetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_SetEnd" title="本定義的永久連結">¶</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnicodeTranslateError_SetEnd</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">end</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnicodeTranslateError_SetEnd" title="本定義的永久連結">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Set the <em>end</em> attribute of the given exception object to <em>end</em>.  Return <code class="docutils literal notranslate"><span class="pre">0</span></code>
 on success, <code class="docutils literal notranslate"><span class="pre">-1</span></code> on failure.</p>
 </dd></dl>
@@ -973,7 +974,7 @@ on success, <code class="docutils literal notranslate"><span class="pre">-1</spa
 
 </section>
 <section id="recursion-control">
-<span id="recursion"></span><h2>Recursion Control<a class="headerlink" href="#recursion-control" title="本標題的永久連結">¶</a></h2>
+<span id="recursion"></span><h2>Recursion Control<a class="headerlink" href="#recursion-control" title="本標頭的永久連結">¶</a></h2>
 <p>These two functions provide a way to perform safe recursive calls at the C
 level, both in the core and in extension modules.  They are needed if the
 recursive code does not necessarily invoke Python code (which tracks its
@@ -1039,17 +1040,12 @@ invocation of <a class="reference internal" href="#c.Py_ReprEnter" title="Py_Rep
 
 </section>
 <section id="standard-exceptions">
-<span id="standardexceptions"></span><h2>Standard Exceptions<a class="headerlink" href="#standard-exceptions" title="本標題的永久連結">¶</a></h2>
+<span id="standardexceptions"></span><h2>Standard Exceptions<a class="headerlink" href="#standard-exceptions" title="本標頭的永久連結">¶</a></h2>
 <p>All standard Python exceptions are available as global variables whose names are
 <code class="docutils literal notranslate"><span class="pre">PyExc_</span></code> followed by the Python exception name.  These have the type
 <span class="xref c c-texpr"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>; they are all class objects.  For completeness, here are all
 the variables:</p>
 <table class="docutils align-default" id="index-4">
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 39%" />
-<col style="width: 12%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>C Name</p></th>
 <th class="head"><p>Python Name</p></th>
@@ -1059,15 +1055,15 @@ the variables:</p>
 <tbody>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BaseException</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#BaseException" title="BaseException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BaseException</span></code></a></p></td>
-<td><p>(1)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_Exception</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a></p></td>
-<td><p>(1)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ArithmeticError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#ArithmeticError" title="ArithmeticError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ArithmeticError</span></code></a></p></td>
-<td><p>(1)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_AssertionError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#AssertionError" title="AssertionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code></a></p></td>
@@ -1159,7 +1155,7 @@ the variables:</p>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_LookupError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#LookupError" title="LookupError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">LookupError</span></code></a></p></td>
-<td><p>(1)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_MemoryError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#MemoryError" title="MemoryError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MemoryError</span></code></a></p></td>
@@ -1183,7 +1179,7 @@ the variables:</p>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_OSError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a></p></td>
-<td><p>(1)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_OverflowError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a></p></td>
@@ -1203,7 +1199,7 @@ the variables:</p>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ReferenceError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#ReferenceError" title="ReferenceError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ReferenceError</span></code></a></p></td>
-<td><p>(2)</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_RuntimeError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></p></td>
@@ -1272,7 +1268,7 @@ the variables:</p>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版本新加入: </span><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BlockingIOError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BrokenPipeError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ChildProcessError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionAbortedError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionRefusedError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionResetError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_FileExistsError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_FileNotFoundError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_InterruptedError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_IsADirectoryError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_NotADirectoryError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_PermissionError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ProcessLookupError</span></code> 和 <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_TimeoutError</span></code> 是在 <span class="target" id="index-9"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3151"><strong>PEP 3151</strong></a> 被引入。</p>
+<p><span class="versionmodified added">在 3.3 版本新加入: </span><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BlockingIOError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BrokenPipeError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ChildProcessError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionAbortedError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionRefusedError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ConnectionResetError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_FileExistsError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_FileNotFoundError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_InterruptedError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_IsADirectoryError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_NotADirectoryError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_PermissionError</span></code>, <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ProcessLookupError</span></code> 和 <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_TimeoutError</span></code> 是在 <span class="target" id="index-9"></span><a class="pep reference external" href="https://peps.python.org/pep-3151/"><strong>PEP 3151</strong></a> 被引入。</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.5 版本新加入: </span><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_StopAsyncIteration</span></code> 和 <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_RecursionError</span></code>。</p>
@@ -1282,10 +1278,6 @@ the variables:</p>
 </div>
 <p>These are compatibility aliases to <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_OSError</span></code>:</p>
 <table class="docutils align-default" id="index-6">
-<colgroup>
-<col style="width: 79%" />
-<col style="width: 21%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>C Name</p></th>
 <th class="head"><p>註解</p></th>
@@ -1299,7 +1291,7 @@ the variables:</p>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_WindowsError</span></code></p></td>
-<td><p>(3)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1307,24 +1299,26 @@ the variables:</p>
 <p><span class="versionmodified changed">在 3.3 版本變更: </span>These aliases used to be separate exception types.</p>
 </div>
 <p>註解：</p>
-<ol class="arabic simple">
-<li><p>This is a base class for other standard exceptions.</p></li>
-<li><p>Only defined on Windows; protect code that uses this by testing that the
-preprocessor macro <code class="docutils literal notranslate"><span class="pre">MS_WINDOWS</span></code> is defined.</p></li>
-</ol>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>)</span>
+<p>This is a base class for other standard exceptions.</p>
+</aside>
+<aside class="footnote brackets" id="id8" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">2</a><span class="fn-bracket">]</span></span>
+<p>Only defined on Windows; protect code that uses this by testing that the
+preprocessor macro <code class="docutils literal notranslate"><span class="pre">MS_WINDOWS</span></code> is defined.</p>
+</aside>
+</aside>
 </section>
 <section id="standard-warning-categories">
-<span id="standardwarningcategories"></span><h2>Standard Warning Categories<a class="headerlink" href="#standard-warning-categories" title="本標題的永久連結">¶</a></h2>
+<span id="standardwarningcategories"></span><h2>Standard Warning Categories<a class="headerlink" href="#standard-warning-categories" title="本標頭的永久連結">¶</a></h2>
 <p>All standard Python warning categories are available as global variables whose
 names are <code class="docutils literal notranslate"><span class="pre">PyExc_</span></code> followed by the Python exception name. These have the type
 <span class="xref c c-texpr"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>; they are all class objects. For completeness, here are all
 the variables:</p>
 <table class="docutils align-default" id="index-7">
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 39%" />
-<col style="width: 12%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>C Name</p></th>
 <th class="head"><p>Python Name</p></th>
@@ -1334,7 +1328,7 @@ the variables:</p>
 <tbody>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_Warning</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#Warning" title="Warning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Warning</span></code></a></p></td>
-<td><p>(1)</p></td>
+<td><p><a class="footnote-reference brackets" href="#id10" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BytesWarning</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#BytesWarning" title="BytesWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BytesWarning</span></code></a></p></td>
@@ -1382,9 +1376,12 @@ the variables:</p>
 <p><span class="versionmodified added">在 3.2 版本新加入: </span><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ResourceWarning</span></code>.</p>
 </div>
 <p>註解：</p>
-<ol class="arabic simple">
-<li><p>This is a base class for other standard warning categories.</p></li>
-</ol>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id10" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">3</a><span class="fn-bracket">]</span></span>
+<p>This is a base class for other standard warning categories.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -1437,6 +1434,10 @@ the variables:</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="收合側邊欄">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1466,7 +1467,7 @@ the variables:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.10.2 Documentation</a> &#187;
+      <a href="../index.html">3.10.7 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -1502,11 +1503,11 @@ the variables:</p>
 <br />
     <br />
 
-    最後更新於 1月 17, 2022。
+    最後更新於 9月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1 建立。
     </div>
 
   </body>
